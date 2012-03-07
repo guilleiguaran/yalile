@@ -44,4 +44,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+  # FACTORY GIRL AVOID REPETITION
+  config.include FactoryGirl::Syntax::Methods
+
 end
