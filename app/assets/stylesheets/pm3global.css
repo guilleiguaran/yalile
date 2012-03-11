@@ -64,7 +64,7 @@ body{
 }
 
 #wrapper{
-  background: url(../images/app/backgrounds/content-main.png) repeat;
+  background: url(app/backgrounds/content-main.png) repeat;
 }
 
 p{
@@ -102,7 +102,7 @@ a:hover{
 #header nav a{display:inline-block;}
 
 .header-top{
-  background: url(../images/app/backgrounds/header-top.jpg) repeat-x;
+  background: url(app/backgrounds/header-top.jpg) repeat-x;
   border-bottom:1px solid #66932D;
   height:48px;
 }
@@ -148,7 +148,7 @@ a:hover{
 #header .select-type.show{border-top:1px solid #222}
 
 #header .select-type > a{
-  background: url(../images/app/icons/arrow-green.png) no-repeat 94%;
+  background: url(app/icons/arrow-green.png) no-repeat 94%;
   color:#FFF;
   font-weight:bold;
   padding-left:15px;
@@ -157,10 +157,10 @@ a:hover{
   width:260px;
 }
 
-#header .select-type.show > a{background: url(../images/app/icons/arrow-green.png) no-repeat 94%;}
+#header .select-type.show > a{background: url(app/icons/arrow-green.png) no-repeat 94%;}
 
 .config > a{
-  background: url(../images/app/icons/config-header.png) no-repeat 12px 15px;
+  background: url(app/icons/config-header.png) no-repeat 12px 15px;
   display:block;
   float:right;
   height:48px;
@@ -178,11 +178,11 @@ a:hover{
 }
 
 .config.show > a{
-  background: url(../images/app/icons/config-header.png) no-repeat -47px 15px;
+  background: url(app/icons/config-header.png) no-repeat -47px 15px;
 }
   
 .config.show{
-  background: url(../images/app/backgrounds/config.jpg) repeat-x;
+  background: url(app/backgrounds/config.jpg) repeat-x;
   border-left:1px solid #272727;
 }
 
@@ -237,7 +237,7 @@ a:hover{
 }
 
 .nav-bar{
-  background: url(../images/app/backgrounds/header-nav-bar.jpg) repeat-x;
+  background: url(app/backgrounds/header-nav-bar.jpg) repeat-x;
   border-top:1px solid #83BD39;
   border-bottom:1px solid #66932D;
   height:44px;
@@ -254,7 +254,7 @@ a:hover{
 }
 
 .nav-bar ul.nav li a{
-  background: url(../images/app/icons/nav-bar.png) no-repeat 13px 0;
+  background: url(app/icons/nav-bar.png) no-repeat 13px 0;
   color:#FFF;
   line-height:44px;
   padding:15px 18px 15px 45px;
@@ -262,7 +262,7 @@ a:hover{
 }
 
 .nav-bar ul.nav li:hover{
-  background: url(../images/app/backgrounds/hover-nav-bar.png) repeat-x top;
+  background: url(app/backgrounds/hover-nav-bar.png) repeat-x top;
 }
 
 .nav-bar ul.nav li a.dashboard{background-position:13px 12px;}
@@ -278,7 +278,7 @@ a:hover{
 }
 
 .sidebar{
-  background: url(../images/app/backgrounds/sidebar.png) repeat;
+  background: url(app/backgrounds/sidebar.png) repeat;
   bottom:0;
   float:left;
   height:100%;
@@ -290,7 +290,7 @@ a:hover{
 }
 
 .overlay-sidebar{
-  background: url(../images/app/backgrounds/overlay-sidebar.png) repeat;
+  background: url(app/backgrounds/overlay-sidebar.png) repeat;
   bottom:0;
   float:left;
   height:100%;
@@ -353,7 +353,7 @@ a:hover{
 }
 
 .game-data{
-  background: url(../images/app/backgrounds/game-state.png) repeat;
+  background: url(app/backgrounds/game-state.png) repeat;
   border-top:1px solid #404040;
   text-shadow:0 1px rgba(0,0,0,0.9);
 }
@@ -361,13 +361,13 @@ a:hover{
 .game-data .game-data-wrapper{padding:15px;}
 
 .game-data .c-arrow-border{
-  background: url(../images/app/backgrounds/sidebar-arrow-border.png) no-repeat;
+  background: url(app/backgrounds/sidebar-arrow-border.png) no-repeat;
   height:13px;
   width:100%;
 }
 
 .game-data .state{
-  background: url(../images/app/icons/state-app.png) no-repeat;
+  background: url(app/icons/state-app.png) no-repeat;
   float:left;
   height:25px;
   margin-right:10px;
@@ -398,7 +398,7 @@ a:hover{
 }
 
 .content-right{
-  background: url(../images/app/backgrounds/content-main.png) repeat;
+  background: url(app/backgrounds/content-main.png) repeat;
   float:left;
   margin:95px 0 0 275px;
 }
@@ -500,7 +500,7 @@ table.main-table.head thead td:last-child{
 }
 
 table.main-table thead td span.selected-arrow{
-  background: url(../images/app/icons/selected-arrow.png) no-repeat center right;
+  background: url(app/icons/selected-arrow.png) no-repeat center right;
   padding-right:15px;
 }
 
@@ -519,12 +519,12 @@ table.main-table tbody td{
 }
 
 table.main-table tbody tr:hover td{
-  background: url(../images/app/backgrounds/hover-table.png) repeat !important;
+  background: url(app/backgrounds/hover-table.png) repeat !important;
   z-index:2;
 }
 
 table.main-table tbody tr:nth-child(odd) td{
-  background:#FFF url(../images/app/backgrounds/odd-td-main-table.png) repeat-x bottom;
+  background:#FFF url(app/backgrounds/odd-td-main-table.png) repeat-x bottom;
 }
 
 table.main-table tbody td:first-child{border-left:1px solid #E2E2E2;}
@@ -544,7 +544,7 @@ table.main-table tbody td span{
 }
 
 table.main-table tbody td span.table-status{
-  background: url(../images/app/icons/table-status.png) no-repeat 0 center;
+  background: url(app/icons/table-status.png) no-repeat 0 center;
   display:block;
   height:15px;
   margin:0 auto;
@@ -572,7 +572,7 @@ table.main-table tbody tr:last-child td:first-child{
 }
 
 a.download{
-  background: url(../images/app/icons/download.png) no-repeat left;
+  background: url(app/icons/download.png) no-repeat left;
   color:#666;
   float:left;
   line-height:20px;
@@ -602,7 +602,7 @@ a.download:hover{text-decoration:underline;}
 }
 
 .navigation ul li a{
-  background:#FAFAFA url(../images/app/icons/arrow-navigation.png) no-repeat;
+  background:#FAFAFA url(app/icons/arrow-navigation.png) no-repeat;
   border:1px solid #D9D9D9;
   display:block;
   height:30px;
@@ -773,7 +773,7 @@ h3.details{
 }
 
 table.status-history td.table-status{
-  background: url(../images/app/icons/table-status.png) no-repeat;
+  background: url(app/icons/table-status.png) no-repeat;
   font-weight:bold;
   padding-left:23px;
 }
@@ -873,7 +873,7 @@ ul.texter-list li {
 }
 
 ul.texter-list li a.remove{
-  background: url(../images/app/icons/remove.png) no-repeat left 1px;
+  background: url(app/icons/remove.png) no-repeat left 1px;
   color:#999;
   line-height:13px;
   padding-left:20px;
@@ -948,7 +948,7 @@ ul.sub-tabs li:hover a, ul.sub-tabs li.active a{
 }
 
 .btn-edit{
-  background: url(../images/app/icons/table-status.png) no-repeat left -320px;
+  background: url(app/icons/table-status.png) no-repeat left -320px;
   color:#666;
   line-height:34px;
   padding:0 5px 0 23px;
@@ -965,7 +965,7 @@ ul.sub-tabs li:hover a, ul.sub-tabs li.active a{
 }
 
 .icons-support{
-  background: url(../images/app/icons/icons-support.png) no-repeat top;
+  background: url(app/icons/icons-support.png) no-repeat top;
   float:left;
   height:41px;
   margin-right:25px;
@@ -997,7 +997,7 @@ ul.sub-tabs li:hover a, ul.sub-tabs li.active a{
 }
 
 .content-steps .list-steps > li{
-  background: url('../images/app/icons/steps.png') no-repeat;
+  background: url('app/icons/steps.png') no-repeat;
   font-size:14px;
   font-weight:bold;
   line-height:32px;
@@ -1110,7 +1110,7 @@ ul.list-radios label{
 .two-fieldset fieldset.last{float:right;}
 
 fieldset input.datepicker{
-  background: url(../images/app/icons/datepicker.png) no-repeat 93% 50%;
+  background: url(app/icons/datepicker.png) no-repeat 93% 50%;
   padding-right:33px !important;
 }  
 
@@ -1184,7 +1184,7 @@ fieldset.btn-alone{
 }
 
 fieldset.datepicker a{
-  background: url('../images/app/icons/datepicker-update.png') no-repeat;
+  background: url('app/icons/datepicker-update.png') no-repeat;
   
   display:block;
   float:right;
@@ -1193,7 +1193,7 @@ fieldset.datepicker a{
 }
 
 fieldset.show-error .error-info{
-  background: url('../images/app/icons/error-info.png') no-repeat;
+  background: url('app/icons/error-info.png') no-repeat;
   display:block;
   height:15px;
   position:absolute;
@@ -1296,7 +1296,7 @@ select{width:100% !important;}
 
 /* ---Green btn ---*/
 .btn-green{
-  background: url(../images/app/buttons/green.png) no-repeat top left;
+  background: url(app/buttons/green.png) no-repeat top left;
   display:block;
   float:left;
   padding-left:3px;
@@ -1304,7 +1304,7 @@ select{width:100% !important;}
 }
 
 .btn-green span, .btn-green input{
-  background: url(../images/app/buttons/green.png) no-repeat top right;
+  background: url(app/buttons/green.png) no-repeat top right;
   color:#FFF;
   display:block;
   float:left;
@@ -1343,7 +1343,7 @@ select{width:100% !important;}
 }
 
 .btn-back span{
-  background: url(../images/app/icons/arrow-navigation.png) no-repeat 11px -21px;
+  background: url(app/icons/arrow-navigation.png) no-repeat 11px -21px;
   border-right:1px solid #D9D9D9;
   display:block;
   float:left;
@@ -1354,7 +1354,7 @@ select{width:100% !important;}
 
 /* ---Red Icon btn ---*/
 .btn-red-cn{
-  background: url(../images/app/buttons/red-btn-cn.png) no-repeat top left;
+  background: url(app/buttons/red-btn-cn.png) no-repeat top left;
   display:block;
   float:left;
   padding-left:37px;
@@ -1362,7 +1362,7 @@ select{width:100% !important;}
 }
 
 .btn-red-cn span, .btn-red-cn input{
-  background: url(../images/app/buttons/red-btn-cn.png) no-repeat top right;
+  background: url(app/buttons/red-btn-cn.png) no-repeat top right;
   color:#FFF;
   cursor:pointer;
   display:block;
@@ -1381,7 +1381,7 @@ select{width:100% !important;}
 
 /* ---Blue Btn Icons ---*/
 .btn-blue-icon{
-  background: url(../images/app/buttons/blue-btn-ico.png) no-repeat top left;
+  background: url(app/buttons/blue-btn-ico.png) no-repeat top left;
   display:block;
   float:left;
   padding-left:36px;
@@ -1389,7 +1389,7 @@ select{width:100% !important;}
 }
 
 .btn-blue-icon span, .btn-blue-icon input{
-  background: url(../images/app/buttons/blue-btn-ico.png) no-repeat top right;
+  background: url(app/buttons/blue-btn-ico.png) no-repeat top right;
   color:#FFF;
   cursor:pointer;
   display:block;
@@ -1500,7 +1500,7 @@ button.ui-multiselect{
 .ie8 .tipsy-inner{border:1px solid #DDD;}
 
 .tipsy:after{
-  background: url('../images/app/icons/arrow-tipsy.png') no-repeat;
+  background: url('app/icons/arrow-tipsy.png') no-repeat;
   content:"";
   height:8px;
   left:50%;
@@ -1534,7 +1534,7 @@ button.ui-multiselect{
 }
 
 .footer{
-  background: url(../images/app/backgrounds/content-main.png) repeat;
+  background: url(app/backgrounds/content-main.png) repeat;
   border-top:1px solid #FFF;
   clear:both;
   height:42px;

@@ -56,8 +56,13 @@ Yalile::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  
+  # ================ ROOT ================================================================
+  root :to => "user/sessions#new"
 
   # ================ DEVISE ROUTES FOR USERS =============================================
-  devise_for :users, :path => "", :path_names => {:sign_in => "login", :sign_out => "logout"}, :only => :sessions
+  scope :module => :user do
+    devise_for :users, :path => "", :path_names => {:sign_in => "login", :sign_out => "logout"}, :only => :sessions, :controllers => {:sessions => "user/sessions"}
+  end
 
 end
