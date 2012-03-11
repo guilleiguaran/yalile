@@ -47,4 +47,7 @@ RSpec.configure do |config|
   # FACTORY GIRL AVOID REPETITION
   config.include FactoryGirl::Syntax::Methods
 
+  # DEVISE HELPER
+  config.include Devise::TestHelpers, :type => :controller
+
 end
