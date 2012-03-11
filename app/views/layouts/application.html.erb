@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Yalile</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <!--[if IE]><![endif]-->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title><%= yield :title %></title>
+    <%= stylesheet_link_tag    "pm3global", "jquery-ui", "multiselect", "dd" %>
+    <%= javascript_include_tag "application", "modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <!--[if lte IE 7 ]> <body class="ie8 ie7"> <![endif]-->
+  <!--[if IE 8 ]> <body class="ie8"> <![endif]-->
+  <!--[if (gte IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
+    <div id="wrapper">
+      <%= render :partial =>"shared/header/application", :layout => false %>
+      <div id="content" class="clearfix">
+        <%= yield %>
+      </div><!-- #content END -->
+    </div><!-- #wrapper END -->
+    <footer id="footer">
+      <!--[if (gte IE 6)&(lte IE 8)]>
+        <script src="/javascripts/selectivizr.js"></script>
+      <![endif]-->
+      <%= javascript_include_tag "jquery-ui-1.8.18.custom.min", "jquery.dd", "jquery.tipsy", "jquery.multiselect", "global"  %>
+    </footer><!-- #footer END -->
+  </body>
 </html>
