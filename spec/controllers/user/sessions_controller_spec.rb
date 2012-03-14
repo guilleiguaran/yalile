@@ -26,4 +26,23 @@ describe User::SessionsController do
       end
     end
   end
+
+  context "on POST to #create" do
+    context "with a non registered user" do
+      before(:each) do
+        request.env["devise.mapping"] = Devise.mappings[:user]
+      end
+      it "should login the user if the email and password are corrects" do
+        create(:user, :username => "arturoblanco", :password => "123456")
+        post :create, :user => {:username => "arturoblanco", :password => "123456"}
+        user = subject.current_user
+        user.should_not be_nil
+        user.username.should eq("arturoblanco")
+      end
+      it "should redirect to new sale if the current user is not an admin" do
+      end
+      it "should redirect to the admin site if the current user is an admin" do
+      end
+    end
+  end
 end

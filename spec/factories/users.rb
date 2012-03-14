@@ -6,18 +6,18 @@ FactoryGirl.define do
     "name#{n}@email#{n}.com"
   end
 
-  sequence :full_name do |n|
+  sequence :fullname do |n|
     "Firstname#{n} Lastname#{n}"
   end
 
-  sequence :user_name do |n|
+  sequence :username do |n|
     "username#{n}"
   end
 
   factory :user do
     email {FactoryGirl.generate :email}
-    full_name {FactoryGirl.generate :full_name}
-    user_name {FactoryGirl.generate :user_name}
+    fullname {FactoryGirl.generate :fullname}
+    username {FactoryGirl.generate :username}
     password "123456"
     is_admin false
   end

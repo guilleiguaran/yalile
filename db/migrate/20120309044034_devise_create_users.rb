@@ -10,7 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       #t.datetime :reset_password_sent_at
 
       ## Rememberable
-      #t.datetime :remember_created_at
+      t.datetime :remember_created_at
 
       ## Trackable
       t.integer  :sign_in_count, :default => 0
@@ -36,15 +36,15 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Token authenticatable
       # t.string :authentication_token
 
-      t.string :full_name, :null => false
-      t.string :user_name, :null => false
+      t.string :fullname, :null => false
+      t.string :username, :null => false
       t.boolean :is_admin, :default => false
 
 
       t.timestamps
     end
 
-    add_index :users, [:full_name, :user_name, :email], :unique => true
+    add_index :users, [:fullname, :username, :email], :unique => true
     # add_index :users, :reset_password_token, :unique => true
     # add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true

@@ -5,13 +5,13 @@ describe User do
   context "Creating a user" do
     context "with valid attributes" do
       it "should return no errors" do
-        user = build(:user, :email => "arturoblanco700@gmail.com", :user_name => "arturoblanco700", :full_name => "Arturo Blanco")
+        user = build(:user, :email => "arturoblanco700@gmail.com", :username => "arturoblanco700", :fullname => "Arturo Blanco")
         user.save.should eq(true)
         user.should have(0).errors
         User.count.should eq(1)
         user = User.first
-        user.full_name.should eq("Arturo Blanco")
-        user.user_name.should eq("arturoblanco700")
+        user.fullname.should eq("Arturo Blanco")
+        user.username.should eq("arturoblanco700")
         user.email.should eq("arturoblanco700@gmail.com")
       end
     end
@@ -25,16 +25,16 @@ describe User do
       end
 
       it "should validates presence of full name" do
-        user = build(:user, :full_name => "")
+        user = build(:user, :fullname => "")
         user.save.should eq(false)
-        user.should have(1).error_on(:full_name)
+        user.should have(1).error_on(:fullname)
         User.count.should eq(0)
       end
 
       it "should validates presence of user name" do
-        user = build(:user, :user_name => "")
+        user = build(:user, :username => "")
         user.save.should eq(false)
-        user.should have(1).error_on(:user_name)
+        user.should have(1).error_on(:username)
         User.count.should eq(0)
       end
 
@@ -51,6 +51,24 @@ describe User do
         user.should have(1).error_on(:email)
         User.count.should eq 0
       end
+    end
+  end
+
+  context "Validating a user" do
+    before :all do
+      create(:user, :username => "arturoblanco", :password => "123456")
+    end
+    it "should return the user if the email and password match" do
+      user = User.find_user(:username => "arturoblanco", :password => "123456")
+      user.should_not be_blank
+    end
+    it "should return nil if the user is valid but the password do not match" do
+      user = User.find_user(:username => "arturoblanco", :password => "123")
+      user.should be_nil
+    end
+    it "should return nil if teh user was not found" do
+      user = User.find_user(:username => "usernotfounded", :password => "123")
+      user.should be_nil
     end
   end
 

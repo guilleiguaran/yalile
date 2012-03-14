@@ -7,8 +7,17 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
   # VALIDATIONS
-  validates :full_name, :presence => true
-  validates :user_name, :presence => true
+  validates :fullname, :presence => true
+  validates :username, :presence => true
+
+  # FUNCTION TO FIND A USER THROUGH HIS EMAIL ADDRESS, AND COMPARE THE PASSWORD SENT
+  def self.find_user(params={})
+    user = self.where{username == params[:username]}.first
+    if !user.blank?
+      return user if user.valid_password?(params[:password])
+    end
+  end
+
 end
 # == Schema Information
 #
