@@ -29,30 +29,44 @@ describe Product do
   end
 
   context "on update" do
-    before :all do
-      create_list(:product, 2)
-    end
     context "with invalid attrbutes" do
+      before :each do
+        create_list(:product, 2)
+      end
       it "should validates presence of name" do
         product = Product.first
+        product_name = product.name
         product.update_attributes(:name => "").should eq(false)
         product.should have(1).error_on(:name)
-        product.reload.name.should eq("product 1")
+        product.reload.name.should eq(product_name)
       end
       it "should validates uniqueness of title" do
         product = Product.first
+        product_name = product.name
         product.update_attributes(:name => Product.last.name).should eq(false)
         product.should have(1).error_on(:name)
-        product.reload.name.should eq("product 1")
+        product.reload.name.should eq(product_name)
       end
     end
     context "with valid attributes" do
+      before :each do
+        create_list(:product, 2)
+      end
       it "should update the product without errors" do
         product = Product.first
         product.update_attributes(:name => "adidas edited").should eq(true)
         product.should have(0).errors
         product.reload.name.should eq("adidas edited")
       end
+    end
+  end
+
+  context "on destroy" do
+    it "should not delete the product" do
+      create_list(:product, 2)
+      product = Product.first
+      product.destroy.should eq(false)
+      Product.count.should eq(2)
     end
   end
 end
