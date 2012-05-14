@@ -62,8 +62,10 @@ describe Product do
   end
 
   context "on destroy" do
-    it "should not delete the product" do
+    before :each do
       create_list(:product, 2)
+    end
+    it "should not delete the product" do
       product = Product.first
       product.destroy.should eq(false)
       Product.count.should eq(2)

@@ -23,14 +23,15 @@ end
 #
 # Table name: users
 #
-#  id                 :integer(4)      not null, primary key
-#  email              :string(255)     default(""), not null
-#  encrypted_password :string(255)     default(""), not null
-#  sign_in_count      :integer(4)      default(0)
-#  full_name          :string(255)     not null
-#  user_name          :string(255)     not null
-#  is_admin           :boolean(1)      default(FALSE)
-#  created_at         :datetime        not null
-#  updated_at         :datetime        not null
+#  id                  :integer(4)      not null, primary key
+#  email               :string(255)     default(""), not null
+#  encrypted_password  :string(255)     default(""), not null
+#  remember_created_at :datetime
+#  sign_in_count       :integer(4)      default(0)
+#  fullname            :string(255)     not null
+#  username            :string(255)     not null
+#  is_admin            :boolean(1)      default(FALSE)
+#  created_at          :datetime        not null
+#  updated_at          :datetime        not null
 #
 
