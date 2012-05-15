@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title><%= yield :title %></title>
     <%= stylesheet_link_tag    "pm3global", "jquery-ui", "multiselect", "dd" %>
-    <%= javascript_include_tag "application", "modernizr" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
   <!--[if lte IE 7 ]> <body class="ie8 ie7"> <![endif]-->
@@ -21,9 +21,8 @@
     </div><!-- #wrapper END -->
     <footer id="footer">
       <!--[if (gte IE 6)&(lte IE 8)]>
-        <script src="/javascripts/selectivizr.js"></script>
+        <%= javascript_include_tag "selectivizr" %>
       <![endif]-->
-      <%= javascript_include_tag "jquery-ui-1.8.18.custom.min", "jquery.dd", "jquery.tipsy", "jquery.multiselect", "global"  %>
     </footer><!-- #footer END -->
   </body>
 </html>

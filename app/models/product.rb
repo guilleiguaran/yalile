@@ -1,11 +1,16 @@
 class Product < ActiveRecord::Base
 
-  # CALLBACKS
-  before_destroy AvoidDestroy
+  # ASOCIATIONS
+  has_many :articles
 
   # VALIDATIONS
   validates :name, :presence => true
   validates :name, :uniqueness => true
+
+  # CALLBACKS
+  before_destroy AvoidDestroy
+
+  attr_accessible :name
 
 end
 # == Schema Information

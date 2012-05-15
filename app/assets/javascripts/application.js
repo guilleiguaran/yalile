@@ -11,4 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
+//= require selectivizr
+//= require modernizr
+//= require jquery.tipsy
+//= require jquery.multiselect
+//= require jquery.dd
+//= require global
