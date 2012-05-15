@@ -11,7 +11,7 @@ class CreateArticles < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :articles, :description, :unique => false
+    add_index :articles, :description, :unique => false, :length => 100
     add_index :articles, :size, :unique => false
     add_index :articles, :code, :unique => true
   end

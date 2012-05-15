@@ -4,11 +4,11 @@ class Article < ActiveRecord::Base
   belongs_to :product
 
   # VALIDATIONS
-  validates :product_id, :presence => true
+  validates_associated :product
+  # validates :product_id, :presence => true
   validates :description, :presence => true
   validates :size, :presence => true
   validates :code, :presence => true, :uniqueness => true
-  validates_associated :products
 
   # CALLBACKS
   before_destroy AvoidDestroy

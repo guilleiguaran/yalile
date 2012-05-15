@@ -4,8 +4,7 @@ class Product < ActiveRecord::Base
   has_many :articles
 
   # VALIDATIONS
-  validates :name, :presence => true
-  validates :name, :uniqueness => true
+  validates :name, :presence => true, :uniqueness => true
 
   # CALLBACKS
   before_destroy AvoidDestroy

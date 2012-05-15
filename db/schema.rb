@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120316231046) do
+ActiveRecord::Schema.define(:version => 20120515004923) do
+
+  create_table "articles", :force => true do |t|
+    t.integer  "product_id"
+    t.text     "description",                :null => false
+    t.string   "size",                       :null => false
+    t.integer  "in_stock",    :default => 0
+    t.string   "code",                       :null => false
+    t.integer  "status"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "articles", ["code"], :name => "index_articles_on_code", :unique => true
+  add_index "articles", ["description"], :name => "index_articles_on_description", :length => {"description"=>100}
+  add_index "articles", ["size"], :name => "index_articles_on_size"
 
   create_table "items", :force => true do |t|
     t.integer  "product_id",                 :null => false
@@ -33,6 +48,24 @@ ActiveRecord::Schema.define(:version => 20120316231046) do
   end
 
   add_index "products", ["name"], :name => "index_products_on_name", :unique => true
+
+  create_table "sale_transactions", :force => true do |t|
+    t.integer  "sale_id"
+    t.integer  "article_id"
+    t.integer  "quantity_articles"
+    t.float    "article_unit_price_sold"
+    t.float    "article_total_price"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  create_table "sales", :force => true do |t|
+    t.string   "salesman",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sales", ["salesman"], :name => "index_sales_on_salesman"
 
   create_table "users", :force => true do |t|
     t.string   "email",               :default => "",    :null => false
