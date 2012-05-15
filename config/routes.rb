@@ -67,3 +67,9 @@ Yalile::Application.routes.draw do
   resources :products, :only => [:index]
 
 end
+#== Route Map
+# Generated on 15 May 2012 19:54
+#
+#         user_session POST   /login(.:format)    user/sessions#create
+# destroy_user_session DELETE /logout(.:format)   user/sessions#destroy
+#             products GET    /products(.:format) products#index
