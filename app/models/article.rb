@@ -15,3 +15,24 @@ class Article < ActiveRecord::Base
 
   attr_accessible :code, :description, :in_stock, :product_id, :size, :status
 end
+# == Schema Information
+#
+# Table name: articles
+#
+#  id          :integer(4)      not null, primary key
+#  product_id  :integer(4)
+#  description :text            default(""), not null
+#  size        :string(255)     not null
+#  in_stock    :integer(4)      default(0)
+#  code        :string(255)     not null
+#  status      :integer(4)
+#  created_at  :datetime        not null
+#  updated_at  :datetime        not null
+#
+# Indexes
+#
+#  index_articles_on_code         (code) UNIQUE
+#  index_articles_on_description  (description)
+#  index_articles_on_size         (size)
+#
+

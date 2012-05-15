@@ -2,7 +2,7 @@ $(function(){
 
   $(".skin-select").msDropDown();
 
-  $( ".datepicker-call" ).datepicker({
+  $( ".datepicker-call").datepicker({
     changeMonth: true,
     changeYear: true
   });
