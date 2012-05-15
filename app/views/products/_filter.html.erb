@@ -1,0 +1,87 @@
+<div class="head-table box-default clearfix">
+  <%= simple_form_for :filter do |form| %>
+    <div class="box-search">
+      <fieldset class="input-search">
+        <label>Search</label>
+        <input class="text" type="text">
+        <div class="btn-green">
+          <input type="submit", value="Search">
+        </div>
+      </fieldset><!-- input-search END -->
+      <ul class="list-radios clearfix">
+        <li>
+          <fieldset>
+            <input type="radio" id="trans-id">
+            <label for="trans-id">Transaction ID</label>
+          </fieldset>
+        </li>
+        <li>
+          <fieldset>
+            <input type="radio" id="user-id">
+            <label for="user-id">User ID</label>
+          </fieldset>
+        </li>
+        <li>
+          <fieldset>
+            <input type="radio" id="dev">
+            <label for="dev">Dev Reference</label>
+          </fieldset>
+        </li>
+        <li>
+          <fieldset>
+            <input type="radio" id="email-phone">
+            <label for="email-phone">Email / Phone</label>
+          </fieldset>
+        </li>
+      </ul><!--.list-radios clearfix END -->
+      <fieldset>
+        <label>Application</label>
+        <select class="skin-select">
+          <option>Cidade Maravilhosa - Rio</option>
+          <option>FarmVille</option>
+        </select>
+      </fieldset>
+    </div><!-- box-search END -->
+    <div class="data-time">
+      <div class="two-fieldset clearfix">
+        <fieldset>
+          <label>Start Date</label>
+          <input class="datepicker-call datepicker text" type="text" placeholder="DD / MM / YYY">
+        </fieldset>
+        <fieldset class="last">
+          <label>Start Date</label>
+          <input class="datepicker-call datepicker text" type="text" placeholder="DD / MM / YYY">
+        </fieldset><!-- last END -->
+      </div><!-- two-fieldset clearfix END -->
+      <fieldset>
+        <label>Date Type</label>
+        <ul class="list-radios clearfix">
+          <li>
+            <fieldset>
+              <input type="radio" id="created">
+              <label for="created">Created</label>
+            </fieldset>
+          </li>
+          <li>
+            <fieldset>
+              <input type="radio" id="paid">
+              <label for="paid">Paid</label>
+            </fieldset>
+          </li>
+          <li>
+            <fieldset>
+              <input type="radio" id="released">
+              <label for="released">Released</label>
+            </fieldset>
+          </li>
+          <li>
+            <fieldset>
+              <input type="radio" id="canceled">
+              <label for="canceled">Canceled</label>
+            </fieldset>
+          </li>
+        </ul><!--.list-radios-->
+      </fieldset>
+    </div><!-- data-time END -->
+  <% end %>
+</div><!--.head-table-->
