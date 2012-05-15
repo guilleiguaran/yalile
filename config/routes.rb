@@ -64,4 +64,6 @@ Yalile::Application.routes.draw do
     devise_for :users, :path => "", :path_names => {:sign_in => "login", :sign_out => "logout"}, :only => :sessions, :controllers => {:sessions => "user/sessions"}
   end
 
+  resources :products, :only => [:index]
+
 end
