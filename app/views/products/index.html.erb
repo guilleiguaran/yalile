@@ -6,9 +6,9 @@
     <div class="content-main clearfix">
       <div class="content-title">
         <h2 class="floatleft">Listado De Productos</h2>
-        <%= link_to content_tag(:span, "Crear Nuevo Producto"), "javascript:void(0)", :class => "btn-blue-icon add floatright add-app" %>
+        <%= link_to content_tag(:span, "Crear Nuevo Producto"), new_product_path , :id => "form_for_new_button", :class => "btn-blue-icon add floatright add-app" %>
       </div>
-      <div class="box-default rounder-all-five marginbottom clearfix box-app">
+      <div id="form_for_html_render" class="box-default rounder-all-five marginbottom clearfix box-app">
       </div><!-- box-default rounder-all-five marginbottom clearfix box-app END -->
       <%= render :partial => "filter", :layout => false %>
       <%= render :partial => "table", :layout => false %>

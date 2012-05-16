@@ -2,14 +2,14 @@ $(function(){
 
   $(".skin-select").msDropDown();
 
-  $( ".datepicker-call").datepicker({
+  $(".datepicker-call").datepicker({
     changeMonth: true,
     changeYear: true
   });
 
   /*Multiselect*/
   $(".multiselect-call").multiselect({
-    selectedList: 4 // 0-based index
+    selectedList: 4
   });
 
   /*Tooltips*/
@@ -52,23 +52,7 @@ $(function(){
     }
   });
 
-  /*Add New App*/
   $(".box-app").addClass("hidden");
-
-  $('.add-app').click(function(event){
-    event.stopPropagation();
-    $(".box-app").addClass("open");
-    $(".add-app").addClass("hidden");
-  });
-
-  $('.cancel-app').click(function(event){
-    event.stopPropagation();
-    $(".add-app").removeClass("hidden");
-    $(".box-app").addClass("hidden");
-    $(".box-app").removeClass("open");
-    $(".add-app").addClass("open");
-    $(".add-app").removeClass("open");
-  });
 
   /*Edit App*/
   $('.btn-edit').click(function(event){

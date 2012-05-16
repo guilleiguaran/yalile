@@ -18,4 +18,7 @@
 //= require jquery.tipsy
 //= require jquery.multiselect
 //= require jquery.dd
+//= require jquery.validate.min
+//= require additional-methods.min
 //= require global
+//= require basicActionsHandler
