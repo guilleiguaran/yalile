@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @article = @product.articles.new
     respond_with(html: render_to_string("new", layout: false))
   end
 

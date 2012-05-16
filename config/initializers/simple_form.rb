@@ -5,7 +5,8 @@ SimpleForm.setup do |config|
   # wrapper, change the order or even add your own to the
   # stack. The options given below are used to wrap the
   # whole input.
-  config.wrappers do |b|
+  config.wrappers :default, :class => :input,
+    :hint_class => :field_with_hint, :error_class => :field_with_errors do |b|
     ## Extensions enabled by default
     # Any of these extensions can be disabled for a
     # given input by passing: `f.input EXTENSION_NAME => false`.
@@ -38,18 +39,26 @@ SimpleForm.setup do |config|
     # Calculates readonly automatically from readonly attributes
     b.optional :readonly
 
-    # Use a set of components by wrapping them in a tag+class.
-    b.wrapper :tag => "fieldset", :class => nil do |ba|
-      ba.use :label_input, :class => "text"
-    end
-
     ## Inputs
+    b.use :label_input
     b.use :hint,  :wrap_with => { :tag => :span, :class => :hint }
     b.use :error, :wrap_with => { :tag => :span, :class => :error }
   end
 
+  config.wrappers :my_wrapper, :tag => :fieldset, :class => nil do |component|
+    component.use :html5
+    component.use :placeholder
+    component.use :label
+    component.use :input
+
+
+    component.optional :label_input
+    component.optional :maxlength
+    component.optional :readonly
+  end
+
   # The default wrapper to be used by the FormBuilder.
-  # config.default_wrapper = :default
+  config.default_wrapper = :my_wrapper
 
   # Define the way to render check boxes / radio buttons with labels.
   # Defaults to :nested for bootstrap config.
@@ -58,9 +67,11 @@ SimpleForm.setup do |config|
   config.boolean_style = :nested
 
   # Default class for buttons
-  config.button_class = ''
+  config.button_class = nil
 
-  # Method used to tidy up errors.
+  # Method used to tidy up errors. Specify any Rails Array method.
+  # :first lists the first message for each field.
+  # Use :to_sentence to list all errors for each field.
   # config.error_method = :first
 
   # Default tag used for error notification helper.
@@ -90,7 +101,7 @@ SimpleForm.setup do |config|
   # config.item_wrapper_tag = :span
 
   # You can define a class to use in all item wrappers. Defaulting to none.
-  # config.item_wrapper_class = nil
+  config.item_wrapper_class = nil
 
   # How the label text should be generated altogether with the required text.
   # config.label_text = lambda { |label, required| "#{required} #{label}" }
@@ -102,7 +113,7 @@ SimpleForm.setup do |config|
   config.form_class = nil
 
   # You can define which elements should obtain additional classes
-  # config.generate_additional_classes_for = [:wrapper, :label, :input]
+  config.generate_additional_classes_for = [:wrapper, :label, :input]
 
   # Whether attributes are required by default (or not). Default is true.
   config.required_by_default = false
@@ -126,7 +137,7 @@ SimpleForm.setup do |config|
   # config.country_priority = nil
 
   # Default size for text inputs.
-  # config.default_input_size = 50
+  config.default_input_size = 30
 
   # When false, do not use translations for labels.
   # config.translate_labels = true

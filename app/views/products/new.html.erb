@@ -1,4 +1,4 @@
-<%= simple_form_for @product do |form| %>
+<%= simple_form_for :pepito, defaults: {input_html: {class: "text"}} do |form| %>
 <div class="four-fieldset clearfix">
   <fieldset>
     <label>Productos:</label>
@@ -6,28 +6,16 @@
       <option>New</option>
     </select>
   </fieldset>
-  <fieldset class="bigest">
-    <label>Nombre del Producto:</label>
-    <input type="text" class="text">
-  </fieldset>
+  <%= form.input :name, label: "Nombre del Producto:", input_html: {maxlength: 30}, wrapper_html: {class: "bigest"} %>
 </div><!--.four-fieldset-->
 <div class="four-fieldset clearfix more-separate cancel-save">
-  <fieldset>
-    <label>Talla:</label>
-    <input type="text" class="text">
-  </fieldset>
-  <fieldset>
-    <label>Cantidad:</label>
-    <input type="text" class="text">
-  </fieldset>
-  <fieldset class="big last">
-    <label>Código:</label>
-    <input type="text" class="text">
-  </fieldset>
+  <%= form.input :size, label: "Talla:", input_html: {maxlength: 3} %>
+  <%= form.input :in_stock, label: "Cantidad:", input_html: {maxlength: 4} %>
+  <%= form.input :code, label: "Código:", input_html: {maxlength: 30}, wrapper_html: {class: "big last"} %>
 </div><!--.four-fieldset-->
 <div class="cancel-save">
   <ul class="list-cancel">
-    <li><div class="btn-green"><input type="submit" value="Crear Producto"></div></li>
+    <li><%= content_tag :div, form.button(:submit, value: "Guardar Producto"), class: "btn-green" %></li>
     <li><%= link_to "Cancelar", "javascript:void(0);", :class => "cancel-app", :id => "form_for_cancel_button" %></li>
   </ul>
 </div>
