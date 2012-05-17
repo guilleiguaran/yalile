@@ -153,7 +153,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.3)
   rspec-rails (~> 2.6)
-  simple_form (~> 2.0.1)
+  simple_form (~> 2.0)
   squeel
   uglifier (>= 1.0.3)
   unicorn

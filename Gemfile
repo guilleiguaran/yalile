@@ -10,7 +10,7 @@ gem 'cancan'
 gem 'devise'
 gem 'kaminari'
 gem 'jquery-rails'
-gem 'simple_form', '~> 2.0.1'
+gem 'simple_form', '~> 2.0'
 gem 'squeel'
 gem 'unicorn'
 

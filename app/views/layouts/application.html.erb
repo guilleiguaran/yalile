@@ -8,6 +8,7 @@
     <title><%= yield :title %></title>
     <%= stylesheet_link_tag    "pm3global", "jquery-ui", "multiselect", "dd" %>
     <%= javascript_include_tag "application" %>
+    <%= yield :javascripts %>
     <%= csrf_meta_tags %>
   </head>
   <!--[if lte IE 7 ]> <body class="ie8 ie7"> <![endif]-->

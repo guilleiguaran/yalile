@@ -11,6 +11,7 @@ var basicActionsHandler = (function (){
   var basicDivHtmlRender = "#form_for_html_render";
 
   var basicButtonClicked = undefined;
+  var basicForm = undefined;
 
   $(document).ready(function  () {
     basicNewAction();
@@ -22,6 +23,16 @@ var basicActionsHandler = (function (){
       setBasicButtonClicked(this);
       ajaxRequest("GET", basicButtonClicked.attr("href"), undefined, insertHtml)
       togleBasicButtonClicked();
+    });
+    return false;
+  }
+  
+  var basicCreateAction = function  () {
+    $(basicButtonCreate).on("click", function  (event) {
+      setBasicForm(this.form);
+      if (isBasicFormValid()) {
+        event.preventDefault();
+      };
     });
     return false;
   }
@@ -48,15 +59,25 @@ var basicActionsHandler = (function (){
   };
 
   var insertHtml = function  (jsonResponse) {
-    $(basicDivHtmlRender).html(jsonResponse.html).removeClass("hidden");
+    $(basicDivHtmlRender).html(jsonResponse.html).removeClass("hidden").triggerHandler("change");
     setSelectsSkin();
     basicActionCancel();
+    basicCreateAction();
     return false;
   }
 
   var setBasicButtonClicked = function  (buttonClicked) {
     basicButtonClicked = $(buttonClicked);
     return false;
+  }
+  
+  var setBasicForm = function  (actionForm) {
+    basicForm = $(actionForm);
+    return false;
+  }
+  
+  var isBasicFormValid = function  () {
+    return basicForm.valid();
   }
 
   var togleBasicButtonClicked = function  () {
