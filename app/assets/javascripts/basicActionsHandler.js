@@ -29,10 +29,9 @@ var basicActionsHandler = (function (){
   
   var basicCreateAction = function  () {
     $(basicButtonCreate).on("click", function  (event) {
+      event.preventDefault();
       setBasicForm(this.form);
-      if (isBasicFormValid()) {
-        event.preventDefault();
-      };
+      if (isBasicFormValid()) {};
     });
     return false;
   }
