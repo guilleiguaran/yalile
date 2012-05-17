@@ -12,13 +12,13 @@ $(function(){
     selectedList: 4
   });
 
-  /*Tooltips*/
+  /*Tooltips
   $('.error-info').tipsy({
     gravity: $.fn.tipsy.autoNS,
     html: true,
     delayIn: 500,
     delayOut: 500
-  });
+  });*/
 
   /*min Height sidebar*/
   $('.content-main').css("min-height",$(window).height()-$('#header').height()-69);
@@ -52,9 +52,9 @@ $(function(){
     }
   });
 
-  $(".box-app").addClass("hidden");
+  //$(".box-app").addClass("hidden");
 
-  /*Edit App*/
+  /*Edit App
   $('.btn-edit').click(function(event){
     event.stopPropagation();
     $(this).addClass("hidden");
@@ -74,7 +74,7 @@ $(function(){
     $("ul li fieldset span.show").removeClass("hidden");
     $(".skin-select").msDropDown();
     $("input.url").attr('disabled', 'disabled')
-  });
+  });*/
 
   /*Overlay sidebar*/
   $('.nav-bar .config').click(function(event){

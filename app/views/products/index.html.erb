@@ -1,19 +1,19 @@
 <% title "Productos" %>
 
 <div class="wrapper clearfix">
-  <%= render :partial => "shared/common/leftpanel", :layout => false%>
+  <%= render "shared/common/leftpanel", layout: false %>
   <div class="content-right clearfix">
     <div class="content-main clearfix">
       <div class="content-title">
         <h2 class="floatleft">Listado De Productos</h2>
-        <%= link_to content_tag(:span, "Crear Nuevo Producto"), new_product_path , :id => "form_for_new_button", :class => "btn-blue-icon add floatright add-app" %>
+        <%= link_to content_tag(:span, "Crear Nuevo Producto"), new_product_path , id: "form_for_new_button", class: "btn-blue-icon add floatright add-app" %>
       </div>
-      <div id="form_for_html_render" class="box-default rounder-all-five marginbottom clearfix box-app">
-      </div><!-- box-default rounder-all-five marginbottom clearfix box-app END -->
-      <%= render :partial => "filter", :layout => false %>
-      <%= render :partial => "table", :layout => false %>
+      <div id="form_for_html_render" class="hidden box-default rounder-all-five marginbottom clearfix box-app">
+      </div><!-- hidden box-default rounder-all-five marginbottom clearfix box-app END -->
+      <%= render "filter", layout: false %>
+      <%= render "table", layout: false %>
     </div><!--.content-main END -->
-    <%= render :partial => "shared/common/footer" %>
+    <%= render "shared/common/footer", layout: false %>
   </div>
 </div>
 
