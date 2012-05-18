@@ -64,12 +64,14 @@ Yalile::Application.routes.draw do
     devise_for :users, :path => "", :path_names => {:sign_in => "login", :sign_out => "logout"}, :only => :sessions, :controllers => {:sessions => "user/sessions"}
   end
 
-  resources :products, :only => [:index, :new]
+  resources :products, :only => [:index, :new, :create]
 
 end
 #== Route Map
-# Generated on 15 May 2012 19:54
+# Generated on 17 May 2012 21:38
 #
-#         user_session POST   /login(.:format)    user/sessions#create
-# destroy_user_session DELETE /logout(.:format)   user/sessions#destroy
-#             products GET    /products(.:format) products#index
+#         user_session POST   /login(.:format)        user/sessions#create
+# destroy_user_session DELETE /logout(.:format)       user/sessions#destroy
+#             products GET    /products(.:format)     products#index
+#                      POST   /products(.:format)     products#create
+#          new_product GET    /products/new(.:format) products#new

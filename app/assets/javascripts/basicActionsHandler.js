@@ -31,7 +31,9 @@ var basicActionsHandler = (function (){
     $(basicButtonCreate).on("click", function  (event) {
       event.preventDefault();
       setBasicForm(this.form);
-      if (isBasicFormValid()) {};
+      if (isBasicFormValid()) {
+        ajaxRequest("POST", basicForm.prop("action"), basicForm.serializeArray(), basicActionCallback)
+      };
     });
     return false;
   }
@@ -64,6 +66,14 @@ var basicActionsHandler = (function (){
     basicCreateAction();
     return false;
   }
+  
+  var basicActionCallback = function  (jsonResponse) {
+    if (jsonResponse.status === "success") {
+      // $(basicButtonNew).click();
+    } else{
+      
+    };
+  };
 
   var setBasicButtonClicked = function  (buttonClicked) {
     basicButtonClicked = $(buttonClicked);

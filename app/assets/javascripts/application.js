@@ -20,5 +20,7 @@
 //= require jquery.dd
 //= require jquery.validate.min
 //= require additional-methods.min
+//= require jquery.inputmask
+//= require jquery.inputmask.extentions
 //= require global
 //= require basicActionsHandler

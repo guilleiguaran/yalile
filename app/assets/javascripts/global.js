@@ -69,10 +69,9 @@ var globalJavascriptFile = (function  () {
         var inputTextElement = $(element);
         inputTextElement.parent("fieldset").removeClass("show-error");
         inputTextElement.removeClass("error-message");
-        inputTextElement.next("a.error-info").text("");
       },
       errorPlacement: function (error, element) {
-        error.attr({title: error.text()});
+        error.prop({title: error.text()});
         error.html("");
         element.after(error);
         jQueryErrorsTooltip();

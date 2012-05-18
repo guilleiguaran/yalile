@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :articles
 
   # VALIDATIONS
-  validates :name, :presence => true, :uniqueness => true
+  validates :name, presence: true, uniqueness: true
 
   # CALLBACKS
   before_destroy AvoidDestroy
