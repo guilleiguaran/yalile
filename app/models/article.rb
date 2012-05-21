@@ -9,9 +9,9 @@ class Article < ActiveRecord::Base
   validates_associated :product
   # validates :product_id, presence: true
   # validates :description, presence: true
-  validates :size, presence: true
-  validates :code, presence: true, uniqueness: true
-  validates :in_stock, presence: true
+  validates :size, presence: true, format: {with: /^[a-z0-9]*$/i}
+  validates :code, presence: true, uniqueness: true, format: {with: /^[a-z0-9]*$/i}
+  validates :in_stock, presence: true, numericality: {greater_than: 0}, inclusion: {in: 1..100}
 
   # CALLBACKS
   before_destroy AvoidDestroy

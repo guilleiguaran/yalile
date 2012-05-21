@@ -5,9 +5,9 @@
   </div><!--.four-fieldset-->
   <div class="four-fieldset clearfix more-separate cancel-save">
     <%= form.simple_fields_for :articles do |builder| %>
-      <%= builder.input :size, label: "Talla:", input_html: {maxlength: 3} %>
-      <%= builder.input :in_stock, label: "Cantidad:", input_html: {maxlength: 4}, as: :string %>
-      <%= builder.input :code, label: "Código:", input_html: {maxlength: 30}, wrapper_html: {class: "big last"} %>
+      <%= builder.input :size, label: "Talla:", input_html: {maxlength: 3, class: "malphanumeric text"} %>
+      <%= builder.input :in_stock, label: "Cantidad:", input_html: {maxlength: 4, class: "text mnumeric"}, as: :string %>
+      <%= builder.input :code, label: "Código:", input_html: {maxlength: 30, class: "malphanumeric text"}, wrapper_html: {class: "big last"} %>
     <% end %>
   </div><!--.four-fieldset-->
   <div class="cancel-save">

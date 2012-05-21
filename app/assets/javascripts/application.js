@@ -23,4 +23,7 @@
 //= require jquery.inputmask
 //= require jquery.inputmask.extentions
 //= require global
+//= require additionalValidations
+//= require inputMasks
 //= require basicActionsHandler
+//= require jquery.validations.es

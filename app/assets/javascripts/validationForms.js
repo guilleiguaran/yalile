@@ -16,9 +16,9 @@ var validationForm = (function  () {
     $(productForm).validate({
       rules:{
         "product[name]":{ required: true },
-        "product[articles_attributes][0][size]":{ required: true, maxlength: 3 },
+        "product[articles_attributes][0][size]":{ required: true, maxlength: 3, customalphanumeric: true },
         "product[articles_attributes][0][in_stock]":{ required: true, maxlength: 4, digits: true, range: [1, 100] },
-        "product[articles_attributes][0][code]":{ required: true, maxlength: 30 }
+        "product[articles_attributes][0][code]":{ required: true, maxlength: 30, customalphanumeric: true }
       }
     });
   };

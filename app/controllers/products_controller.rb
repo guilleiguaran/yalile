@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   respond_to :json, only: [:new, :create]
 
   def index
+    @products = Product.order{created_at.desc}.page(params[:page])
   end
 
   def new
@@ -16,10 +17,12 @@ class ProductsController < ApplicationController
 
   def create
     respond_with(@product) do |format|
-      if @product.save
-        format.json { render json: {status: "success"}}
-      else
-        format.json { render json: {status: "error", errors: @product.errors.messages}}
+      format.json do
+        if @product.save
+          render json: {status: "success"}
+        else
+          render json: {status: "error", errors: @product.errors}
+        end
       end
     end
   end
@@ -31,7 +34,8 @@ class ProductsController < ApplicationController
   end
 
   def check_product_existence
-    @product = Product.find_by_id(params[:product].delete(:code))
+    @product = Product.by_id_or_name(params[:product])
+    params[:product].delete(:code)
     if @product.nil?
       @product = Product.new(params[:product])
     else

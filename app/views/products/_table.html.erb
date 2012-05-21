@@ -2,44 +2,19 @@
   <thead>
     <tr>
       <td><span>Status</span></td>
-      <td><span class="selected-arrow">Creation Date</span></td>
-      <td><span>Paymentez Date</span></td>
-      <td><span>Release Date</span></td>
-      <td><span>Cancelation Date</span></td>
-      <td><span>Email/Phone</span></td>
-      <td><span>Description</span></td>
-      <td><span>Value</span></td>
+      <td><span>Nombre</span></td>
+      <td><span>Creado</span></td>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><a href ="transaction-details"><span class="table-status initiated"></span></a></td>
-      <td><span>22 / 12 /  2011 5:43pm</span></td>
-      <td><span>22 / 12 /  2011 5:43pm</span></td>
-      <td><span>22 / 12 /  2011 5:43pm</span></td>
-      <td><span>22 / 12 /  2011 5:43pm</span></td>
-      <td><span>nester0820@hotmail.com</span></td>
-      <td><span>5 coins</span></td>
-      <td><span>R$ 10,00</span></td>
-    </tr>
-    <tr>
-      <td><span class="table-status pending"></span></td>
-      <td><span>22 / 12 /  2011 5:43pm</span></td>
-      <td><span>22 / 12 /  2011 5:43pm</span></td>
-      <td><span>22 / 12 /  2011 5:43pm</span></td>
-      <td><span>22 / 12 /  2011 5:43pm</span></td>
-      <td><span>nester0820@hotmail.com</span></td>
-      <td><span>5 coins</span></td>
-      <td><span>R$ 10,00</span></td>
-    </tr>
+    <%= content_tag_for :tr, @products do |product| %>
+      <td><%= content_tag :span, "", class: "table-status initiated" %></td>
+      <td><%= content_tag :span, product.name.titleize %></td>
+      <td><%= content_tag :span, formatted_time(product.created_at) %></td>
+    <% end %>
   </tbody>
 </table>
-
-<a href ="" class="download">Download</a>
 <div class="navigation">
-  <p><strong>1 - 50</strong> of <strong>60</strong></p>
-  <ul>
-    <li class="prev"><a href =""></a></li>
-    <li class="next"><a href =""></a></li>
-  </ul>
+  <p><%= page_entries_info @products, entry_name: "Productos" %></p>
+  <%= paginate @products %>
 </div>
