@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
   
-  paginates_per 20
+  paginates_per 3
 
   attr_accessible :name, :articles_attributes
 

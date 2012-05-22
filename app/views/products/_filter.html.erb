@@ -1,86 +1,17 @@
 <div class="head-table box-default clearfix">
-  <%= simple_form_for :filter do |form| %>
+  <%= simple_form_for :filter, html: {id: "form_for_filter"}, defaults: {input_html: {class: "text"}} do |form| %>
     <div class="box-search">
-      <fieldset class="input-search">
-        <label>Search</label>
-        <input class="text" type="text">
-        <div class="btn-green">
-          <input type="submit", value="Search">
-        </div>
-      </fieldset><!-- input-search END -->
-      <ul class="list-radios clearfix">
-        <li>
-          <fieldset>
-            <input type="radio" id="trans-id">
-            <label for="trans-id">Transaction ID</label>
-          </fieldset>
-        </li>
-        <li>
-          <fieldset>
-            <input type="radio" id="user-id">
-            <label for="user-id">User ID</label>
-          </fieldset>
-        </li>
-        <li>
-          <fieldset>
-            <input type="radio" id="dev">
-            <label for="dev">Dev Reference</label>
-          </fieldset>
-        </li>
-        <li>
-          <fieldset>
-            <input type="radio" id="email-phone">
-            <label for="email-phone">Email / Phone</label>
-          </fieldset>
-        </li>
-      </ul><!--.list-radios clearfix END -->
-      <fieldset>
-        <label>Application</label>
-        <select class="skin-select">
-          <option>Cidade Maravilhosa - Rio</option>
-          <option>FarmVille</option>
-        </select>
-      </fieldset>
+      <%= form.input :text_value, label: "Buscar Por:", wrapper_html: {class: "input-search"}, input_html: {placeholder: "Filtre aqui por ..."} %>
+      <%= form.input :name, collection: [["Nombre",""]], as: :radio, label: false, collection_wrapper_class: "list-radios clearfix", input_html: {class: ""} %>
     </div><!-- box-search END -->
     <div class="data-time">
       <div class="two-fieldset clearfix">
-        <fieldset>
-          <label>Start Date</label>
-          <input class="datepicker-call datepicker text" type="text" placeholder="DD / MM / YYY">
-        </fieldset>
-        <fieldset class="last">
-          <label>Start Date</label>
-          <input class="datepicker-call datepicker text" type="text" placeholder="DD / MM / YYY">
-        </fieldset><!-- last END -->
+        <%= form.input :initial_date, label: "Fecha Inicial:", input_html: {class: "datepicker-call datepicker text", placeholder: "DD / MM / YYYY"} %>
+        <%= form.input :final_date, label: "Fecha Final:", input_html: {class: "datepicker-call datepicker text", placeholder: "DD / MM / YYYY"}, wrapper_html: {class: "last"} %>
       </div><!-- two-fieldset clearfix END -->
       <fieldset>
-        <label>Date Type</label>
-        <ul class="list-radios clearfix">
-          <li>
-            <fieldset>
-              <input type="radio" id="created">
-              <label for="created">Created</label>
-            </fieldset>
-          </li>
-          <li>
-            <fieldset>
-              <input type="radio" id="paid">
-              <label for="paid">Paid</label>
-            </fieldset>
-          </li>
-          <li>
-            <fieldset>
-              <input type="radio" id="released">
-              <label for="released">Released</label>
-            </fieldset>
-          </li>
-          <li>
-            <fieldset>
-              <input type="radio" id="canceled">
-              <label for="canceled">Canceled</label>
-            </fieldset>
-          </li>
-        </ul><!--.list-radios-->
+        <%= content_tag :label, "Tipo de Dato:" %>
+        <%= form.input :created_at, collection: [["Creado",""]], as: :radio, label: false, collection_wrapper_class: "list-radios clearfix", input_html: {class: ""} %>
       </fieldset>
     </div><!-- data-time END -->
   <% end %>
