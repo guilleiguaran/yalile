@@ -1,98 +1,86 @@
+<% title "Artículo" %>
+
 <div class="wrapper clearfix">
   <%= render "shared/common/leftpanel", layout: false %>
+  
   <div class="content-right clearfix">
     <div class="content-main clearfix">
       <div class="content-title">
-        <h2>Transaction Details</h2>
+        <h2>Detalles Del Producto</h2>
       </div>
       <div class="wrapp-box">
         <div class="box-default head-table">
           <ul class="details first-big clearfix">
-            <li class="more-width">
+            <li>
               <label><strong>ID:</strong></label>
-              <span>6097BAB5-B0FB-4EE5-B77B-6DAAC75EEC56</span>
+              <%= content_tag :span, @product.id %>
             </li>
             <li>
-              <label><strong>Currency:</strong></label>
-              <span>6097BAB5-B0FB-4EE5</span>
+              <label><strong>Nombre:</strong></label>
+              <%= content_tag :span, @product.name.capitalize %>
             </li>
             <li>
-              <label><strong>Product code:</strong></label>
-              <span>6097BAB5-B0FB-4EE5</span>
+              <label><strong>No. Artículos Asociados:</strong></label>
+              <%= content_tag :span, @product.articles.count %>
             </li>
             <li>
-              <label><strong>Status:</strong></label>
-              <span>Aproved</span>
+              <label><strong>Creado En:</strong></label>
+              <%= content_tag :span, formatted_time(@product.created_at) %>
+            </li>
+            <li>
+              <label><strong>Actualizado En:</strong></label>
+              <%= content_tag :span, formatted_time(@product.updated_at) %>
+            </li>
+          </ul>
+        </div><!--.box-default-->
+      </div><!--.wrapp-box-->
+      
+      <div class="content-title">
+        <h2>Detalles Del Articulo</h2>
+      </div>
+      <div class="wrapp-box">
+        <div class="box-default head-table">
+          <ul class="details first-big clearfix">
+            <li>
+              <label><strong>ID:</strong></label>
+              <%= content_tag :span, @article.id %>
+            </li>
+            <li>
+              <label><strong>Código:</strong></label>
+              <%= content_tag :span, @article.code %>
+            </li>
+            <li>
+              <label><strong>Talla:</strong></label>
+              <%= content_tag :span, @article.size %>
+            </li>
+            <li>
+              <label><strong>Unidades Disponibles:</strong></label>
+              <%= content_tag :span, @article.in_stock %>
+            </li>
+            <li>
+              <label><strong>Estado:</strong></label>
+              <%= content_tag :span, @article.status %>
             </li>
           </ul>
         </div><!--.box-default-->
         <div class="box-default box-bottom">
-          <ul class="details clearfix">
-            <li>
-              <label><strong>Creation</strong></label>
-              <span>22 / 12 /  2011 5:43pm</span>
+          <ul class="details first-big clearfix">
+            <li class="more-width">
+              <label><strong>Descripción del Artículo:</strong></label>
+              <%= content_tag :span, @article.description %>
             </li>
             <li>
-              <label><strong>Payment Date:</strong></label>
-              <span>22 / 12 /  2011 5:43pm</span>
+              <label><strong>Creado En:</strong></label>
+              <%= content_tag :span, formatted_time(@article.created_at) %>
             </li>
             <li>
-              <label><strong>Release Date:</strong></label>
-              <span>22 / 12 /  2011 5:43pm</span>
-            </li>
-            <li>
-              <label><strong>Cancelation Date:</strong></label>
-              <span>22 / 12 /  2011 5:43pm</span>
+              <label><strong>Actualizado En:</strong></label>
+              <%= content_tag :span, formatted_time(@product.updated_at) %>
             </li>
           </ul>
         </div><!--.box-default-->
       </div><!--.wrapp-box-->
-      <div class="wrapp-box">
-        <div class="box-default head-table">
-          <ul class="details clearfix">
-            <li>
-              <label><strong>Payment Type:</strong></label>
-              <span>Saldo Paymentez</span>
-            </li>
-            <li>
-              <label><strong>User ID:</strong></label>
-              <span>12343412HYNN</span>
-            </li>
-            <li>
-              <label><strong>Buyer Name:</strong></label>
-              <span>Nestor A. Ramirez Rugeles</span>
-            </li>
-            <li>
-              <label><strong>Buyer Email:</strong></label>
-              <span>nestor.ramirez@koombea.com</span>
-            </li>
-          </ul>
-        </div><!--.box-default-->
-        <div class="box-default box-bottom marginbottom">
-          <ul class="details clearfix">
-            <li>
-              <label><strong>Product Description:</strong></label>
-              <span>325 Cristais</span>
-            </li>
-            <li>
-              <label><strong>Application Name:</strong></label>
-              <span>Twilight Story</span>
-            </li>
-            <li>
-              <label><strong>Application code:</strong></label>
-              <span>1231231JUGF</span>
-            </li>
-            <li>
-              <label><strong>Dev Reference:</strong></label>
-              <span>1231231231SDKHSD</span>
-            </li>
-            <li>
-              <label><strong>Environment:</strong></label>
-              <span>Facebook</span>
-            </li>
-          </ul>
-        </div><!--.box-default-->
-      </div><!--.wrapp-box-->
+      
       <div class="wrapp-box clearfix">
         <div class="two-columns floatleft box-summary">
           <h3 class="details">Product Value</h3>

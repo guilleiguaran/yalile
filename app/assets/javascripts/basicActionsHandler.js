@@ -79,9 +79,7 @@ var basicActionsHandler = (function (){
   
   var basicActionCallback = function  (jsonResponse) {
     if (jsonResponse.status === "success") {
-      
     } else{
-      
     };
   };
 

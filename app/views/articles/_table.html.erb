@@ -11,7 +11,7 @@
   <tbody>
     <%= content_tag_for :tr, @articles do |article| %>
       <td>
-        <%= link_to "", article_path(article.id), class: "hidden" %>
+        <%= link_to "", product_article_path(params[:product_id], article.id), class: "hidden" %>
         <%= content_tag :span, "", class: "table-status approved" %>
       </td>
       <td><%= content_tag :span, article.code %></td>
