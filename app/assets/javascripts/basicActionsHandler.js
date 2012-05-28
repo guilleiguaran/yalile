@@ -7,6 +7,8 @@ var basicActionsHandler = (function (){
   var basicButtonEdit = "#form_for_edit_button";
   var basicButtonUpdate = "#form_for_update_button";
   var basicButtonCancel = "#form_for_cancel_button";
+  
+  var siteRenderHtml = "#site_render_html";
 
   var basicDivHtmlRender = "#form_for_html_render";
 
@@ -14,8 +16,16 @@ var basicActionsHandler = (function (){
   var basicForm = undefined;
 
   $(document).ready(function  () {
+    basicShowAction();
     basicNewAction();
   });
+
+  var basicShowAction = function  () {
+    $(siteRenderHtml).on("click", "table.main-table.aligncenter tr", function  () {
+      var showLink = $(this).children("td:first").find("a.hidden");
+      window.location = showLink.prop("href");
+    });
+  }
 
   var basicNewAction = function  () {
     $(basicButtonNew).on("click", function  (event) {

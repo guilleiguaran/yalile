@@ -26,4 +26,5 @@
 //= require additionalValidations
 //= require inputMasks
 //= require basicActionsHandler
+//= require siteFilter
 //= require jquery.validations.es

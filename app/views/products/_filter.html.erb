@@ -1,8 +1,8 @@
 <div class="head-table box-default clearfix">
-  <%= simple_form_for :filter, html: {id: "form_for_filter"}, defaults: {input_html: {class: "text"}} do |form| %>
-    <div class="box-search">
-      <%= form.input :text_value, label: "Buscar Por:", wrapper_html: {class: "input-search"}, input_html: {placeholder: "Filtre aqui por ..."} %>
-      <%= form.input :name, collection: [["Nombre",""]], as: :radio, label: false, collection_wrapper_class: "list-radios clearfix", input_html: {class: ""} %>
+  <%= simple_form_for :filter, html: {id: "site_filter_form"}, defaults: {input_html: {class: "text"}} do |form| %>
+    <div id="input_search_container" class="box-search">
+      <%= form.input :text_value, label: "Buscar Por:", wrapper_html: {class: "input-search"}, input_html: {id: "input_search_text_field", placeholder: "Bucar aqui por ..."} %>
+      <%= form.input :name, collection: ["Nombre"], as: :radio, label: false, collection_wrapper_class: "list-radios clearfix", input_html: {class: nil}, value_method: :downcase %>
     </div><!-- box-search END -->
     <div class="data-time">
       <div class="two-fieldset clearfix">
@@ -11,7 +11,7 @@
       </div><!-- two-fieldset clearfix END -->
       <fieldset>
         <%= content_tag :label, "Tipo de Dato:" %>
-        <%= form.input :created_at, collection: [["Creado",""]], as: :radio, label: false, collection_wrapper_class: "list-radios clearfix", input_html: {class: ""} %>
+        <%= form.input :created_at, collection: ["Creado"], as: :radio, label: false, collection_wrapper_class: "list-radios clearfix", input_html: {class: nil}, value_method: :downcase %>
       </fieldset>
     </div><!-- data-time END -->
   <% end %>

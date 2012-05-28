@@ -1,0 +1,160 @@
+<div class="wrapper clearfix">
+  <%= render "shared/common/leftpanel", layout: false %>
+  <div class="content-right clearfix">
+    <div class="content-main clearfix">
+      <div class="content-title">
+        <h2>Transaction Details</h2>
+      </div>
+      <div class="wrapp-box">
+        <div class="box-default head-table">
+          <ul class="details first-big clearfix">
+            <li class="more-width">
+              <label><strong>ID:</strong></label>
+              <span>6097BAB5-B0FB-4EE5-B77B-6DAAC75EEC56</span>
+            </li>
+            <li>
+              <label><strong>Currency:</strong></label>
+              <span>6097BAB5-B0FB-4EE5</span>
+            </li>
+            <li>
+              <label><strong>Product code:</strong></label>
+              <span>6097BAB5-B0FB-4EE5</span>
+            </li>
+            <li>
+              <label><strong>Status:</strong></label>
+              <span>Aproved</span>
+            </li>
+          </ul>
+        </div><!--.box-default-->
+        <div class="box-default box-bottom">
+          <ul class="details clearfix">
+            <li>
+              <label><strong>Creation</strong></label>
+              <span>22 / 12 /  2011 5:43pm</span>
+            </li>
+            <li>
+              <label><strong>Payment Date:</strong></label>
+              <span>22 / 12 /  2011 5:43pm</span>
+            </li>
+            <li>
+              <label><strong>Release Date:</strong></label>
+              <span>22 / 12 /  2011 5:43pm</span>
+            </li>
+            <li>
+              <label><strong>Cancelation Date:</strong></label>
+              <span>22 / 12 /  2011 5:43pm</span>
+            </li>
+          </ul>
+        </div><!--.box-default-->
+      </div><!--.wrapp-box-->
+      <div class="wrapp-box">
+        <div class="box-default head-table">
+          <ul class="details clearfix">
+            <li>
+              <label><strong>Payment Type:</strong></label>
+              <span>Saldo Paymentez</span>
+            </li>
+            <li>
+              <label><strong>User ID:</strong></label>
+              <span>12343412HYNN</span>
+            </li>
+            <li>
+              <label><strong>Buyer Name:</strong></label>
+              <span>Nestor A. Ramirez Rugeles</span>
+            </li>
+            <li>
+              <label><strong>Buyer Email:</strong></label>
+              <span>nestor.ramirez@koombea.com</span>
+            </li>
+          </ul>
+        </div><!--.box-default-->
+        <div class="box-default box-bottom marginbottom">
+          <ul class="details clearfix">
+            <li>
+              <label><strong>Product Description:</strong></label>
+              <span>325 Cristais</span>
+            </li>
+            <li>
+              <label><strong>Application Name:</strong></label>
+              <span>Twilight Story</span>
+            </li>
+            <li>
+              <label><strong>Application code:</strong></label>
+              <span>1231231JUGF</span>
+            </li>
+            <li>
+              <label><strong>Dev Reference:</strong></label>
+              <span>1231231231SDKHSD</span>
+            </li>
+            <li>
+              <label><strong>Environment:</strong></label>
+              <span>Facebook</span>
+            </li>
+          </ul>
+        </div><!--.box-default-->
+      </div><!--.wrapp-box-->
+      <div class="wrapp-box clearfix">
+        <div class="two-columns floatleft box-summary">
+          <h3 class="details">Product Value</h3>
+          <div class="box-default rounder-all-five">
+            <ul class="list-price clearfix">
+              <li>
+                <strong>Gross Value:</strong>
+                <span>$999.999,99</span>
+              </li>
+              <li>
+                <strong>Discount:</strong>
+                <span>$999.999,99</span>
+              </li>
+              <li>
+                <strong>Taxes:</strong>
+                <span>$999.999,99</span>
+              </li>
+              <li>
+                <strong>Fees:</strong>
+                <span>$999.999,99</span>
+              </li>
+            </ul><!--.list-price-->
+            <ul class="list-price net clearfix">
+              <li>
+                <strong>Net Value</strong>
+                <span>$999.999,99</span>
+              </li>
+            </ul><!--.list-price-->
+          </div><!--.box-default-->
+        </div><!--.two-columns-->
+        <div class="two-columns floatright box-summary">
+          <h3 class="details">Product Value</h3>
+          <table class="status-history">
+            <tbody>
+              <tr>
+                <td>Date</td>
+                <td>Status</td>
+              </tr>
+              <tr>
+                <td>22 / 12 /  2011 5:43pm</td>
+                <td class="table-status initiated">Initiated</td>
+              </tr>
+              <tr>
+                <td>22 / 12 /  2011 5:43pm</td>
+                <td class="table-status pending">Pending</td>
+              </tr>
+              <tr>
+                <td>22 / 12 /  2011 5:43pm</td>
+                <td class="table-status approved">Approved</td>
+              </tr>
+              <tr>
+                <td>22 / 12 /  2011 5:43pm</td>
+                <td class="table-status canceled">Canceled</td>
+              </tr>
+            </tbody>
+          </table>
+        </div><!--.two-columns-->
+      </div><!--.wrapp-box-->
+      <%= link_to :back, class: "btn-back" do %>
+        <%= content_tag :span, "" %> Regresar
+      <% end %>
+    </div><!--.content-main-->
+    <%= render "shared/common/footer", layout: false %>
+  </div><!--.content-right-->
+</div><!--.wrapper-->

@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
 
+  paginates_per 3
+
   attr_accessible :code, :description, :in_stock, :product_id, :size, :status
 
   # ASOCIATIONS

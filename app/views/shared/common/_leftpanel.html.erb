@@ -1,31 +1,29 @@
 <div class="sidebar">
   <% if current_user %>
-    <div class="content-avatar clearfix">
-      <div class="user-avatar">
-        <%= image_tag "app/avatar.jpg" %>
-      </div><!-- user-avatar END -->
-      <div class="user-data">
-        <%= content_tag :h2, current_user.full_name %>
-        <%= content_tag :span, current_user.email %>
-      </div><!-- user-data END -->
-    </div><!-- content-avatar clearfix END -->
-    <div class="choose-app">
-      <fieldset>
-        <label>Choose an Application</label>
-        <select class="skin-select">
-          <option>Cidade Maravilhosa - Rio</option>
-          <option>FarmVille</option>
-          <option>CityVille</option>
-        </select>
-      </fieldset>
-    </div><!--.choose-app-->
-    <div class="paid-value">
-      <h2>Gross Paid Value</h2>
-      <span>$999.999.999,99</span>
-    </div><!-- paid-value END -->
-    <div class="paid-value default">
-      <h2>Net Paid Value</h2>
-      <span>$999.999.999,99</span>
-    </div><!-- paid-value default END -->
+  <div class="content-avatar clearfix">
+    <%= content_tag :div, image_tag("app/avatar.jpg"), class: "user-avatar" %>
+    <div class="user-data">
+      <%= content_tag :h2, current_user.fullname %>
+      <%= content_tag :span, current_user.email %>
+    </div><!-- user-data END -->
+  </div><!-- content-avatar clearfix END -->
+  <div class="choose-app">
+    <fieldset>
+      <label>Escoge Un Producto</label>
+      <select class="skin-select">
+        <option>Cidade Maravilhosa - Rio</option>
+        <option>FarmVille</option>
+        <option>CityVille</option>
+      </select>
+    </fieldset>
+  </div><!--.choose-app-->
+  <div class="paid-value">
+    <h2>Venta de Hoy</h2>
+    <span>$999.999.999,99</span>
+  </div><!-- paid-value END -->
+  <div class="paid-value default">
+    <h2>Venta del Mes de Abril</h2>
+    <span>$999.999.999,99</span>
+  </div><!-- paid-value default END -->
   <% end %>
 </div><!--.sidebar-->

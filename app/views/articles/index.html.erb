@@ -1,12 +1,12 @@
-<% title "Productos" %>
+<% title "Artículos" %>
 
 <div class="wrapper clearfix">
   <%= render "shared/common/leftpanel", layout: false %>
   <div class="content-right clearfix">
     <div class="content-main clearfix">
       <div class="content-title">
-        <h2 class="floatleft">Listado De Productos</h2>
-        <%= link_to content_tag(:span, "Crear Nuevo Producto"), new_product_path , id: "form_for_new_button", class: "btn-blue-icon add floatright add-app" %>
+        <h2 class="floatleft">Listado De Articulos</h2>
+        <%= link_to content_tag(:span, "Crear Nuevo Artículo"), new_product_article_path , id: "form_for_new_button", class: "btn-blue-icon add floatright add-app" %>
       </div>
       <div id="form_for_html_render" class="hidden box-default rounder-all-five marginbottom clearfix box-app">
       </div><!-- hidden box-default rounder-all-five marginbottom clearfix box-app END -->
@@ -14,9 +14,13 @@
       <div id="site_render_html">
         <%= render "table", layout: false %>
       </div>
+      <%= link_to products_path, class: "btn-back" do %>
+        <%= content_tag :span %>
+        Listado Productos
+      <% end %>
     </div><!--.content-main END -->
     <%= render "shared/common/footer", layout: false %>
-  </div>
-</div>
+  </div><!-- content-right clearfix END -->
+</div><!-- wrapper clearfix END -->
 
 <% javascripts "validationForms" %>

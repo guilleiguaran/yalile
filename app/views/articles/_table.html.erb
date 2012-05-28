@@ -1,0 +1,27 @@
+<table class="main-table aligncenter">
+  <thead>
+    <tr>
+      <td><span>Status</span></td>
+      <td><span>Código</span></td>
+      <td><span>Talla</span></td>
+      <td><span>Descripción</span></td>
+      <td><span>En Bódega</span></td>
+    </tr>
+  </thead>
+  <tbody>
+    <%= content_tag_for :tr, @articles do |article| %>
+      <td>
+        <%= link_to "", article_path(article.id), class: "hidden" %>
+        <%= content_tag :span, "", class: "table-status approved" %>
+      </td>
+      <td><%= content_tag :span, article.code %></td>
+      <td><%= content_tag :span, article.size %></td>
+      <td><%= content_tag :span, article.description %></td>
+      <td><%= content_tag :span, article.in_stock %></td>
+    <% end %>
+  </tbody>
+</table>
+<div class="navigation">
+  <%= content_tag :p, page_entries_info(@articles, entry_name: "Articulos") %>
+  <%= paginate @articles %>
+</div>

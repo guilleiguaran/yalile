@@ -4,18 +4,17 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :rememberable, :validatable, :timeoutable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :fullname, :is_admin, :username
 
   # VALIDATIONS
   validates :fullname, :presence => true
   validates :username, :presence => true
 
-  # FUNCTION TO FIND A USER THROUGH HIS EMAIL ADDRESS, AND COMPARE THE PASSWORD SENT
+  # FUNCTION TO FIND A USER THROUGH HIS USERNAME, AND COMPARE THE PASSWORD SENT
   def self.find_user(params={})
-    user = self.where{username == params[:username]}.first
-    if !user.blank?
-      return user if user.valid_password?(params[:password])
-    end
+    user = find_by_username(params[:username])
+    return user if !user.blank? && user.valid_password?(params[:password])
+    nil
   end
 
 end

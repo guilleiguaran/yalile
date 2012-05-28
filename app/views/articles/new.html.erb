@@ -1,0 +1,13 @@
+<%= simple_form_for [@product, @article], html: {id: "article_form"}, defaults: {input_html: {class: "text"}} do |form| %>
+  <div class="four-fieldset clearfix more-separate">
+    <%= form.input :size, label: "Talla:", input_html: {maxlength: 3, class: "malphanumeric text"} %>
+    <%= form.input :in_stock, label: "Cantidad:", input_html: {maxlength: 4, class: "text mnumeric"}, as: :string %>
+    <%= form.input :code, label: "Código:", input_html: {maxlength: 30, class: "malphanumeric text"}, wrapper_html: {class: "big last"} %>
+  </div><!--.four-fieldset-->
+  <div class="cancel-save">
+    <ul class="list-cancel">
+      <li><%= content_tag :div, form.button(:submit, value: "Guardar Articulo", id: "form_for_create_button"), class: "btn-green" %></li>
+      <li><%= link_to "Cancelar", "javascript:void(0);", :class => "cancel-app", :id => "form_for_cancel_button" %></li>
+    </ul><!-- list-cancel END -->
+  </div><!-- cancel-save END -->
+<% end %>
