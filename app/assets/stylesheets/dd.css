@@ -1,33 +1,33 @@
 /************** Skin 1 *********************/
 .dd {
-	/*display:inline-block !important;*/
-	text-align:left;
-	background-color:#fff;
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-	border-radius:3px;
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:12px;
-	float:left;
-	position:relative;
-	width:99.5% !important;
+  /*display:inline-block !important;*/
+  text-align:left;
+  background-color:#fff;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:12px;
+  float:left;
+  position:relative;
+  width:99.5% !important;
 }
 .dd .ddTitle {
-	background:#FFF;
-	border:1px solid #c3c3c3;
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-	border-radius:3px;
-	-moz-box-shadow:0 3px 3px rgba(244,244,244,0.9) inset;
+  background:#FFF;
+  border:1px solid #c3c3c3;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  -moz-box-shadow:0 3px 3px rgba(244,244,244,0.9) inset;
   -webkit-box-shadow:0 3px 3px rgba(244,244,244,0.9) inset;
   box-shadow:0 3px 3px rgba(244,244,244,0.9) inset;
-	color:#666;
-	cursor:pointer;
-	height:32px;
-	line-height:34px;
-	overflow:hidden;
-	text-indent:0;
-	width:99.5%;
+  color:#666;
+  cursor:pointer;
+  height:32px;
+  line-height:34px;
+  overflow:hidden;
+  text-indent:0;
+  width:99.5%;
 }
 
 .ie7 .dd .ddTitle {
@@ -36,8 +36,8 @@
 }
 
 .dd .ddTitle span.arrow {
-	background:url(app/icons/arrow-select.png) no-repeat 0 15px; float:right !important; display:inline-block;width:15px; height:20px; cursor:pointer; 
-	background-position:0 15px !important;
+  background:url(app/icons/arrow-select.png) no-repeat 0 15px; float:right !important; display:inline-block;width:15px; height:20px; cursor:pointer; 
+  background-position:0 15px !important;
 }
 
 .ie7 .dd .ddTitle span.arrow {background-position:0 8px !important;}
@@ -46,44 +46,44 @@
 
 .dd .ddTitle span.ddTitleText img{text-align:left; padding:0 2px 0 0}
 .dd .ddTitle img.selected {
-	padding:0 3px 0 0;
-	vertical-align:top;
+  padding:0 3px 0 0;
+  vertical-align:top;
 }
 .dd .ddChild {
-	position:absolute;
-	border:1px solid #c3c3c3;
-	border-top:none;
-	display:none;
-	margin:0;
-	width:auto;
-	overflow:auto;
-	overflow-x:hidden !important;
-	background-color:#ffffff;
-	top:32px !important;
-	width:99.5% !important;
+  position:absolute;
+  border:1px solid #c3c3c3;
+  border-top:none;
+  display:none;
+  margin:0;
+  width:auto;
+  overflow:auto;
+  overflow-x:hidden !important;
+  background-color:#ffffff;
+  top:32px !important;
+  width:99.5% !important;
 }
 .dd .ddChild .opta a, .dd .ddChild .opta a:visited {padding-left:10px}
 .dd .ddChild a {
-	display:block;
-	line-height:15px;
-	padding:7px 0 7px 10px;
-	text-decoration:none;
-	color:#000;
-	overflow:hidden;
-	white-space:nowrap;
-	cursor:pointer;
+  display:block;
+  line-height:15px;
+  padding:7px 0 7px 10px;
+  text-decoration:none;
+  color:#000;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
 }
 .dd .ddChild a:hover {
-	background-color:#D2FF9D;
+  background-color:#D2FF9D;
 }
 .dd .ddChild a img {
-	border:0;
-	padding:0 2px 0 0;
-	vertical-align:middle;
+  border:0;
+  padding:0 2px 0 0;
+  vertical-align:middle;
 }
 .dd .ddChild a.selected {
-	background-color:#D2FF9D;
-	
+  background-color:#D2FF9D;
+
 }
 .hidden {display:none;}
 
@@ -92,63 +92,63 @@
 
 /************** Skin 2 *********************/
 .dd2 {
-	/*display:inline-block !important;*/
-	text-align:left;
-	background-color:#fff;
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:12px;
-	float:left;
+  /*display:inline-block !important;*/
+  text-align:left;
+  background-color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:12px;
+  float:left;
 }
 .dd2 .ddTitle {
-	background:transparent url(msDropDown.gif) no-repeat;
-	padding:0 3px;
-	text-indent:0;
-	cursor:default;
-	overflow:hidden;
-	height:36px;
+  background:transparent url(msDropDown.gif) no-repeat;
+  padding:0 3px;
+  text-indent:0;
+  cursor:default;
+  overflow:hidden;
+  height:36px;
 }
 .dd2 .ddTitle span.arrow {
-	background:transparent url(app/icons/arrow-select.png) no-repeat 0 0; float:right; display:inline-block;width:27px; height:27px; cursor:pointer; top:5px; position:relative; right:2px;
+  background:transparent url(app/icons/arrow-select.png) no-repeat 0 0; float:right; display:inline-block;width:27px; height:27px; cursor:pointer; top:5px; position:relative; right:2px;
 }
 
 .dd2 .ddTitle span.ddTitleText {text-indent:1px; overflow:hidden; line-height:33px; font-family:Georgia, "Times New Roman", Times, serif; font-size:16px; font-weight:bold; color:#fff; _position:relative; _top:4px}
 .dd2 .ddTitle span.ddTitleText img{text-align:left; padding:0 2px 0 0;}
 .dd2 .ddTitle img.selected {
-	padding:0 2px 0 0;
-	vertical-align:top;
+  padding:0 2px 0 0;
+  vertical-align:top;
 }
 .dd2 .ddChild {
-	position:absolute;
-	border:1px solid #c3c3c3;
-	border-top:none;
-	display:none;
-	margin:0;
-	width:auto;
-	overflow:auto;
-	overflow-x:hidden !important;
-	background-color:#ffffff;
-	font-size:14px;
+  position:absolute;
+  border:1px solid #c3c3c3;
+  border-top:none;
+  display:none;
+  margin:0;
+  width:auto;
+  overflow:auto;
+  overflow-x:hidden !important;
+  background-color:#ffffff;
+  font-size:14px;
 }
 .dd2 .ddChild .opta a, .dd2 .ddChild .opta a:visited {padding-left:10px}
 .dd2 .ddChild a {
-	display:block;
-	padding:3px 0 3px 3px;
-	text-decoration:none;
-	color:#000;
-	overflow:hidden;
-	white-space:nowrap;
-	cursor:pointer;
+  display:block;
+  padding:3px 0 3px 3px;
+  text-decoration:none;
+  color:#000;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
 }
 .dd2 .ddChild a:hover {
-	background-color:#66CCFF;
+  background-color:#66CCFF;
 }
 .dd2 .ddChild a img {
-	border:0;
-	padding:0 2px 0 0;
-	vertical-align:middle;
+  border:0;
+  padding:0 2px 0 0;
+  vertical-align:middle;
 }
 .dd2 .ddChild a.selected {
-	background-color:#66CCFF;	
+  background-color:#66CCFF;	
 }
 
 .dd2 .borderTop{border-top:1px solid #c3c3c3  !important;}
@@ -156,43 +156,43 @@
 
 /************* use sprite *****************/
 .dd .ddChild a.sprite, .dd .ddChild a.sprite:visited {
-	background-image:url(../icons/sprite.gif);
-	background-repeat:no-repeat;
-	padding-left:24px;
+  background-image:url(../icons/sprite.gif);
+  background-repeat:no-repeat;
+  padding-left:24px;
 }
 
 .dd .ddChild a.calendar, .dd .ddChild a.calendar:visited {
-	background-position:0 -404px;
+  background-position:0 -404px;
 }
 .dd .ddChild a.shoppingcart, .dd .ddChild a.shoppingcart:visited {
-	background-position:0 -330px;
+  background-position:0 -330px;
 }
 .dd .ddChild a.cd, .dd .ddChild a.cd:visited {
-	background-position:0 -439px;
+  background-position:0 -439px;
 }
 .dd .ddChild a.email, .dd .ddChild a.email:visited {
-	background-position:0 -256px;
+  background-position:0 -256px;
 }
 .dd .ddChild a.faq, .dd .ddChild a.faq:visited {
-	background-position:0 -183px;
+  background-position:0 -183px;
 }
 .dd .ddChild a.games,
 .dd .ddChild a.games:visited {
-	background-position:0 -365px;
+  background-position:0 -365px;
 }
 .dd .ddChild a.music, .dd .ddChild a.music:visited {
-	background-position:0 -146px;
+  background-position:0 -146px;
 }
 .dd .ddChild a.phone, .dd .ddChild a.phone:visited {
-	background-position:0 -109px;
+  background-position:0 -109px;
 }
 .dd .ddChild a.graph, .dd .ddChild a.graph:visited {
-	background-position:0 -73px;
+  background-position:0 -73px;
 }
 .dd .ddChild a.secured, .dd .ddChild a.secured:visited {
-	background-position:0 -37px;
+  background-position:0 -37px;
 }
 .dd .ddChild a.video, .dd .ddChild a.video:visited {
-	background-position:0 0;
+  background-position:0 0;
 }
 /*******************************/

@@ -5,33 +5,25 @@ var globalJavascriptFile = (function  () {
   $(document).ready(function  () {
 
     jQueryValidationsDefaults();
-
-    $(".skin-select").msDropDown();
-
-    $(".datepicker-call").datepicker({
-      changeMonth: true,
-      changeYear: true
-    });
+    skiningSelects();
+    overLaySideBars();
+    datepickerSkin();
 
     /*Multiselect*/
     $(".multiselect-call").multiselect({
       selectedList: 4
     });
 
-
     /*min Height sidebar*/
-
     $(window).resize(function(){
       $('.content-main').css("min-height",$(window).height()-$('#header').height()-69);
       $('.content-right').css("width",$(window).width()-$('.sidebar').width());
     })
 
     $('.content-main').css("min-height",$(window).height()-$('#header').height()-69);
-
     $('.content-right').css("width",$(window).width()-$('.sidebar').width());
 
     /*Dropdown*/
-
     $('.config > a').on("click", function(e){
       $(this).parents(".main").find(".show").removeClass("show")
       $(this).parent().toggleClass("show");
@@ -48,14 +40,26 @@ var globalJavascriptFile = (function  () {
         $('.overlay-sidebar').css("z-index", "2");
       }
     });
+  });
+  
+  var datepickerSkin = function  () {
+    $(".datepicker-call").datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
+  }
 
-    /*Overlay sidebar*/
+  /*Overlay sidebar*/
+  var overLaySideBars = function  () {
     $('.nav-bar .config').click(function(event){
       event.stopPropagation();
       $('.overlay-sidebar').css("z-index", "3");
     });
+  }
 
-  });
+  var skiningSelects = function  () {
+    $(".skin-select").msDropDown();
+  }
 
   var jQueryValidationsDefaults = function  () {
     $.validator.setDefaults({
@@ -83,12 +87,14 @@ var globalJavascriptFile = (function  () {
 
   var jQueryErrorsTooltip = function  () {
     $('.error-info').tipsy({
-    gravity: $.fn.tipsy.autoNS,
-    html: true,
-    delayIn: 500,
-    delayOut: 500
+      gravity: $.fn.tipsy.autoNS,
+      html: true,
+      delayIn: 500,
+      delayOut: 500
     });
   };
-
+  
+  globalJavascriptFile.jQueryErrorsTooltip = jQueryErrorsTooltip;
+  globalJavascriptFile.skiningSelects = skiningSelects;
   return globalJavascriptFile;
 })();

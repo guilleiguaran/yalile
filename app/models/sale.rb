@@ -2,13 +2,16 @@ class Sale < ActiveRecord::Base
   # ASSOCIATIONS
   has_many :sale_transactions
   has_one :article, :through => :sale_transaction
+  
+  accepts_nested_attributes_for :sale_transactions
+  attr_accessible :salesman, :sale_transactions_attributes
 
   # VALIDATIONS
   validates :salesman, :presence => true
 
   # CALLBACKS
   before_destroy AvoidDestroy
-  attr_accessible :salesman
+  
 end
 # == Schema Information
 #

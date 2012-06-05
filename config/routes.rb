@@ -16,10 +16,13 @@ Yalile::Application.routes.draw do
     # =============== PRODUCT ARTICLES ROUTES ==============================================
     resources :articles, only: [:index, :show, :new, :create]
   end
+  
+  # ================ SALES ROUTES ==========================================================
+  resources :sales, only: [:new, :create]
 
 end
 #== Route Map
-# Generated on 28 May 2012 19:42
+# Generated on 04 Jun 2012 20:19
 #
 #        user_registration POST   /user(.:format)                              devise/registrations#create
 #    new_user_registration GET    /user/sign_up(.:format)                      devise/registrations#new
@@ -33,7 +36,8 @@ end
 #         product_articles GET    /products/:product_id/articles(.:format)     articles#index
 #                          POST   /products/:product_id/articles(.:format)     articles#create
 #      new_product_article GET    /products/:product_id/articles/new(.:format) articles#new
+#          product_article GET    /products/:product_id/articles/:id(.:format) articles#show
 #                 products GET    /products(.:format)                          products#index
 #                          POST   /products(.:format)                          products#create
 #              new_product GET    /products/new(.:format)                      products#new
-#                  article GET    /articles/:id(.:format)                      articles#show
+#                    sales GET    /sales(.:format)                             sales#index

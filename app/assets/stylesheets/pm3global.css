@@ -22,9 +22,9 @@
 .floatright{float:right !important;}
 .floatcenter{
   float:none !important;
-	margin-left:auto !important;
-	margin-right:auto !important;
-	overflow:hidden;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  overflow:hidden;
 }
 
 .alignleft{text-align:left !important;}
@@ -73,13 +73,13 @@ p{
 }
 
 a{
-	-moz-transition:color 0.1s linear;
-	-webkit-transition:color 0.1s linear;
-	transition:color 0.1s linear;
+  -moz-transition:color 0.1s linear;
+  -webkit-transition:color 0.1s linear;
+  transition:color 0.1s linear;
 }
 
 a:hover{
-	
+
 }
 
 /* Header
@@ -180,7 +180,7 @@ a:hover{
 .config.show > a{
   background: url(app/icons/config-header.png) no-repeat -47px 15px;
 }
-  
+
 .config.show{
   background: url(app/backgrounds/config.jpg) repeat-x;
   border-left:1px solid #272727;
@@ -1185,7 +1185,7 @@ fieldset.btn-alone{
 
 fieldset.datepicker a{
   background: url('app/icons/datepicker-update.png') no-repeat;
-  
+
   display:block;
   float:right;
   height:14px;
@@ -1259,7 +1259,7 @@ fieldset.show-error input.text{
   padding-top:10px;
   height:22px;
 }
-  
+
 
 label.inline{display:inline-block;}
 label.checkbox{cursor:pointer;}
@@ -1278,7 +1278,7 @@ label.disabled{
   width:100%;
 }
 
-input.url[disabled="disabled"]{
+input.url[disabled="disabled"], input.text[disabled="disabled"]{
   background-color:#F5F4EE;
   -moz-box-shadow:0 0px rgba(0,0,0,0.5);
   -webkit-box-shadow:0 0px rgba(0,0,0,0.5);
@@ -1288,8 +1288,6 @@ input.url[disabled="disabled"]{
 .ie7 .text{width:88%;}
 
 select{width:100% !important;}
-
-
 
 /* Buttons
 ============================================================ */
@@ -1478,7 +1476,6 @@ button.ui-multiselect{
 
 .ui-multiselect-menu .ui-multiselect-checkboxes li label span:hover{color:#666;}
 
-
 /* Tooltips
 ============================================================ */
 .tipsy-inner{
@@ -1530,7 +1527,7 @@ button.ui-multiselect{
 /* Footer
 ============================================================ */
 #footer{
-  
+
 }
 
 .footer{
@@ -1580,37 +1577,34 @@ button.ui-multiselect{
   .box-search{
     width:55%;
   }
-  
+
   ul li:last-child{margin-left:0 !important;}
-  
+
   .content-right{
     width:726px !important;
   }
-  
+
   ul.details li span{padding-right:10px;}
-  
+
   li .box-url {
     overflow:hidden;
     width: 75%;
   }
-  
+
   .two-irregularbox fieldset.btn-right .box-url, .two-irregularbox fieldset.btn-right input.text{
     width:52%;
   }
-  
+
   .two-columns {
     width: 58.5%;
   }
-  
+
   .content-steps .net-total li:last-child{
     margin: 0 0 0px 40px !important;
   }
-  
+
   .content-steps .net-total li strong {
     width: 235px;
   }
-  
+
 }
-
-
-
