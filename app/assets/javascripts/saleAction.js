@@ -20,7 +20,11 @@ var saleAction = (function  () {
   }
   
   var saleFormValidations = function  () {
-    $(salesForm).validate();
+    $(salesForm).validate({
+      submitHandler: function  (form) {
+        form.submit();
+      }
+    });
   }
   
   return saleAction;

@@ -1,8 +1,6 @@
 <%= simple_form_for [@product, @article], html: {id: "article_form"}, defaults: {input_html: {class: "text"}} do |form| %>
   <div class="four-fieldset clearfix more-separate">
-    <%= form.input :size, label: "Talla:", input_html: {maxlength: 3, class: "malphanumeric text"} %>
-    <%= form.input :in_stock, label: "Cantidad:", input_html: {maxlength: 4, class: "text mnumeric"}, as: :string %>
-    <%= form.input :code, label: "Código:", input_html: {maxlength: 30, class: "malphanumeric text"}, wrapper_html: {class: "big last"} %>
+    <%= render "shared/common/article_fields", form: form %>
   </div><!--.four-fieldset-->
   <div class="cancel-save">
     <ul class="list-cancel">

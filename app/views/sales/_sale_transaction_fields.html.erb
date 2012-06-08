@@ -1,5 +1,5 @@
 <div class="four-fieldset clearfix">
-  <%= f.input :article_id, label: "Productos:", collection: @products, prompt: "Producto", input_html: {class: "skin-select"}, wrapper: nil %>
+  <%= f.input :article_id, label: "Productos:", collection: @articles, value_method: "id", label_method: "code", prompt: "Producto", input_html: {class: "skin-select"}, wrapper: nil %>
   <%= f.input :quantity_articles, label: "Cantidad:", as: "string", input_html: {maxlength: 2, class: "text"} %>
   <%= f.input :article_unit_price_sold, label: "$ Unitario:", as: "string", input_html: {disabled: true, class: "text"} %>
   <%= f.input :article_total_price, label: "$ Total:", as: "string", input_html: {disabled: true, class: "text"} %>

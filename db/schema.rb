@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20120515004923) do
     t.integer  "in_stock",    :default => 0
     t.string   "code",                       :null => false
     t.integer  "status"
+    t.integer  "price",                      :null => false
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
   end

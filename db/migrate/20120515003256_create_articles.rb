@@ -7,6 +7,7 @@ class CreateArticles < ActiveRecord::Migration
       t.integer :in_stock, :default => 0
       t.string :code, :null =>  false
       t.integer :status
+      t.integer :price, :null => false
 
       t.timestamps
     end

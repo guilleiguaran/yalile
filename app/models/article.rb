@@ -2,7 +2,7 @@ class Article < ActiveRecord::Base
 
   paginates_per 3
 
-  attr_accessible :code, :description, :in_stock, :product_id, :size, :status
+  attr_accessible :code, :description, :in_stock, :product_id, :size, :status, :price
 
   # ASOCIATIONS
   belongs_to :product
@@ -13,7 +13,8 @@ class Article < ActiveRecord::Base
   # validates :description, presence: true
   validates :size, presence: true, format: {with: /^[a-z0-9]*$/i}
   validates :code, presence: true, uniqueness: true, format: {with: /^[a-z0-9]*$/i}
-  validates :in_stock, presence: true, numericality: {greater_than: 0}, inclusion: {in: 1..100}
+  validates :in_stock, presence: true, inclusion: {in: 1..100}
+  validates :price, presence: true, numericality: {greater_than: 0}
 
   # CALLBACKS
   before_destroy AvoidDestroy
