@@ -1,8 +1,11 @@
 class Sale < ActiveRecord::Base
+
+  paginates_per 10
+
   # ASSOCIATIONS
   has_many :sale_transactions
   has_one :article, :through => :sale_transaction
-  
+
   accepts_nested_attributes_for :sale_transactions
   attr_accessible :salesman, :sale_transactions_attributes
 
@@ -11,7 +14,15 @@ class Sale < ActiveRecord::Base
 
   # CALLBACKS
   before_destroy AvoidDestroy
-  
+
+  def transactions_by_status(current_status=0)
+    self.sale_transactions.where{status == current_status}
+  end
+
+  def total_of_sale
+    transactions_by_status.sum(:article_total_price)
+  end
+
 end
 # == Schema Information
 #

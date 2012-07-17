@@ -1,0 +1,60 @@
+<% title "Detalles Venta" %>
+<div class="wrapper clearfix">
+  <%= render "shared/common/leftpanel" %>
+  <div class="content-right clearfix">
+    <div class="content-main clearfix">
+      <div class="content-title">
+        <%= content_tag :h2, "Venta Detallada", class: :floatleft %>
+      </div>
+      <%= link_to "Edit", "javascript:void(0);", class: "btn-edit floatright" %>
+      <div class="wrapp-box">
+        <div class="box-default head-table">
+          <ul class="details first-big clearfix">
+            <li>
+              <%= content_tag :label, content_tag(:strong, "Código") %>
+              <%= content_tag :span, @sale.id %>
+            </li>
+            <li>
+              <%= content_tag :label, content_tag(:strong, "Usuário del Vendedor") %>
+              <%= content_tag :span, @sale.salesman %>
+            </li>
+            <li>
+              <%= content_tag :label, content_tag(:strong, "Fecha de la Venta") %>
+              <%= content_tag :span, formatted_time(@sale.created_at) %>
+            </li>
+            <li>
+              <%= content_tag :label, content_tag(:strong, "Articulos Vendidos") %>
+              <%= content_tag :span, @saletransactions.count %>
+            </li>
+            <li>
+              <%= content_tag :label, content_tag(:strong, "Total De la Venta") %>
+              <%= content_tag :span, number_to_currency(@sale.total_of_sale) %>
+            </li>
+          </ul><!-- details first-big clearfix END -->
+        </div><!--box-default head-table END -->
+        <div class="box-default box-bottom">
+          <ul class="details clearfix">
+            <li>
+              <%= content_tag :label, content_tag(:strong, "Articulos Devueltos") %>
+              <%= content_tag :span, @refundsaletransactions.count %>
+            </li>
+          </ul>
+        </div><!--.box-default-->
+      </div><!--.wrapp-box-->
+      <div class="wrapp-box clearfix">
+        <div class="two-irregularbox">
+          <div class="big">
+            <%= content_tag :h3, "Listado de Artículos Activos", class: :details %>
+            <%= articles_list @saletransactions %>
+            <%= content_tag :h3, "Listado de Artículos Devueltos", class: :details %>
+            <%= articles_list @refundsaletransactions %>
+          </div><!--.small-->
+        </div><!--.two-irreguralbox-->
+      </div><!--.wrapp-box-->
+      <%= link_to content_tag(:span) + "Ventas", sales_path, class: "btn-back" %>
+    </div><!--.content-main-->
+    <%= render "shared/common/footer" %>
+  </div><!--.content-right-->
+</div>
+
+<% javascripts "siteFilter" %>

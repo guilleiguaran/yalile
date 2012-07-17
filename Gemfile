@@ -5,7 +5,7 @@ gem 'rails', '3.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem "annotate", "~> 2.4.1.beta1"
+gem 'annotate', '~> 2.4'
 gem 'cancan'
 gem 'devise'
 gem 'kaminari'
@@ -13,7 +13,6 @@ gem 'jquery-rails'
 gem 'simple_form', '~> 2.0'
 gem 'squeel'
 gem 'unicorn'
-
 
 # Gems used only for assets and not required
 # in production environments by default.

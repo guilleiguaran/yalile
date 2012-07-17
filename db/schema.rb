@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20120515004923) do
     t.integer  "sale_id"
     t.integer  "article_id"
     t.integer  "quantity_articles"
+    t.integer  "status"
     t.float    "article_unit_price_sold"
     t.float    "article_total_price"
     t.datetime "created_at",              :null => false

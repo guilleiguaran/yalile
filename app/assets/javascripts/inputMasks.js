@@ -25,6 +25,7 @@ var inputMasks = (function  () {
       textInput.inputmask({"mask": "*", "repeat": textInput.prop("maxlength"), "greedy": false});
     })
   }
-
+  
+  inputMasks.loadMasks = loadMasks;
   return inputMasks;
 })();

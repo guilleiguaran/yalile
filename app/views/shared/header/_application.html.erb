@@ -20,11 +20,11 @@
     <% if current_user %>
     <div class="config select-type">
       <% if current_user.is_admin? %>
-      <%= link_to "Admin", "javascript:void(0);" %>
+      <%= link_to "Administrador", "javascript:void(0);" %>
       <div class="config-box">
         <ul>
-          <li><%= link_to "Agregar Usuario", "javascript:void(0);" %></li>
-          <li><%= link_to "Eliminar Usuario", "javascript:void(0);" %></li>
+          <li><%= link_to "Resumen de Ventas", sales_path %></li>
+          <li><%= link_to "Manejo de Usuario", "javascript:void(0);" %></li>
           <li><%= link_to "Devolver Artículo", "javascript:void(0);" %></li>
         </ul>
       </div><!-- config-box END -->

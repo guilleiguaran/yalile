@@ -1,0 +1,17 @@
+<% title "Ventas" %>
+
+<div class="wrapper clearfix">
+  <%= render "shared/common/leftpanel" %>
+  <div class="content-right clearfix">
+    <div class="content-main clearfix">
+      <div class="content-title">
+        <h2 class="floatleft">Listado De Ventas</h2>
+      </div>
+      <%= render "filter" %>
+      <div id="site_render_html">
+        <%= render "table" %>
+      </div><!-- site_render_html END -->
+    </div><!--.content-main END -->
+    <%= render "shared/common/footer" %>
+  </div><!-- content-right clearfix END -->
+</div><!-- wrapper clearfix END -->

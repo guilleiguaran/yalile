@@ -1,5 +1,5 @@
 Yalile::Application.routes.draw do
-  
+
   # ================ DEVISE ROUTES FOR USERS ===============================================
   devise_for :user, skip: [:sessions, :passwords]
   devise_scope :user do
@@ -16,10 +16,12 @@ Yalile::Application.routes.draw do
     # =============== PRODUCT ARTICLES ROUTES ==============================================
     resources :articles, only: [:index, :show, :new, :create]
   end
-  
-  # ================ SALES ROUTES ==========================================================
-  resources :sales, only: [:new, :create]
 
+  # ================ SALES ROUTES ==========================================================
+  resources :sales, only: [:index, :show, :new, :create]
+
+  # ================ INFORMATIONS ROUTES ===================================================
+  get ":resource/:id/information" => "informations#show", as: :get_information
 end
 #== Route Map
 # Generated on 04 Jun 2012 20:19

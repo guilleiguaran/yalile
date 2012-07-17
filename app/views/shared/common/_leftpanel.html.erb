@@ -22,7 +22,7 @@
     <span>$999.999.999,99</span>
   </div><!-- paid-value END -->
   <div class="paid-value default">
-    <h2>Venta del Mes de Abril</h2>
+    <%= content_tag :h2, "Venta del Mes de #{Date.today.strftime("%B")}"%>
     <span>$999.999.999,99</span>
   </div><!-- paid-value default END -->
   <% end %>

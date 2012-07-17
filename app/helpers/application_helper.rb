@@ -1,6 +1,6 @@
 module ApplicationHelper
   
-  def formatted_time(date_object)
+  def formatted_time(date_object, format="")
     date_object.in_time_zone("Bogota").to_date.to_formatted_s(:rfc822)
   end
   

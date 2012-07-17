@@ -4,6 +4,7 @@ class CreateSaleTransactions < ActiveRecord::Migration
       t.integer :sale_id
       t.integer :article_id
       t.integer :quantity_articles
+      t.integer :status
       t.float :article_unit_price_sold
       t.float :article_total_price
 

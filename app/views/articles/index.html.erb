@@ -1,7 +1,7 @@
 <% title "Artículos" %>
 
 <div class="wrapper clearfix">
-  <%= render "shared/common/leftpanel", layout: false %>
+  <%= render "shared/common/leftpanel" %>
   <div class="content-right clearfix">
     <div class="content-main clearfix">
       <div class="content-title">
@@ -10,16 +10,16 @@
       </div>
       <div id="form_for_html_render" class="hidden box-default rounder-all-five marginbottom clearfix box-app">
       </div><!-- hidden box-default rounder-all-five marginbottom clearfix box-app END -->
-      <%= render "filter", layout: false %>
+      <%= render "filter" %>
       <div id="site_render_html">
-        <%= render "table", layout: false %>
+        <%= render "table" %>
       </div>
       <%= link_to products_path, class: "btn-back" do %>
         <%= content_tag :span %>
         Listado Productos
       <% end %>
     </div><!--.content-main END -->
-    <%= render "shared/common/footer", layout: false %>
+    <%= render "shared/common/footer" %>
   </div><!-- content-right clearfix END -->
 </div><!-- wrapper clearfix END -->
 

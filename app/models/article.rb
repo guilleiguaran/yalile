@@ -31,13 +31,8 @@ end
 #  in_stock    :integer(4)      default(0)
 #  code        :string(255)     not null
 #  status      :integer(4)
+#  price       :integer(4)      not null
 #  created_at  :datetime        not null
 #  updated_at  :datetime        not null
-#
-# Indexes
-#
-#  index_articles_on_code         (code) UNIQUE
-#  index_articles_on_description  (description)
-#  index_articles_on_size         (size)
 #
 

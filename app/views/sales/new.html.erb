@@ -1,7 +1,7 @@
 <% title "Nueva Venta" %>
 
 <div class="wrapper clearfix">
-  <%= render "shared/common/leftpanel", layout: false %>
+  <%= render "shared/common/leftpanel" %>
   <div class="content-right clearfix">
     <div class="content-main clearfix">
       <div class="content-title">
@@ -17,11 +17,10 @@
         <% end %>
       </div><!-- box-default rounder-all-five marginbottom clearfix box-app END -->
       <%= link_to :back, class: "btn-back" do %>
-        <%= content_tag :span %>
-        Atras
+        <%= content_tag :span %> Atras
       <% end %>
     </div><!--.content-main END -->
-    <%= render "shared/common/footer", layout: false %>
+    <%= render "shared/common/footer" %>
   </div><!-- content-right clearfix END -->
 </div><!-- wrapper clearfix END -->
 
