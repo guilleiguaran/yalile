@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("reset.css");
 
 /* -----------------------------------------------------------
 
@@ -345,7 +344,7 @@ a:hover{
   border-bottom:1px solid #272727;
   border-top:1px solid #404040;
   padding:10px 15px;
-} 
+}
 
 .choose-app label{
   color:#999;
@@ -892,7 +891,7 @@ ul.sub-tabs{
   border-radius:3px;
   float:left;
   margin-bottom:20px;
-} 
+}
 
 ul.sub-tabs li{
   border-right:1px solid #BDBDBD;
@@ -1112,7 +1111,7 @@ ul.list-radios label{
 fieldset input.datepicker{
   background: url(app/icons/datepicker.png) no-repeat 93% 50%;
   padding-right:33px !important;
-}  
+}
 
 .ie7 fieldset input.datepicker{width:70%;}
 
@@ -1235,7 +1234,7 @@ fieldset.show-error input.text{
   float:right;
   padding-right:3px;
   width:60%;
-} 
+}
 
 .content-main input.text{
   border:1px solid #CCC;
