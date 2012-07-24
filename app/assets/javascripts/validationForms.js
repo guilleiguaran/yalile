@@ -24,13 +24,14 @@ var validationForm = (function  () {
       }
     });
   };
-  
+
   var articleFormValidations = function  () {
     $(articleForm).validate({
       rules:{
         "article[size]": { required: true, maxlength: 3, customalphanumeric: true },
         "article[in_stock]": { required: true, maxlength: 4, digits: true, range: [1, 100] },
-        "article[code]": { required: true, maxlength: 30, customalphanumeric: true }
+        "article[code]": { required: true, maxlength: 30, customalphanumeric: true },
+        "article[description]": { required: true }
       }
     });
   }

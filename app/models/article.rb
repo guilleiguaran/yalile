@@ -10,7 +10,7 @@ class Article < ActiveRecord::Base
   # VALIDATIONS
   validates_associated :product
   # validates :product_id, presence: true
-  # validates :description, presence: true
+  validates :description, presence: true
   validates :size, presence: true, format: {with: /^[a-z0-9]*$/i}
   validates :code, presence: true, uniqueness: true, format: {with: /^[a-z0-9]*$/i}
   validates :in_stock, presence: true, inclusion: {in: 1..100}
