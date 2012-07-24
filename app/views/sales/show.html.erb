@@ -47,7 +47,7 @@
             <%= content_tag :h3, "Listado de Artículos Activos", class: :details %>
             <%= articles_list @saletransactions %>
             <%= content_tag :h3, "Listado de Artículos Devueltos", class: :details %>
-            <%= articles_list @refundsaletransactions %>
+            <%= articles_list @refundsaletransactions, @sale %>
           </div><!--.small-->
         </div><!--.two-irreguralbox-->
       </div><!--.wrapp-box-->

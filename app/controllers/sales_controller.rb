@@ -23,6 +23,7 @@ class SalesController < ApplicationController
     @sale = Sale.new(params[:sale].merge!(salesman: current_user.username))
     SalesControl.complete_sale(@sale)
     if @sale.save
+      SalesControl.reduce_article_stock(@sale)
       redirect_to new_sale_path
     else
       render :new

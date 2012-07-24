@@ -1,6 +1,7 @@
 class SaleTransaction < ActiveRecord::Base
   # ASSOCIATIONS
   belongs_to :sale
+  belongs_to :article
 
   # VALIDATIONS
   validates_associated :sale
@@ -14,10 +15,20 @@ class SaleTransaction < ActiveRecord::Base
   # CALLBACKS
   before_destroy AvoidDestroy
 
-  attr_accessible :article_id, :article_total_price, :article_unit_price_sold, :quantity_articles, :sale_id
+  attr_accessible :article_id, :article_total_price, :article_unit_price_sold, :quantity_articles, :sale_id, :status
 
   def article_associated
     Article.find_by_id(self.article_id)
+  end
+
+  def article_stock(type)
+    article = self.article
+    case type.to_sym
+    when :return
+      article.update_attribute(:in_stock, article.in_stock + self.quantity_articles)
+    when :sell
+      article.update_attribute(:in_stock, article.in_stock - self.quantity_articles)
+    end
   end
 
   private

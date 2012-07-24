@@ -10,6 +10,28 @@ class SalesControl
       return sale
     end
 
+    def reduce_article_stock(sale)
+      sale.sale_transactions.each do |sale_transaction|
+        sale_transaction.article_stock(:sell)
+      end
+    end
+
+    def return_transaction(sale_id, transaction_id)
+      sale = Sale.find(sale_id)
+      if sale
+        transaction = sale.sale_transactions.find(transaction_id)
+        if transaction
+          case transaction.status
+          when 0
+            transaction.update_attributes(status: 1)
+            transaction.article_stock(:return)
+            return true
+          end
+        end
+      end
+      return false
+    end
+
     private
 
     def article_attributes

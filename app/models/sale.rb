@@ -4,7 +4,7 @@ class Sale < ActiveRecord::Base
 
   # ASSOCIATIONS
   has_many :sale_transactions
-  has_one :article, :through => :sale_transaction
+  has_many :articles, :through => :sale_transactions
 
   accepts_nested_attributes_for :sale_transactions
   attr_accessible :salesman, :sale_transactions_attributes
