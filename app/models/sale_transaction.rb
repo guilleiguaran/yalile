@@ -18,7 +18,7 @@ class SaleTransaction < ActiveRecord::Base
   attr_accessible :article_id, :article_total_price, :article_unit_price_sold, :quantity_articles, :sale_id, :status
 
   def article_associated
-    Article.find_by_id(self.article_id)
+    self.article
   end
 
   def article_stock(type)
@@ -36,8 +36,8 @@ class SaleTransaction < ActiveRecord::Base
   attr_reader :article_verified
 
   def article_id_existance
-    @article_verified = Article.find_by_id(self.article_id)
-    if !@article_verified
+    article_verified = Article.find_by_id(self.article_id)
+    if !article_verified
       errors.add(:article_id, "Este item no existe en la base de datos.")
     end
   end
