@@ -9,21 +9,18 @@
   </div><!-- content-avatar clearfix END -->
   <div class="choose-app">
     <fieldset>
-      <label>Escoge Un Producto</label>
-      <select class="skin-select">
-        <option>Cidade Maravilhosa - Rio</option>
-        <option>FarmVille</option>
-        <option>CityVille</option>
-      </select>
+      <%= label :product, "Escoge un Producto" %>
+      <%= select :summary, :product, summary_for_articles, {prompt: "Elige Un Producto"}, {class: "skin-select"} %>
     </fieldset>
   </div><!--.choose-app-->
   <div class="paid-value">
-    <h2>Venta de Hoy</h2>
-    <span>$999.999.999,99</span>
+    <%= content_tag :h2, "Venta De Hoy" %>
+    <%= content_tag :span, "$999,99", id: :today_summary %>
   </div><!-- paid-value END -->
   <div class="paid-value default">
+    <% summary_for_articles %>
     <%= content_tag :h2, "Venta del Mes de #{l(Date.today, format: "%B").humanize}"%>
-    <span>$999.999.999,99</span>
+    <%= content_tag :span, "$999,99", id: :monthly_summary %>
   </div><!-- paid-value default END -->
   <% end %>
 </div><!--.sidebar-->

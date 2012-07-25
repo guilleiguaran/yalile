@@ -9,10 +9,6 @@ module SalesHelper
     link_to(name, 'javascript:void(0);', class: "add-article cancel-app", data: {id: id, fields: fields.gsub("\n", "")})
   end
 
-  def article_label(article)
-    article.product.name.humanize + " Cod. " + article.code + " Ta. " + article.size
-  end
-
   def articles_list(saletransactions, sale=nil)
     list_html = ""
     saletransactions.each_with_index do |saletransaction, index|

@@ -27,4 +27,5 @@
 //= require inputMasks
 //= require basicActionsHandler
 //= require siteFilter
+//= require summaryArticle
 //= require jquery.validations.es

@@ -22,4 +22,12 @@ module ApplicationHelper
     end
   end
 
+  def article_label(article)
+    article.product.name.humanize + " Cod. " + article.code + " Ta. " + article.size
+  end
+
+  def summary_for_articles
+    Article.order{created_at.desc}.collect{|article| [article_label(article), article.id]}
+  end
+
 end
