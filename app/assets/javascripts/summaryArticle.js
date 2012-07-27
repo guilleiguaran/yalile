@@ -4,12 +4,32 @@ var summaryArticle = (function  () {
   var summaryArticleSelect = "#summary_product";
 
   $(document).ready(function  () {
-    $(summaryArticleSelect).on("change", function  () {
-      console.log($(this).val());
-    });
+    summaryArticleSelection();
   });
 
-  var ajaxRequest = function  () {
+  var summaryArticleSelection = function  () {
+    $(summaryArticleSelect).on("change", function  () {
+      var summaryUrl = "/sale-transactions";
+      var data = {"status":0, "article_id": $(this).val()}
+      ajaxRequest(summaryUrl, data, articleSummary);
+    });
+  }
+
+  var ajaxRequest = function  (ajaxUrl, ajaxData, ajaxCallback) {
+    $.ajax({
+      url: ajaxUrl,
+      success: ajaxCallback,
+      data: ajaxData,
+      error: function  (jqXHR, textStatus, errorThrown) {
+        console.log(jqXHR, textStatus, errorThrown);
+      }
+    });
+  }
+
+  var articleSummary = function  (jsonResponse) {
+    $.each(jsonResponse, function  (index, element) {
+      console.log(element);
+    });
   }
 
   return summaryArticle;

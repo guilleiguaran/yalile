@@ -19,12 +19,15 @@ Yalile::Application.routes.draw do
 
   # ================ SALES ROUTES ==========================================================
   resources :sales, only: [:index, :show, :new, :create] do
-    # ================ SLES TRANSACTIONS ROUTES ============================================
+    # ================ SALES TRANSACTIONS ROUTES ===========================================
     resources :sale_transactions, only: [:destroy], as: :transactions
   end
 
+  # ================ SALES TRANSACTIONS ROUTES =============================================
+  resources :sale_transactions, only: [:index], path: :"sale-transactions"
 
   # ================ INFORMATIONS ROUTES ===================================================
+  get ":resource/information" => "informations#index", as: :informations
   get ":resource/:id/information" => "informations#show", as: :get_information
 end
 #== Route Map
