@@ -10,8 +10,8 @@ var summaryArticle = (function  () {
   var summaryArticleSelection = function  () {
     $(summaryArticleSelect).on("change", function  () {
       var summaryUrl = "/sale-transactions";
-      var data = {"status":0, "article_id": $(this).val()}
-      ajaxRequest(summaryUrl, data, articleSummary);
+      var summaryData = {"summary": {"status": 0, "article_id": $(this).val()}};
+      //ajaxRequest(summaryUrl, data, articleSummary);
     });
   }
 
@@ -28,7 +28,6 @@ var summaryArticle = (function  () {
 
   var articleSummary = function  (jsonResponse) {
     $.each(jsonResponse, function  (index, element) {
-      console.log(element);
     });
   }
 

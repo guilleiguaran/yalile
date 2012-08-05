@@ -1,9 +1,7 @@
 class SaleTransactionsController < ApplicationController
 
   def index
-    art = params[:article_id]
-    s = params[:status]
-    render json: SaleTransaction.where{(status.like s) & (article_id.like art)}.order{created_at.desc}
+    # render json: SaleTransaction.where{(status.like s) & (article_id.like art)}.order{created_at.desc}
   end
 
   def destroy

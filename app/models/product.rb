@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Product < ActiveRecord::Base
   
   paginates_per 3
@@ -29,13 +39,3 @@ class Product < ActiveRecord::Base
   end
 
 end
-# == Schema Information
-#
-# Table name: products
-#
-#  id         :integer(4)      not null, primary key
-#  name       :string(255)
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#
-

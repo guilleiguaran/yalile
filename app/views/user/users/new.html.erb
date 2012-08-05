@@ -1,0 +1,21 @@
+<%= simple_form_for @user, html: {id: "user_form"}, defaults: {input_html: {class: "text"}} do |form| %>
+  <div class="four-fieldset clearfix">
+    <%= form.input :status, collection: @user.valid_status, input_html: {class: "skin-select"}, include_blank: false %>
+    <%= form.input :fullname, label: "Nombre", wrapper_html: {class: :big}, input_html: {maxlength: 40} %>
+    <%= form.input :email, label: "Email", wrapper_html: {class: "medium last"}, input_html: {maxlength: 30} %>
+    <%= form.input :username, label: "Nombre de Usuário", input_html: {maxlength: 15} %>
+    <%= form.input :password, label: "Contraseña", wrapper_html: {class: :big}, input_html: {maxlength: 6} %>
+    <%= content_tag :fieldset do %>
+      <%= content_tag :div, class: "nolabel checkbox-label floatleft" do %>
+        <%= form.input(:is_admin, label: false, wrapper: false, input_html: {class: nil}) %>
+        <%= form.label :is_admin, "Admin" %>
+      <% end %>
+    <% end %>
+  </div><!--.four-fieldset clearfix END -->
+  <div class="cancel-save">
+    <ul class="list-cancel">
+      <li><%= content_tag :div, form.button(:submit, value: "Guardar Usuário", id: "form_for_create_button") , class: "btn-green" %></li>
+      <li><%= link_to "Cancelar", "javascript:void(0);", class: "canel-app", id: "form_for_cancel_button" %></li>
+    </ul>
+  </div>
+<% end %>

@@ -4,6 +4,7 @@ var validationForm = (function  () {
   var formForRender = "#form_for_html_render";
   var productForm = "#product_form";
   var articleForm = "#article_form";
+  var userForm = "#user_form";
 
   $(document).ready(function  () {
     $(formForRender).on("change", formValidationFunctions);
@@ -12,6 +13,7 @@ var validationForm = (function  () {
   var formValidationFunctions = function  () {
     productFormValidations();
     articleFormValidations();
+    userFormValidations();
   };
 
   var productFormValidations = function  () {
@@ -32,6 +34,25 @@ var validationForm = (function  () {
         "article[in_stock]": { required: true, maxlength: 4, digits: true, range: [1, 100] },
         "article[code]": { required: true, maxlength: 30, customalphanumeric: true },
         "article[description]": { required: true }
+      }
+    });
+  }
+
+  var userFormValidations = function  () {
+    $(userForm).validate({
+      rules:{
+        "user[fullname]": {required: true, letterswithbasicpunc: true},
+        "user[email":{required: true, email: true},
+        "user[username]": {required: true, alphanumeric: true},
+        "user[password]": {required: true, minlength: 6}
+      },
+      messages:{
+        "user[fullname]": {
+          letterswithbasicpunc: "Sólo se permiten letras en el nombre."
+        },
+        "user[username]":{
+          alphanumeric: "Sólo se permiten letras numeros y underscores(_)."
+        }
       }
     });
   }

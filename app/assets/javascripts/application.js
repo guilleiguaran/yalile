@@ -19,6 +19,7 @@
 //= require jquery.multiselect
 //= require jquery.dd
 //= require jquery.validate.min
+//= require jquery.validations.es
 //= require additional-methods.min
 //= require jquery.inputmask
 //= require jquery.inputmask.extentions
@@ -28,4 +29,3 @@
 //= require basicActionsHandler
 //= require siteFilter
 //= require summaryArticle
-//= require jquery.validations.es

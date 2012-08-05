@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: sale_transactions
+#
+#  id                      :integer          not null, primary key
+#  sale_id                 :integer
+#  article_id              :integer
+#  quantity_articles       :integer
+#  status                  :integer
+#  article_unit_price_sold :float
+#  article_total_price     :float
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
+#
+
 class SaleTransaction < ActiveRecord::Base
   # ASSOCIATIONS
   belongs_to :sale
@@ -48,17 +63,3 @@ class SaleTransaction < ActiveRecord::Base
     end
   end
 end
-# == Schema Information
-#
-# Table name: sale_transactions
-#
-#  id                      :integer(4)      not null, primary key
-#  sale_id                 :integer(4)
-#  article_id              :integer(4)
-#  quantity_articles       :integer(4)
-#  article_unit_price_sold :float
-#  article_total_price     :float
-#  created_at              :datetime        not null
-#  updated_at              :datetime        not null
-#
-

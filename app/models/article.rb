@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id          :integer          not null, primary key
+#  product_id  :integer
+#  description :text             default(""), not null
+#  size        :string(255)      not null
+#  in_stock    :integer          default(0)
+#  code        :string(255)      not null
+#  status      :integer
+#  price       :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class Article < ActiveRecord::Base
 
   paginates_per 3
@@ -20,19 +36,3 @@ class Article < ActiveRecord::Base
   before_destroy AvoidDestroy
 
 end
-# == Schema Information
-#
-# Table name: articles
-#
-#  id          :integer(4)      not null, primary key
-#  product_id  :integer(4)
-#  description :text            default(""), not null
-#  size        :string(255)     not null
-#  in_stock    :integer(4)      default(0)
-#  code        :string(255)     not null
-#  status      :integer(4)
-#  price       :integer(4)      not null
-#  created_at  :datetime        not null
-#  updated_at  :datetime        not null
-#
-

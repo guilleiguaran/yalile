@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20120515004923) do
     t.string   "encrypted_password",  :default => "",    :null => false
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",       :default => 0
+    t.integer  "status",              :default => 0,     :null => false
     t.string   "fullname",                               :null => false
     t.string   "username",                               :null => false
     t.boolean  "is_admin",            :default => false

@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: sales
+#
+#  id         :integer          not null, primary key
+#  salesman   :string(255)      not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Sale < ActiveRecord::Base
 
   paginates_per 10
@@ -24,17 +34,3 @@ class Sale < ActiveRecord::Base
   end
 
 end
-# == Schema Information
-#
-# Table name: sales
-#
-#  id         :integer(4)      not null, primary key
-#  salesman   :string(255)     not null
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#
-# Indexes
-#
-#  index_sales_on_salesman  (salesman)
-#
-
