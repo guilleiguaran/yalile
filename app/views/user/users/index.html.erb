@@ -7,8 +7,7 @@
         <%= content_tag :h2, "Listado De Usuarios", class: :floatleft %>
         <%= link_to content_tag(:span, "Crear Nuevo Usuário"), new_user_path , id: "form_for_new_button", class: "btn-blue-icon add floatright add-app" %>
       </div>
-      <div id="form_for_html_render" class="hidden box-default rounder-all-five marginbottom clearfix box-app">
-      </div><!-- hidden box-default rounder-all-five marginbottom clearfix box-app END -->
+      <%= content_tag :div, "", class: "hidden box-default rounder-all-five marginbottom clearfix box-app", id: "form_for_html_render" %>
       <%= render "filter" %>
       <div id="site_render_html">
         <%= render "table" %>

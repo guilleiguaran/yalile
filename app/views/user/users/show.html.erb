@@ -1,0 +1,86 @@
+<% title "Detalles del Usuário" %>
+<div class="wrapper clearfix">
+  <%= render "shared/common/leftpanel" %>
+  <div class="content-right clearfix">
+    <div class="content-main clearfix">
+      <%= content_tag :div, class: "content-title"  do %>
+        <%= content_tag :h2, "Detalles Del Usuário", class: "floatleft" %>
+        <%= link_to "Editar", edit_user_path(@user.id), class: "btn-edit floatright", id: "form_for_edit_button" %>
+      <% end %>
+      <%= content_tag :div, "", class: "hidden box-default rounder-all-five marginbottom clearfix box-app", id: "form_for_html_render" %>
+      <div class="wrapp-box">
+        <div class="box-default head-table">
+          <ul class="details first-big clearfix">
+            <li>
+              <label><strong>Nombre Completo:</strong></label>
+              <%= content_tag :span, @user.fullname %>
+            </li>
+            <li>
+              <label><strong>Email:</strong></label>
+              <%= content_tag :span, @user.email %>
+            </li>
+            <li>
+              <label><strong>Nombre de Usuário:</strong></label>
+              <%= content_tag :span, @user.username %>
+            </li>
+            <li>
+              <label><strong>Role:</strong></label>
+              <%= content_tag :span, @user.is_admin.eql?(true) ? "Administrador" : "Usuário" %>
+            </li>
+            <li>
+              <label><strong>Creado En:</strong></label>
+              <%= content_tag :span, formatted_time(@user.created_at, "%B %d, %Y %H:%M") %>
+            </li>
+          </ul>
+        </div><!--.box-default-->
+        <div class="box-default box-bottom">
+          <ul class="details first-big clearfix">
+            <li>
+              <label><strong>Estado Actual:</strong></label>
+              <%= content_tag :span, @user.status %>
+            </li>
+            <li>
+              <label><strong>No. Veces Logueado:</strong></label>
+              <%= content_tag :span, @user.sign_in_count %>
+            </li>
+          </ul>
+        </div><!--.box-default-->
+      </div><!--.wrapp-box-->
+      
+      <div class="wrapp-box clearfix">
+        <div class="two-columns floatleft box-summary">
+          <%= content_tag :h3, "Ultimas Ventas Del Usuário", class: :details %>
+          <table class="status-history">
+            <tbody>
+              <tr>
+                <td>Fecha</td>
+                <td>Valor</td>
+              </tr>
+              <tr>
+                <td>22 / 12 /  2011 5:43pm</td>
+                <td class="table-status initiated">Initiated</td>
+              </tr>
+              <tr>
+                <td>22 / 12 /  2011 5:43pm</td>
+                <td class="table-status pending">Pending</td>
+              </tr>
+              <tr>
+                <td>22 / 12 /  2011 5:43pm</td>
+                <td class="table-status approved">Approved</td>
+              </tr>
+              <tr>
+                <td>22 / 12 /  2011 5:43pm</td>
+                <td class="table-status canceled">Canceled</td>
+              </tr>
+            </tbody>
+          </table>
+        </div><!--.two-columns-->
+      </div><!--.wrapp-box-->
+      <%= link_to :back, class: "btn-back" do %>
+        <%= content_tag :span, "" %> Regresar
+      <% end %>
+    </div><!--.content-main-->
+    <%= render "shared/common/footer" %>
+  </div><!--.content-right-->
+</div><!-- wrapper clerarfix END -->
+<% javascripts "validationForms" %>

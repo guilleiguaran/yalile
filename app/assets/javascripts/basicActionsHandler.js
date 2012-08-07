@@ -18,6 +18,7 @@ var basicActionsHandler = (function (){
   $(document).ready(function  () {
     basicShowAction();
     basicNewAction();
+    basicEditAction();
   });
 
   var basicShowAction = function  () {
@@ -31,20 +32,28 @@ var basicActionsHandler = (function (){
     $(basicButtonNew).on("click", function  (event) {
       event.preventDefault();
       setBasicButtonClicked(this);
-      ajaxRequest("GET", basicButtonClicked.attr("href"), undefined, insertHtml)
+      ajaxRequest("GET", basicButtonClicked.attr("href"), undefined, insertHtml, false);
       togleBasicButtonClicked();
+      basicCreateAction();
     });
     return false;
   }
-  
-  var basicCreateAction = function  () {
-    $(basicButtonCreate).on("click", function  (event) {
+
+  var basicEditAction = function  () {
+    $(basicButtonEdit).on("click", function  (event) {
       event.preventDefault();
-      setBasicForm(this.form);
-      if (isBasicFormValid()) {
-        ajaxRequest("POST", basicForm.prop("action"), basicForm.serializeArray(), basicActionCallback)
-      };
+      setBasicButtonClicked(this);
+      ajaxRequest("GET", basicButtonClicked.attr("href"), undefined, insertHtml, false);
+      togleBasicButtonClicked();
+      basicUpdateAction();
     });
+    return false;
+  }
+
+  var insertHtml = function  (jsonResponse) {
+    $(basicDivHtmlRender).html(jsonResponse.html).removeClass("hidden").triggerHandler("change");
+    setSelectsSkin();
+    basicActionCancel();
     return false;
   }
 
@@ -56,30 +65,47 @@ var basicActionsHandler = (function (){
     });
     return false;
   };
+  
+  var basicCreateAction = function  () {
+    $(basicButtonCreate).on("click", function  (event) {
+      event.preventDefault();
+      setBasicForm(this.form);
+      if (isBasicFormValid()) {
+        ajaxRequest("POST", basicForm.prop("action"), basicForm.serializeArray(), basicActionCallback, true);
+      };
+    });
+    return false;
+  }
 
-  var ajaxRequest = function  (ajaxMethod, ajaxUrl, ajaxParams, ajaxCallback) {
+  var basicUpdateAction = function  () {
+    $(basicButtonUpdate).on("click", function  (event) {
+      event.preventDefault();
+      setBasicForm(this.form);
+      if (isBasicFormValid()) {
+        ajaxRequest("PUT", basicForm.prop("action"), basicForm.serializeArray(), basicActionCallback, true);
+      };
+    });
+    return false;
+  }
+
+  var ajaxRequest = function  (ajaxMethod, ajaxUrl, ajaxParams, ajaxCallback, isAsync) {
     $.ajax({
       type: ajaxMethod,
       url: ajaxUrl,
       data: ajaxParams,
+      async: isAsync,
       success: ajaxCallback,
       error: function  (error) {
         console.log(error);
       }
     });
   };
-
-  var insertHtml = function  (jsonResponse) {
-    $(basicDivHtmlRender).html(jsonResponse.html).removeClass("hidden").triggerHandler("change");
-    setSelectsSkin();
-    basicActionCancel();
-    basicCreateAction();
-    return false;
-  }
   
   var basicActionCallback = function  (jsonResponse) {
     if (jsonResponse.status === "success") {
+      console.log(jsonResponse);
     } else{
+      console.log(jsonResponse.errors);
     };
   };
 
@@ -99,10 +125,13 @@ var basicActionsHandler = (function (){
 
   var togleBasicButtonClicked = function  () {
     basicButtonClicked.slideToggle();
+    //if(!basicButtonClicked.hasClass("btn-edit")) 
+    return false;
   }
 
   var setSelectsSkin = function  () {
     $(basicDivHtmlRender).find("select.skin-select").msDropDown();
+    return false;
   }
 
   return basicActionsHandler;

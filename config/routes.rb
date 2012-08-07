@@ -28,7 +28,7 @@ Yalile::Application.routes.draw do
 
   # ================ USERS ROUTES ==========================================================
   scope module: :user do
-    resources :users, only: [:index, :new, :create]
+    resources :users, only: [:index, :show, :new, :create, :edit, :update]
   end
   
 
@@ -37,7 +37,7 @@ Yalile::Application.routes.draw do
   get ":resource/:id/information" => "informations#show", as: :get_information
 end
 #== Route Map
-# Generated on 05 Aug 2012 11:11
+# Generated on 05 Aug 2012 17:44
 #
 #        user_registration POST   /user(.:format)                                 devise/registrations#create
 #    new_user_registration GET    /user/sign_up(.:format)                         devise/registrations#new
@@ -62,5 +62,8 @@ end
 #                     sale GET    /sales/:id(.:format)                            sales#show
 #        sale_transactions GET    /sale-transactions(.:format)                    sale_transactions#index
 #                    users GET    /users(.:format)                                user/users#index
+#                          POST   /users(.:format)                                user/users#create
+#                 new_user GET    /users/new(.:format)                            user/users#new
+#                edit_user GET    /users/:id/edit(.:format)                       user/users#edit
 #             informations GET    /:resource/information(.:format)                informations#index
 #          get_information GET    /:resource/:id/information(.:format)            informations#show

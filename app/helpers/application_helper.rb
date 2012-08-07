@@ -1,7 +1,7 @@
 module ApplicationHelper
 
-  def formatted_time(date_object, format="")
-    date_object.in_time_zone("Bogota").to_date.to_formatted_s(:rfc822)
+  def formatted_time(date_object, format=:rfc822)
+    l date_object.in_time_zone("Bogota"), format: format
   end
 
   def page_entries_info(collection, options = {})
