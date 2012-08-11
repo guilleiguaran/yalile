@@ -15,12 +15,12 @@
   </div><!--.choose-app-->
   <div class="paid-value">
     <%= content_tag :h2, "Venta De Hoy" %>
-    <%= content_tag :span, "$999,99", id: :today_summary %>
+    <%= content_tag :span, "$ 0,00", id: :today_summary %>
   </div><!-- paid-value END -->
   <div class="paid-value default">
     <% summary_for_articles %>
     <%= content_tag :h2, "Venta del Mes de #{l(Date.today, format: "%B").humanize}"%>
-    <%= content_tag :span, "$999,99", id: :monthly_summary %>
+    <%= content_tag :span, "$ 0,00", id: :monthly_summary %>
   </div><!-- paid-value default END -->
   <% end %>
 </div><!--.sidebar-->

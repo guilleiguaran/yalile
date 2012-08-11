@@ -23,6 +23,7 @@ class SaleTransaction < ActiveRecord::Base
   validate :article_id_existance
   validate :enough_articles
   validates :article_id, presence: true
+  validates :status, presence: true
   validates :quantity_articles, presence:  true, inclusion: {in: 0..20}, numericality: {integer: true}
   validates :article_total_price, presence:  true, numericality: {greater_than: 0, integer: true}
   validates :article_unit_price_sold, presence:  true, numericality: {greater_than: 0, integer: true}
@@ -44,6 +45,14 @@ class SaleTransaction < ActiveRecord::Base
     when :sell
       article.update_attribute(:in_stock, article.in_stock - self.quantity_articles)
     end
+  end
+
+  def self.summary(params={})
+    where{
+      (status == 0) & (article_id == params[:article_id]) &
+      (created_at >= params[:summary_date].to_datetime.at_beginning_of_month) &
+      (created_at <= params[:summary_date].to_datetime.at_end_of_month)
+    }.order{created_at.desc}
   end
 
   private

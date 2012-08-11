@@ -24,7 +24,7 @@
       <div class="config-box">
         <ul>
           <li><%= link_to "Resumen de Ventas", sales_path %></li>
-          <li><%= link_to "Manejo de Usuario", "javascript:void(0);" %></li>
+          <li><%= link_to "Manejo de Usuarios", users_path %></li>
           <li><%= link_to "Devolver Artículo", "javascript:void(0);" %></li>
         </ul>
       </div><!-- config-box END -->
@@ -34,7 +34,7 @@
       <li><%= link_to "Ventas", new_sale_path, class: "dashboard" %></li>
       <li><%= link_to "Transacciones", "javascript:void(0);", class: "transaction" %></li>
       <li><%= link_to "Productos", products_path, class: "application" %></li>
-      <li><%= link_to "Profile", "javascript:void(0);", class: "support" %></li>
+      <li><%= link_to "Inventario", "javascript:void(0);", class: "support" %></li>
       <li><%= link_to "Usúarios", users_path, class: "colleagues" %></li>
     </ul><!-- nav END -->
     <% end %>

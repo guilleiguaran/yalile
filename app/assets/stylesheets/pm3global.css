@@ -454,6 +454,8 @@ ul.list-radios li{
   margin:0 0 10px 20px;
 }
 
+ul.list-radios li input[type='radio']{margin-right:2px;}
+
 ul.list-radios li fieldset{margin:0;}
 
 ul.list-radios li:first-child{margin:0;}

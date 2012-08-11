@@ -1,7 +1,13 @@
 class SaleTransactionsController < ApplicationController
 
+  respond_to :json, only: :index
+
   def index
-    # render json: SaleTransaction.where{(status.like s) & (article_id.like art)}.order{created_at.desc}
+    @sale_transactions = SaleTransaction.summary(params[:summary])
+    respond_with(@sale_transactions) do |format|
+      format.html { render }
+      format.json { render json: @sale_transactions}
+    end
   end
 
   def destroy

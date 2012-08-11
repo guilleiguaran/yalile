@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-  def formatted_time(date_object, format=:rfc822)
+  def formatted_time(date_object, format="%B %d, %Y %H:%M")
     l date_object.in_time_zone("Bogota"), format: format
   end
 
