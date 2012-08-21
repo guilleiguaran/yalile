@@ -12,7 +12,7 @@
     <%= content_tag_for :tr, @users do |user| %>
       <td>
         <%= link_to "", user_path(user.id), class: "hidden" %>
-        <%= content_tag :span, "", class: "table-status initiated" %>
+        <%= content_tag :span, "", class: "table-status #{icon_table_helper(:class, user.status)}", title: icon_table_helper(:title, user.status) %>
       </td>
       <td><%= content_tag :span, user.fullname %></td>
       <td><%= content_tag :span, user.email %></td>

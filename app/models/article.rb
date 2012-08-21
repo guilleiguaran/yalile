@@ -16,7 +16,7 @@
 
 class Article < ActiveRecord::Base
 
-  paginates_per 3
+  paginates_per 10
 
   attr_accessible :code, :description, :in_stock, :product_id, :size, :status, :price
 

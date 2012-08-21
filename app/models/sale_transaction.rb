@@ -14,6 +14,9 @@
 #
 
 class SaleTransaction < ActiveRecord::Base
+
+  paginates_per 10
+  
   # ASSOCIATIONS
   belongs_to :sale
   belongs_to :article

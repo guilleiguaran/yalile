@@ -28,7 +28,9 @@ Yalile::Application.routes.draw do
 
   # ================ USERS ROUTES ==========================================================
   scope module: :user do
-    resources :users, only: [:index, :show, :new, :create, :edit, :update]
+    resources :users, only: [:index, :show, :new, :create, :edit, :update] do
+      put "update_profile" => "users#update_profile", on: :member, as: :update
+    end
   end
   
 

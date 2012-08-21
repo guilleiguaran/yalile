@@ -1,4 +1,12 @@
 es-CO:
+  status:
+    new: "Nuevo(a)"
+    approved: "Aprovado(a)"
+    inactive: "Inactivo(a)"
+    users:
+      "0": "new"
+      "1": "approved"
+      "2": "inactive"
   date:
     abbr_day_names:
     - dom

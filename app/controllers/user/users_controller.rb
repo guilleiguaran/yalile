@@ -1,5 +1,7 @@
 class User::UsersController < ApplicationController
 
+  before_filter :user_profile, only: [:update, :update_profile]
+
   def index    
     @users = User.where{}.page(params[:page])
   end
@@ -16,26 +18,44 @@ class User::UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:sucess] = "El usuario se guardo correctamente."
+      @response = {status: :success}
     else
-      flash[:error] = "El usuario no se guardo de forma correcta intente nuevamente."
+      @response = {status: :error, errors: @user.erros.messages}
     end
-    redirect_to new_user_path
+    render json: @response
   end
 
   def edit
     @user =  User.find(params[:id])
-    render json: {html: render_to_string("edit", layout: false)}
+    if request.xhr?
+      render json: {html: render_to_string("admin_edit", layout: false)}
+    end
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
       @response = {status: :success}
     else
       @response = {status: :error, errors: @user.errors.messages}
     end
     render json: @response
+  end
+
+  def update_profile
+    if @user.update_attributes(params[:user])
+      flash[:success] = "Has actualizado tu perfil de forma correcta."
+      redirect_to edit_user_path(@user)
+    else
+      flash[:error] = "Hay errores actualizando tu perfil."
+      render :edit
+    end
+  end
+
+  private
+
+  def user_profile
+     params[:user].delete_if{|key, value| value.blank?}
+     @user = User.find(params[:id])
   end
 
 end

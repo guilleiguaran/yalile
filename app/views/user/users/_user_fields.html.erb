@@ -3,7 +3,7 @@
   <%= form.input :fullname, label: "Nombre", wrapper_html: {class: :big}, input_html: {maxlength: 40} %>
   <%= form.input :email, label: "Email", wrapper_html: {class: "medium last"}, input_html: {maxlength: 30} %>
   <%= form.input :username, label: "Nombre de Usuário", input_html: {maxlength: 15} %>
-  <%= form.input :password, label: "Contraseña", wrapper_html: {class: :big}, input_html: {maxlength: 6} %>
+  <%= form.input :password, label: "Contraseña", wrapper_html: {class: :big}, input_html: {maxlength: 10} %>
   <%= content_tag :fieldset do %>
     <%= content_tag :div, class: "nolabel checkbox-label floatleft" do %>
       <%= form.input(:is_admin, label: false, wrapper: false, input_html: {class: nil}) %>

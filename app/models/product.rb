@@ -10,9 +10,7 @@
 
 class Product < ActiveRecord::Base
   
-  paginates_per 3
-
-  attr_accessible :name, :articles_attributes
+  paginates_per 10
 
   # ASOCIATIONS
   has_many :articles
@@ -20,6 +18,8 @@ class Product < ActiveRecord::Base
 
   # VALIDATIONS
   validates :name, presence: true, uniqueness: true
+
+  attr_accessible :name, :articles_attributes
 
   # CALLBACKS
   before_destroy AvoidDestroy

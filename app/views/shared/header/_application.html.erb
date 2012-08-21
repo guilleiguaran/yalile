@@ -7,7 +7,7 @@
         <%= link_to "", "javascript:void(0);" %>
         <div class="config-box">
           <ul>
-            <li><%= link_to "Perfil", "javascript:void(0);" %></li>
+            <li><%= link_to "Perfil", edit_user_path(current_user.id) %></li>
             <li><%= link_to "Cambiar Contraseña", "javascript:void(0);" %></li>
             <li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
           </ul>

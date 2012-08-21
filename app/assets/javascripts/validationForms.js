@@ -7,6 +7,7 @@ var validationForm = (function  () {
   var userForm = "#user_form";
 
   $(document).ready(function  () {
+    editUserProfile();
     $(formForRender).on("change", formValidationFunctions);
   });
 
@@ -44,7 +45,27 @@ var validationForm = (function  () {
         "user[fullname]": {required: true, letterswithbasicpunc: true},
         "user[email":{required: true, email: true},
         "user[username]": {required: true, alphanumeric: true},
-        "user[password]": {required: true, minlength: 6}
+        "user[password]": {required: function(element){return window.location.pathname === "/users"}, minlength: 6, maxlength: 10},
+      },
+      messages:{
+        "user[fullname]": {
+          letterswithbasicpunc: "Sólo se permiten letras en el nombre."
+        },
+        "user[username]":{
+          alphanumeric: "Sólo se permiten letras numeros y underscores(_)."
+        }
+      }
+    });
+  }
+
+  var editUserProfile = function  () {
+    $(userForm).validate({
+      rules:{
+        "user[fullname]": {required: true, letterswithbasicpunc: true},
+        "user[email":{required: true, email: true},
+        "user[username]": {required: true, alphanumeric: true},
+        "user[password]": {minlength: 6, maxlength: 10},
+        "user[password_confirmation]": {equalTo: "#user_password", minlength: 6, maxlength: 10}
       },
       messages:{
         "user[fullname]": {

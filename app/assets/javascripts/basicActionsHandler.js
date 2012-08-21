@@ -91,6 +91,7 @@ var basicActionsHandler = (function (){
   var ajaxRequest = function  (ajaxMethod, ajaxUrl, ajaxParams, ajaxCallback, isAsync) {
     $.ajax({
       type: ajaxMethod,
+      dataType: "json",
       url: ajaxUrl,
       data: ajaxParams,
       async: isAsync,
@@ -104,7 +105,9 @@ var basicActionsHandler = (function (){
   var basicActionCallback = function  (jsonResponse) {
     if (jsonResponse.status === "success") {
       console.log(jsonResponse);
+      window.location.reload();
     } else{
+      alert(jsonResponse.errors);
       console.log(jsonResponse.errors);
     };
   };
@@ -125,7 +128,6 @@ var basicActionsHandler = (function (){
 
   var togleBasicButtonClicked = function  () {
     basicButtonClicked.slideToggle();
-    //if(!basicButtonClicked.hasClass("btn-edit")) 
     return false;
   }
 

@@ -1,0 +1,9 @@
+<%= simple_form_for @user, html: {id: "user_form"}, defaults: {input_html: {class: "text"}} do |form| %>
+  <%= render "user_fields", form: form %>
+  <div class="cancel-save">
+    <ul class="list-cancel">
+      <li><%= content_tag :div, form.button(:submit, value: "Guardar Usuário", id: "form_for_update_button") , class: "btn-green" %></li>
+      <li><%= link_to "Cancelar", "javascript:void(0);", class: "canel-app", id: "form_for_cancel_button" %></li>
+    </ul>
+  </div>
+<% end %>

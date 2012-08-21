@@ -1,9 +1,25 @@
-<%= simple_form_for @user, html: {id: "user_form"}, defaults: {input_html: {class: "text"}} do |form| %>
-  <%= render "user_fields", form: form %>
-  <div class="cancel-save">
-    <ul class="list-cancel">
-      <li><%= content_tag :div, form.button(:submit, value: "Guardar Usuário", id: "form_for_update_button") , class: "btn-green" %></li>
-      <li><%= link_to "Cancelar", "javascript:void(0);", class: "canel-app", id: "form_for_cancel_button" %></li>
-    </ul>
-  </div>
-<% end %>
+<% title "Mi Perfil" %>
+<div class="wrapper clearfix">
+  <%= render "shared/common/leftpanel" %>
+  <div class="content-right clearfix">
+    <div class="content-main clearfix">
+      <%= content_tag :div, content_tag(:h2, "Editar Perfil"), class: "content-title" %>
+      <div class="wrapp-box">
+        <div class="two-columns">
+          <div class="box-default head-table clearfix">
+            <%= simple_form_for @user, url: update_user_path(params[:id]), html: {id: "user_form"}, defaults: {input_html: {class: "text"}} do |form| %>
+              <%= form.input :fullname, label: "Nombre Completo", input_html: {maxlength: 40} %>
+              <%= form.input :email, label: "Email", input_html: {maxlength: 30} %>
+              <%= form.input :username, label: "Usuário", input_html: {maxlength: 15} %>
+              <%= form.input :password, label: "Contraseña", input_html: {maxlength: 10, value: ""} %>
+              <%= form.input :password_confirmation, label: "Confirmar Contraseña", wrapper_html: {class: "marginbottom"}, input_html: {maxlength: 10} %>
+              <%= content_tag :div, form.button(:submit, value: "Guardar"), class: "btn-green floatright" %>
+            <% end %>
+          </div><!-- box-default head-table clearfix END -->
+        </div><!-- two-columns END -->
+      </div><!-- wrapp-box END -->
+    </div><!-- content-main clearfix END -->
+    <%= render "shared/common/footer" %>
+  </div><!-- content-right clearfix END -->
+</div><!-- wrapper clearfix END  -->
+<% javascripts "validationForms" %>

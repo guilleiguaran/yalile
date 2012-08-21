@@ -17,7 +17,7 @@
 
 class User < ActiveRecord::Base
 
-  paginates_per 3
+  paginates_per 10
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable and :omniauthable, :recoverable, :trackable
@@ -28,8 +28,8 @@ class User < ActiveRecord::Base
 
   # VALIDATIONS
   validates :fullname, presence: true
-  validates :username, presence: true
-  validates :email, presence: true
+  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
 
   # FUNCTION TO FIND A USER THROUGH HIS USERNAME, AND COMPARE THE PASSWORD SENT
   def self.find_user(params={})
@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   end
 
   def valid_status
-    return ["new", 0], ["active", 1], ["inactive", 2]
+    return ["new", 0], ["approved", 1], ["inactive", 2]
   end
 
 end
