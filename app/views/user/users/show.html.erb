@@ -54,12 +54,12 @@
             <tbody>
               <tr>
                 <td>Fecha</td>
-                <td>Valor</td>
+                <td>Total Venta</td>
               </tr>
-              <tr>
-                <td>22 / 12 /  2011 5:43pm</td>
-                <td class="table-status initiated">Initiated</td>
-              </tr>
+              <%= content_tag_for :tr, @last_sales do |last_sale| %>
+                <%= content_tag :td, formatted_time(last_sale.created_at) %>
+                <%= content_tag :td, number_to_currency(last_sale.article_total_price) %>
+              <% end %>
             </tbody>
           </table>
         </div><!--.two-columns-->

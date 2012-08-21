@@ -8,7 +8,7 @@ class User::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @last_sales = @user.sales.order{created_at.desc}.limit(5)
+    @last_sales = @user.sale_transactions.order{created_at.desc}.limit(5)
   end
 
   def new
