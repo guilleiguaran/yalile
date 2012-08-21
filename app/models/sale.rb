@@ -3,7 +3,7 @@
 # Table name: sales
 #
 #  id         :integer          not null, primary key
-#  salesman   :string(255)      not null
+#  user_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -13,14 +13,15 @@ class Sale < ActiveRecord::Base
   paginates_per 10
 
   # ASSOCIATIONS
+  belongs_to :user
   has_many :sale_transactions
   has_many :articles, :through => :sale_transactions
 
   accepts_nested_attributes_for :sale_transactions
-  attr_accessible :salesman, :sale_transactions_attributes
+  attr_accessible :user_id, :sale_transactions_attributes
 
   # VALIDATIONS
-  validates :salesman, :presence => true
+  validates :user_id, presence: true
 
   # CALLBACKS
   before_destroy AvoidDestroy
@@ -31,6 +32,10 @@ class Sale < ActiveRecord::Base
 
   def total_of_sale
     transactions_by_status.sum(:article_total_price)
+  end
+
+  def salesman
+    self.user.username
   end
 
 end

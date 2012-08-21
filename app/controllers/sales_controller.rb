@@ -20,7 +20,7 @@ class SalesController < ApplicationController
   end
 
   def create
-    @sale = Sale.new(params[:sale].merge!(salesman: current_user.username))
+    @sale = Sale.new(params[:sale].merge!(user_id: current_user.id))
     SalesControl.complete_sale(@sale)
     if @sale.save
       SalesControl.reduce_article_stock(@sale)

@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
 
   paginates_per 10
 
+  has_many :sales
+  has_many :sale_transactions, through: :sales
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable and :omniauthable, :recoverable, :trackable
   devise :database_authenticatable, :registerable, :rememberable, :validatable, :timeoutable
