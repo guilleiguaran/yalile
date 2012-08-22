@@ -16,8 +16,8 @@
       </td>
       <td><%= content_tag :span, sale.salesman %></td>
       <td><%= content_tag :span, formatted_time(sale.created_at) %></td>
-      <td><%= content_tag :span, sale.transactions_by_status.count %></td>
-      <td><%= content_tag :span, number_to_currency(sale.total_of_sale) %></td>
+      <td><%= content_tag :span, sale.total_articles %></td>
+      <td><%= content_tag :span, number_to_currency(sale.total) %></td>
     <% end %>
   </tbody>
 </table>

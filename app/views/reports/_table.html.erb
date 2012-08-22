@@ -5,7 +5,7 @@
       <td><span>Producto</span></td>
       <td><span>Artículo</span></td>
       <td><span>No. de Artículos</span></td>
-      <td><span>Total Venta</span></td>
+      <td><span>Total</span></td>
     </tr>
   </thead>
   <tbody>
@@ -13,8 +13,8 @@
       <td><%= content_tag :span, formatted_time(sale_transaction.created_at) %></td>
       <td><%= content_tag :span, sale_transaction.product.name %></td>
       <td><%= content_tag :span, article_label(sale_transaction.article) %></td>
-      <td><%#= content_tag :span, sale_transaction.transactions_by_status.count %></td>
-      <td><%#= content_tag :span, number_to_currency(sale_transaction.total_of_sale) %></td>
+      <td><%= content_tag :span, sale_transaction.quantity_articles %></td>
+      <td><%= content_tag :span, number_to_currency(sale_transaction.quantity_by_price) %></td>
     <% end %>
   </tbody>
 </table>

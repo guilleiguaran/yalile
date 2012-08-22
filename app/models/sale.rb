@@ -18,20 +18,18 @@ class Sale < ActiveRecord::Base
   has_many :articles, :through => :sale_transactions
 
   accepts_nested_attributes_for :sale_transactions
-  attr_accessible :user_id, :sale_transactions_attributes
+  attr_accessible :user_id, :total, :total_articles, :sale_transactions_attributes
 
   # VALIDATIONS
   validates :user_id, presence: true
+  validates :total_articles, presence: true
+  validates :total, presence: true
 
   # CALLBACKS
   before_destroy AvoidDestroy
 
   def transactions_by_status(current_status=0)
     self.sale_transactions.where{status == current_status}
-  end
-
-  def total_of_sale
-    transactions_by_status.sum(:article_total_price)
   end
 
   def salesman

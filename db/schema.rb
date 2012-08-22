@@ -62,9 +62,11 @@ ActiveRecord::Schema.define(:version => 20120515004923) do
   end
 
   create_table "sales", :force => true do |t|
-    t.integer  "user_id",    :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "user_id",        :null => false
+    t.integer  "total_articles", :null => false
+    t.float    "total",          :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   add_index "sales", ["user_id"], :name => "index_sales_on_user_id"

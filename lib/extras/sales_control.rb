@@ -25,6 +25,8 @@ class SalesControl
           when 0
             transaction.update_attributes(status: 1)
             transaction.article_stock(:return)
+            sale.update_attribute(:total, sale.total - transaction.article_unit_price_sold)
+            sale.update_attribute(:total_articles, sale.total_articles - 1)
             return true
           end
         end
@@ -35,12 +37,20 @@ class SalesControl
     private
 
     def article_attributes
+      total_sale = 0
       sale_transactions.each do |sale_transaction|
         article = Article.find_by_id(sale_transaction.article_id)
         sale_transaction.status = 0
         sale_transaction.article_unit_price_sold = article.price
         sale_transaction.article_total_price = sale_transaction.quantity_articles * article.price
+        total_sale += sale_transaction.article_total_price
       end
+      sale_totals(sale_transactions.size, total_sale)
+    end
+
+    def sale_totals(articles, total)
+      sale.total_articles = articles
+      sale.total = total
     end
   end
 end

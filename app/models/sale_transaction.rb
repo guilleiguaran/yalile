@@ -44,7 +44,7 @@ class SaleTransaction < ActiveRecord::Base
   end
 
   def article_stock(type)
-    article = self.article
+    article = article_associated
     case type.to_sym
     when :return
       article.update_attribute(:in_stock, article.in_stock + self.quantity_articles)
@@ -59,6 +59,10 @@ class SaleTransaction < ActiveRecord::Base
       (created_at >= params[:summary_date].to_datetime.at_beginning_of_month) &
       (created_at <= params[:summary_date].to_datetime.at_end_of_month)
     }.order{created_at.desc}
+  end
+
+  def quantity_by_price
+    self.quantity_articles * self.article_unit_price_sold
   end
 
   private
