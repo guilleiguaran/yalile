@@ -24,7 +24,7 @@ var basicActionsHandler = (function (){
   var basicShowAction = function  () {
     $(siteRenderHtml).on("click", "table.main-table.aligncenter tr", function  () {
       var showLink = $(this).children("td:first").find("a.hidden");
-      window.location = showLink.prop("href");
+      if (showLink.length > 0) window.location = showLink.prop("href");
     });
   }
 

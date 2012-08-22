@@ -45,9 +45,9 @@
         <div class="two-irregularbox">
           <div class="small floatleft">
             <%= content_tag :h3, "Listado de Artículos Activos", class: :details %>
-            <%= articles_list @saletransactions %>
+            <%= articles_list @saletransactions, @sale %>
             <%= content_tag :h3, "Listado de Artículos Devueltos", class: :details %>
-            <%= articles_list @refundsaletransactions, @sale %>
+            <%= articles_list @refundsaletransactions %>
           </div><!--.small-->
         </div><!--.two-irreguralbox-->
       </div><!--.wrapp-box-->

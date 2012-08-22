@@ -47,9 +47,9 @@ class SaleTransaction < ActiveRecord::Base
     article = article_associated
     case type.to_sym
     when :return
-      article.update_attribute(:in_stock, article.in_stock + self.quantity_articles)
+      article.update_column(:in_stock, article.in_stock + self.quantity_articles)
     when :sell
-      article.update_attribute(:in_stock, article.in_stock - self.quantity_articles)
+      article.update_column(:in_stock, article.in_stock - self.quantity_articles)
     end
   end
 

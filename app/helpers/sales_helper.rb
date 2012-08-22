@@ -15,7 +15,7 @@ module SalesHelper
       list_html.concat(content_tag(:div, class: details_articles_sale(saletransactions, index)) do
         concat(content_tag(:ul, class: "texter-list") do
           concat(content_tag :li, saletransaction.quantity_articles.to_s + " " + article_label(saletransaction.article_associated))
-          concat(content_tag :li, link_to("Devolver", [sale, saletransaction], class: :remove, method: :delete)) if saletransaction.status.eql?(0)
+          concat(content_tag :li, link_to("Devolver", sale_transaction_path(sale, saletransaction), class: :remove, method: :delete)) if saletransaction.status.eql?(0)
         end)
       end)
     end
