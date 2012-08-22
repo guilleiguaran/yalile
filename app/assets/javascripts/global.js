@@ -43,9 +43,10 @@ var globalJavascriptFile = (function  () {
   });
   
   var datepickerSkin = function  () {
-    $(".datepicker-call").datepicker({
+    $(".datepicker").datepicker({
       changeMonth: true,
-      changeYear: true
+      changeYear: true,
+      dateFormat: "dd/mm/yy"
     });
   }
 

@@ -1,0 +1,11 @@
+<div class="box-default head-table clearfix">
+  <%= simple_form_for :search, url: reports_path, defaults: {wrapper_html: {class: :datepicker}, input_html: {class: "datepicker text", maxlength: 8, readonly: true}}, html: {method: :get} do |form| %>
+    <div class="four-fieldset clearfix more-separate">
+      <%= form.input :initial_date, label: content_tag(:strong,"Fecha de Inicio"), placeholder: "DD/MM/YYYY" %>
+      <%= form.input :final_date, label: content_tag(:strong,"Fecha Fin"), placeholder: "DD/MM/YYYY" %>
+      <fieldset class="btn-alone last">
+        <%= content_tag :div, form.button(:submit, value: "Buscar"), class: "btn-green" %>
+      </fieldset>
+    </div><!--.four-fieldset-->
+  <% end %>
+</div>

@@ -20,6 +20,7 @@ class SaleTransaction < ActiveRecord::Base
   paginates_per 10
   
   # ASSOCIATIONS
+  has_one :product, through: :article
   belongs_to :sale
   belongs_to :article
 

@@ -32,14 +32,16 @@ Yalile::Application.routes.draw do
       put "update_profile" => "users#update_profile", on: :member, as: :update
     end
   end
-  
+
+  # ================ USERS REPORTS =========================================================
+  resources :reports, only: :index
 
   # ================ INFORMATIONS ROUTES ===================================================
   get ":resource/information" => "informations#index", as: :informations
   get ":resource/:id/information" => "informations#show", as: :get_information
 end
 #== Route Map
-# Generated on 05 Aug 2012 17:44
+# Generated on 21 Aug 2012 22:43
 #
 #        user_registration POST   /user(.:format)                                 devise/registrations#create
 #    new_user_registration GET    /user/sign_up(.:format)                         devise/registrations#new
@@ -63,9 +65,13 @@ end
 #                 new_sale GET    /sales/new(.:format)                            sales#new
 #                     sale GET    /sales/:id(.:format)                            sales#show
 #        sale_transactions GET    /sale-transactions(.:format)                    sale_transactions#index
+#              update_user PUT    /users/:id/update_profile(.:format)             user/users#update_profile
 #                    users GET    /users(.:format)                                user/users#index
 #                          POST   /users(.:format)                                user/users#create
 #                 new_user GET    /users/new(.:format)                            user/users#new
 #                edit_user GET    /users/:id/edit(.:format)                       user/users#edit
+#                     user GET    /users/:id(.:format)                            user/users#show
+#                          PUT    /users/:id(.:format)                            user/users#update
+#                  reports GET    /reports(.:format)                              reports#index
 #             informations GET    /:resource/information(.:format)                informations#index
 #          get_information GET    /:resource/:id/information(.:format)            informations#show
