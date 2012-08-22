@@ -4,6 +4,8 @@
       <td><span>Código</span></td>
       <td><span>Vendedor</span></td>
       <td><span>Fecha</span></td>
+      <td><span>No. de Artículos</span></td>
+      <td><span>Total Venta</span></td>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +16,8 @@
       </td>
       <td><%= content_tag :span, sale.salesman %></td>
       <td><%= content_tag :span, formatted_time(sale.created_at) %></td>
+      <td><%= content_tag :span, sale.transactions_by_status.count %></td>
+      <td><%= content_tag :span, number_to_currency(sale.total_of_sale) %></td>
     <% end %>
   </tbody>
 </table>

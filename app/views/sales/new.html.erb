@@ -1,5 +1,4 @@
 <% title "Nueva Venta" %>
-
 <div class="wrapper clearfix">
   <%= render "shared/common/leftpanel" %>
   <div class="content-right clearfix">
@@ -16,12 +15,12 @@
           <%= render "header_actions", form: form, class_div: "cancel-save"  %>
         <% end %>
       </div><!-- box-default rounder-all-five marginbottom clearfix box-app END -->
-      <%= link_to :back, class: "btn-back" do %>
+      <%= render "sale_information" %>
+      <%= link_to :back, class: "clear btn-back" do %>
         <%= content_tag :span %> Atras
       <% end %>
     </div><!--.content-main END -->
     <%= render "shared/common/footer" %>
   </div><!-- content-right clearfix END -->
 </div><!-- wrapper clearfix END -->
-
 <% javascripts "saleAction" %>

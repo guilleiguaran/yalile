@@ -2,38 +2,36 @@
   <div class="header-top">
     <ul class="welcome">
       <% if current_user %>
-      <%= content_tag :li, "Hola! #{current_user.fullname}" %>
-      <li class="config">
-        <%= link_to "", "javascript:void(0);" %>
-        <div class="config-box">
-          <ul>
-            <li><%= link_to "Perfil", edit_user_path(current_user.id) %></li>
-            <li><%= link_to "Cambiar Contraseña", "javascript:void(0);" %></li>
-            <li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
-          </ul>
-        </div><!-- config-box END-->
-      </li><!-- config END -->
+        <%= content_tag :li, "Hola! #{current_user.fullname}" %>
+        <li class="config">
+          <%= link_to "", "javascript:void(0);" %>
+          <div class="config-box">
+            <ul>
+              <li><%= link_to "Mi Perfil", edit_user_path(current_user.id) %></li>
+              <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </div><!-- config-box END-->
+        </li><!-- config END -->
+      <% end %>
     </ul><!-- welocome END -->
-    <% end %>
   </div><!-- header-top END -->
   <div class="nav-bar">
     <% if current_user %>
     <div class="config select-type">
       <% if current_user.is_admin? %>
-      <%= link_to "Administrador", "javascript:void(0);" %>
-      <div class="config-box">
-        <ul>
-          <li><%= link_to "Resumen de Ventas", sales_path %></li>
-          <li><%= link_to "Manejo de Usuarios", users_path %></li>
-          <li><%= link_to "Devolver Artículo", "javascript:void(0);" %></li>
-        </ul>
-      </div><!-- config-box END -->
+        <%= link_to "Administrador", "javascript:void(0);" %>
+        <div class="config-box">
+          <ul>
+            <li><%= link_to "Resumen de Ventas", sales_path %></li>
+            <li><%= link_to "Manejo de Usuarios", users_path %></li>
+          </ul>
+        </div><!-- config-box END -->
       <% end%>
     </div><!-- config select-type END -->
     <ul class="nav">
       <li><%= link_to "Ventas", new_sale_path, class: "dashboard" %></li>
-      <li><%= link_to "Transacciones", "javascript:void(0);", class: "transaction" %></li>
       <li><%= link_to "Productos", products_path, class: "application" %></li>
+      <li><%= link_to "Transacciones", sales_path, class: "transaction" %></li>
       <li><%= link_to "Inventario", "javascript:void(0);", class: "support" %></li>
       <li><%= link_to "Usúarios", users_path, class: "colleagues" %></li>
     </ul><!-- nav END -->

@@ -14,7 +14,7 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #
-
+# USER STATUS [0,1,2] = [ACTIVE, APPROVED, INACTIVE]
 class User < ActiveRecord::Base
 
   paginates_per 10
@@ -32,7 +32,8 @@ class User < ActiveRecord::Base
   # VALIDATIONS
   validates :fullname, presence: true
   validates :username, presence: true, uniqueness: true
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true
+  validates :status, inclusion: {in: 0..2}
 
   # FUNCTION TO FIND A USER THROUGH HIS USERNAME, AND COMPARE THE PASSWORD SENT
   def self.find_user(params={})

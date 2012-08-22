@@ -37,11 +37,7 @@
           <ul class="details first-big clearfix">
             <li>
               <label><strong>Estado Actual:</strong></label>
-              <%= content_tag :span, @user.status %>
-            </li>
-            <li>
-              <label><strong>No. Veces Logueado:</strong></label>
-              <%= content_tag :span, @user.sign_in_count %>
+              <%= content_tag :span, icon_table_helper(:title, @user.status) %>
             </li>
           </ul>
         </div><!--.box-default-->
@@ -49,7 +45,7 @@
       
       <div class="wrapp-box clearfix">
         <div class="two-columns floatleft box-summary">
-          <%= content_tag :h3, "Ultimas Ventas Del Usuário", class: :details %>
+          <%= content_tag :h3, "Últimas Ventas Del Usuário", class: :details %>
           <table class="status-history">
             <tbody>
               <tr>

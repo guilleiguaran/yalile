@@ -13,6 +13,8 @@
 #  updated_at              :datetime         not null
 #
 
+# SALE TRANSACTION STATUS [0,1] = [ACTIVE, RETURNED]
+
 class SaleTransaction < ActiveRecord::Base
 
   paginates_per 10
@@ -26,7 +28,7 @@ class SaleTransaction < ActiveRecord::Base
   validate :article_id_existance
   validate :enough_articles
   validates :article_id, presence: true
-  validates :status, presence: true
+  validates :status, presence: true, inclusion: {in: 0..1}, numericality: {integer: true}
   validates :quantity_articles, presence:  true, inclusion: {in: 0..20}, numericality: {integer: true}
   validates :article_total_price, presence:  true, numericality: {greater_than: 0, integer: true}
   validates :article_unit_price_sold, presence:  true, numericality: {greater_than: 0, integer: true}

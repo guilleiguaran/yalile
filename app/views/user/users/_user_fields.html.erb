@@ -1,5 +1,5 @@
 <div class="four-fieldset clearfix">
-  <%= form.input :status, collection: @user.valid_status, input_html: {class: "skin-select"}, include_blank: false %>
+  <%= form.input :status, label: "Estado", collection: @user.valid_status, input_html: {class: "skin-select"}, include_blank: false %>
   <%= form.input :fullname, label: "Nombre", wrapper_html: {class: :big}, input_html: {maxlength: 40} %>
   <%= form.input :email, label: "Email", wrapper_html: {class: "medium last"}, input_html: {maxlength: 30} %>
   <%= form.input :username, label: "Nombre de Usuário", input_html: {maxlength: 15} %>

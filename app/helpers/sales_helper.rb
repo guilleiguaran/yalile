@@ -23,14 +23,14 @@ module SalesHelper
   end
 
   def details_articles_sale(saletransactions, index)
-    div_class = "box-default "
+    div_class = "box-default marginbottom"
     case index
     when 0
-      div_class.concat("head-table")
+      div_class.concat(" head-table")
     when saletransactions.size - 1
-      div_class.concat("box-bottom")
+      div_class.concat(" box-bottom")
     else
-      div_class.concat("box-center")
+      div_class.concat(" box-center")
     end
   end
 

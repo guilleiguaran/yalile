@@ -21,7 +21,7 @@ class User::UsersController < ApplicationController
     if @user.save
       @response = {status: :success}
     else
-      @response = {status: :error, errors: @user.erros.messages}
+      @response = {status: :error, errors: @user.errors}
     end
     render json: @response
   end
@@ -37,7 +37,7 @@ class User::UsersController < ApplicationController
     if @user.update_attributes(params[:user])
       @response = {status: :success}
     else
-      @response = {status: :error, errors: @user.errors.messages}
+      @response = {status: :error, errors: @user.errors}
     end
     render json: @response
   end

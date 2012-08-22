@@ -1,8 +1,10 @@
 var saleAction = (function  () {
   var saleAction = {};
 
-  var salesContainer = "div.four-fieldset.clearfix:last";
   var salesForm = "#sale_form";
+  var totalOfArticles = "#total_of_articles";
+  var totalOfSale = "#total_of_sale";
+  var salesContainer = "div.four-fieldset.clearfix:last";
   var salesAddArticle = ".add-article";
 
   var articleSelected = undefined;
@@ -75,6 +77,21 @@ var saleAction = (function  () {
     var quantityArticles = parseFloat(quantityArticlesInputText.val());
     var unitPriceArticle = parseFloat(unitPriceArticleInputText.val());
     totalPriceArticleInputText.val(quantityArticles * unitPriceArticle);
+    saleDescriptionInformation();
+    return false;
+  }
+
+  var saleDescriptionInformation = function  () {
+    var totalArticles = 0;
+    var totalSale = 0;
+    $("input[type=text][name*=quantity_articles]").each(function  (index, element) {
+      totalArticles += parseFloat(element.value);
+    });
+    $(totalOfArticles).html(totalArticles);
+    $("input[type=text][name*=article_total_price]").each(function  (index, element) {
+      totalSale += parseFloat(element.value);
+    });
+    $(totalOfSale).html("$ " + totalSale);
     return false;
   }
 

@@ -104,11 +104,14 @@ var basicActionsHandler = (function (){
   
   var basicActionCallback = function  (jsonResponse) {
     if (jsonResponse.status === "success") {
-      console.log(jsonResponse);
       window.location.reload();
     } else{
-      alert(jsonResponse.errors);
-      console.log(jsonResponse.errors);
+      var errorMessages = "";
+      $.each(jsonResponse.errors, function  (key, errors) {
+        var keys_array = key.split(".");
+        errorMessages += keys_array[keys_array.length - 1] + ": " + errors.join(",") + "\n";
+      });
+      alert(errorMessages);
     };
   };
 
