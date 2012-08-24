@@ -23,6 +23,10 @@
               <%= content_tag :span, formatted_time(@sale.created_at) %>
             </li>
             <li>
+              <%= content_tag :label, content_tag(:strong, "Unidades Vendidas") %>
+              <%= content_tag :span, @saletransactions.sum(:quantity_articles) %>
+            </li>
+            <li>
               <%= content_tag :label, content_tag(:strong, "Total De la Venta") %>
               <%= content_tag :span, number_to_currency(@sale.total) %>
             </li>
@@ -31,12 +35,8 @@
         <div class="box-default box-bottom">
           <ul class="details clearfix">
             <li>
-              <%= content_tag :label, content_tag(:strong, "Articulos Vendidos") %>
-              <%= content_tag :span, @sale.total_articles %>
-            </li>
-            <li>
-              <%= content_tag :label, content_tag(:strong, "Articulos Devueltos") %>
-              <%= content_tag :span, @refundsaletransactions.count %>
+              <%= content_tag :label, content_tag(:strong, "Unidades Devueltas") %>
+              <%= content_tag :span, @refundsaletransactions.sum(:quantity_articles) %>
             </li>
           </ul>
         </div><!--.box-default-->
@@ -44,11 +44,13 @@
       <div class="wrapp-box clearfix">
         <div class="two-irregularbox">
           <div class="small floatleft">
-            <%= content_tag :h3, "Listado de Artículos Activos", class: :details %>
+            <%= content_tag :h3, "Detalle Unidades Vendidas", class: :details %>
             <%= articles_list @saletransactions, @sale %>
-            <%= content_tag :h3, "Listado de Artículos Devueltos", class: :details %>
+          </div><!-- .small floatleft END -->
+          <div class="small floatright">
+            <%= content_tag :h3, "Detalle Unidades Devueltas", class: :details %>
             <%= articles_list @refundsaletransactions %>
-          </div><!--.small-->
+          </div><!-- .small floatright END -->
         </div><!--.two-irreguralbox-->
       </div><!--.wrapp-box-->
       <%= link_to content_tag(:span) + "Ventas", sales_path, class: "btn-back" %>
