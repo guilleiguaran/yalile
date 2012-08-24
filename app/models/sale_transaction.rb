@@ -66,7 +66,7 @@ class SaleTransaction < ActiveRecord::Base
   end
 
   def self.report(params={})
-    today = DateTime.now.in_time
+    today = DateTime.now
     logger.info(today)
     params ||= {initial_date: today.at_beginning_of_hour, final_date: today.end_of_hour}
     where{
