@@ -27,7 +27,7 @@ class SaleTransaction < ActiveRecord::Base
   # VALIDATIONS
   validates_associated :sale
   validate :article_id_existance
-  validate :enough_articles
+  #validate :enough_articles
   validates :article_id, presence: true
   validates :status, presence: true, inclusion: {in: 0..1}, numericality: {integer: true}
   validates :quantity_articles, presence:  true, inclusion: {in: 0..20}, numericality: {integer: true}
@@ -84,11 +84,13 @@ class SaleTransaction < ActiveRecord::Base
     article_verified = Article.find_by_id(self.article_id)
     if !article_verified
       errors.add(:article_id, "Este item no existe en la base de datos.")
+    else
+      enough_articles(article_verified)
     end
   end
 
-  def enough_articles
-    if article_verified && article_verified.in_stock < self.quantity_articles
+  def enough_articles(article_verified)
+    if article_verified.in_stock < self.quantity_articles
       errors.add(:quantity_articles, "No hay suficientes articulos para vender.")
     end
   end

@@ -26,7 +26,7 @@ class SalesController < ApplicationController
       SalesControl.reduce_article_stock(@sale)
       redirect_to @sale
     else
-      render :new
+      redirect_to new_sale_path
     end
   end
 
