@@ -7,8 +7,8 @@ var validationForm = (function  () {
   var userForm = "#user_form";
 
   $(document).ready(function  () {
+    $(formForRender).on("load", formValidationFunctions);
     editUserProfile();
-    $(formForRender).on("change", formValidationFunctions);
   });
 
   var formValidationFunctions = function  () {

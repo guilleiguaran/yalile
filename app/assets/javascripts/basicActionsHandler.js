@@ -51,7 +51,7 @@ var basicActionsHandler = (function (){
   }
 
   var insertHtml = function  (jsonResponse) {
-    $(basicDivHtmlRender).html(jsonResponse.html).removeClass("hidden").triggerHandler("change");
+    $(basicDivHtmlRender).html(jsonResponse.html).removeClass("hidden").trigger("load");
     setSelectsSkin();
     basicActionCancel();
     return false;
@@ -139,5 +139,22 @@ var basicActionsHandler = (function (){
     return false;
   }
 
+  var disableNextInputText = function  () {
+    console.log(this);
+    return false;
+  }
+
+  var disableInputText = function  (element, inputId) {
+    inputIdTextToDisable = $(inputId);
+    if (element.value !== "") {
+      inputIdTextToDisable.attr("disabled", "disabled");
+      inputIdTextToDisable.val("");
+    }
+    else{
+      inputIdTextToDisable.removeAttr("disabled");
+    };
+  }
+
+  basicActionsHandler.disableInputText = disableInputText;
   return basicActionsHandler;
 })();

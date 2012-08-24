@@ -1,6 +1,6 @@
 <%= simple_form_for @product, html: {id: "product_form"}, defaults: {input_html: {class: "text"}} do |form| %>
   <div class="four-fieldset clearfix">
-    <%= form.input :code, label: "Productos:", collection: @products, prompt: "Elija un producto", input_html: {class: "skin-select"}, wrapper: nil %>
+    <%= form.input :code, label: "Productos:", collection: @products, prompt: "Elija un producto", input_html: {class: "skin-select", onchange: "basicActionsHandler.disableInputText(this, '#product_name');"}, wrapper: nil %>
     <%= form.input :name, label: "Nombre del Producto:", placeholder: "O ingrese un nombre nuevo ...", input_html: {maxlength: 30}, wrapper_html: {class: "bigest"} %>
   </div><!--.four-fieldset-->
   <div class="four-fieldset clearfix more-separate cancel-save">
