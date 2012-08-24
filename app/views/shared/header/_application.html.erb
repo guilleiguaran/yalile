@@ -22,14 +22,15 @@
         <%= link_to "Administrador", "javascript:void(0);" %>
         <div class="config-box">
           <ul>
-            <li><%= link_to "Resumen de Ventas", sales_path %></li>
+            <li><%= link_to "Listado de Ventas", sales_path %></li>
+            <li><%= link_to "Resumen de Ventas", reports_path %></li>
             <li><%= link_to "Manejo de Usuarios", users_path %></li>
           </ul>
         </div><!-- config-box END -->
       <% end%>
     </div><!-- config select-type END -->
     <ul class="nav">
-      <li><%= link_to "Ventas", new_sale_path, class: "dashboard" %></li>
+      <li><%= link_to "Nueva Venta", new_sale_path, class: "dashboard" %></li>
       <li><%= link_to "Productos", products_path, class: "application" %></li>
       <li><%= link_to "Transacciones", sales_path, class: "transaction" %></li>
       <li><%= link_to "Inventario", "javascript:void(0);", class: "support" %></li>

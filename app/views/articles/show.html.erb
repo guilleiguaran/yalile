@@ -57,7 +57,7 @@
             </li>
             <li>
               <label><strong>Valor:</strong></label>
-              <%= content_tag :span, @article.price %>
+              <%= content_tag :span, number_to_currency(@article.price) %>
             </li>
           </ul>
         </div><!--.box-default-->

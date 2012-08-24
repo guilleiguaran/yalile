@@ -25,7 +25,7 @@ class SalesControl
           when 0
             transaction.update_attributes(status: 1)
             transaction.article_stock(:return)
-            sale.update_column(:total, sale.total - transaction.article_unit_price_sold)
+            sale.update_column(:total, sale.total - transaction.article_total_price)
             sale.update_column(:total_articles, sale.total_articles - 1)
             return true
           end

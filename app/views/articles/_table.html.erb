@@ -14,7 +14,7 @@
         <%= link_to "", product_article_path(params[:product_id], article.id), class: "hidden" %>
         <%= content_tag :span, article.code %>
       </td>
-      <td><%= content_tag :span, article.price %></td>
+      <td><%= content_tag :span, number_to_currency(article.price) %></td>
       <td><%= content_tag :span, article.size %></td>
       <td><%= content_tag :span, article.description %></td>
       <td><%= content_tag :span, article.in_stock %></td>

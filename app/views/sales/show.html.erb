@@ -23,10 +23,6 @@
               <%= content_tag :span, formatted_time(@sale.created_at) %>
             </li>
             <li>
-              <%= content_tag :label, content_tag(:strong, "Articulos Vendidos") %>
-              <%= content_tag :span, @saletransactions.count %>
-            </li>
-            <li>
               <%= content_tag :label, content_tag(:strong, "Total De la Venta") %>
               <%= content_tag :span, number_to_currency(@sale.total) %>
             </li>
@@ -34,6 +30,10 @@
         </div><!--box-default head-table END -->
         <div class="box-default box-bottom">
           <ul class="details clearfix">
+            <li>
+              <%= content_tag :label, content_tag(:strong, "Articulos Vendidos") %>
+              <%= content_tag :span, @sale.total_articles %>
+            </li>
             <li>
               <%= content_tag :label, content_tag(:strong, "Articulos Devueltos") %>
               <%= content_tag :span, @refundsaletransactions.count %>

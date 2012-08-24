@@ -53,6 +53,10 @@ class SaleTransaction < ActiveRecord::Base
     end
   end
 
+  def quantity_by_price
+    self.quantity_articles * self.article_unit_price_sold
+  end
+
   def self.summary(params={})
     where{
       (status == 0) & (article_id == params[:article_id]) &
@@ -61,8 +65,15 @@ class SaleTransaction < ActiveRecord::Base
     }.order{created_at.desc}
   end
 
-  def quantity_by_price
-    self.quantity_articles * self.article_unit_price_sold
+  def self.report(params={})
+    today = DateTime.now.in_time
+    logger.info(today)
+    params ||= {initial_date: today.at_beginning_of_hour, final_date: today.end_of_hour}
+    where{
+      (status.eq 0) &
+      (created_at >= params[:initial_date]) &
+      (created_at <= params[:final_date])
+    }.group{[article_id, sale_id]}.order{created_at.desc}
   end
 
   private
