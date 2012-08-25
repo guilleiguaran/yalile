@@ -1,18 +1,13 @@
 <div class="head-table box-default clearfix">
-  <%= simple_form_for :filter, html: {id: "site_filter_form"}, defaults: {input_html: {class: "text"}} do |form| %>
-    <div id="input_search_container" class="box-search">
-      <%= form.input :text_value, label: "Buscar Por:", wrapper_html: {class: "input-search"}, input_html: {id: "input_search_text_field", placeholder: "Bucar aqui por ..."} %>
-      <%= form.input :name, collection: ["Nombre"], as: :radio, label: false, collection_wrapper_class: "list-radios clearfix", input_html: {class: nil}, value_method: :downcase %>
-    </div><!-- box-search END -->
-    <div class="data-time">
-      <div class="two-fieldset clearfix">
-        <%= form.input :initial_date, label: "Fecha Inicial:", input_html: {class: "datepicker-call datepicker text", placeholder: "DD / MM / YYYY"} %>
-        <%= form.input :final_date, label: "Fecha Final:", input_html: {class: "datepicker-call datepicker text", placeholder: "DD / MM / YYYY"}, wrapper_html: {class: "last"} %>
-      </div><!-- two-fieldset clearfix END -->
-      <fieldset>
-        <%= content_tag :label, "Tipo de Dato:" %>
-        <%= form.input :created_at, collection: ["Creado"], as: :radio, label: false, collection_wrapper_class: "list-radios clearfix", input_html: {class: nil}, value_method: :downcase %>
+  <%= search_form_for @search do |form| %>
+    <div class="four-fieldset clearfix more-separate">
+      <fieldset class="big">
+        <%= form.label :name_cont, "Nombre Del Producto" %>
+        <%= form.text_field :name_cont, class: :text %>
       </fieldset>
-    </div><!-- data-time END -->
+      <fieldset class="btn-alone last">
+        <%= content_tag :div, form.submit("Buscar"), class: "btn-green" %>
+      </fieldset>
+    </div><!-- four-fieldset clearfix more-separate END -->
   <% end %>
 </div><!--.head-table-->
