@@ -4,7 +4,7 @@ var inputMasks = (function  () {
   var formForRender = "#form_for_html_render";
 
   $(document).ready(function  () {
-    $(formForRender).on("change", loadMasks);
+    $(formForRender).on("load", loadMasks);
   });
   
   var loadMasks = function  () {
@@ -15,7 +15,7 @@ var inputMasks = (function  () {
   var numericInputs = function  () {
     $("input[type='text'].mnumeric").each(function  () {
       var textInput = $(this);
-      textInput.inputmask({"mask": "9", "repeat": textInput.prop("maxlength"), "greedy": false });
+      textInput.inputmask({"mask": "9", "repeat": textInput.prop("maxlength"), "greedy": false});
     });
   }
   
