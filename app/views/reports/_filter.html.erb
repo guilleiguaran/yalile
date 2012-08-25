@@ -4,7 +4,7 @@
       <%= form.input :initial_date, label: content_tag(:strong,"Fecha de Inicio"), placeholder: "DD/MM/YYYY" %>
       <%= form.input :final_date, label: content_tag(:strong,"Fecha Fin"), placeholder: "DD/MM/YYYY" %>
       <fieldset class="btn-alone last">
-        <%= content_tag :div, form.button(:submit, value: "Buscar"), class: "btn-green" %>
+        <%= content_tag :div, form.button(:submit, value: "Buscar", name: nil), class: "btn-green" %>
       </fieldset>
     </div><!--.four-fieldset-->
   <% end %>

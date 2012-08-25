@@ -4,7 +4,8 @@
       <td><span>Código</span></td>
       <td><span>Vendedor</span></td>
       <td><span>Fecha</span></td>
-      <td><span>No. de Artículos</span></td>
+      <td><span>Unidades Devueltas</span></td>
+      <td><span>Unidades Vendidas</span></td>
       <td><span>Total Venta</span></td>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       </td>
       <td><%= content_tag :span, sale.salesman %></td>
       <td><%= content_tag :span, formatted_time(sale.created_at) %></td>
+      <td><%= content_tag :span, sale.transactions_by_status(1).count %></td>
       <td><%= content_tag :span, sale.total_articles %></td>
       <td><%= content_tag :span, number_to_currency(sale.total) %></td>
     <% end %>

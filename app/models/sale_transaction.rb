@@ -66,14 +66,14 @@ class SaleTransaction < ActiveRecord::Base
   end
 
   def self.report(params={})
-    today = DateTime.now
-    logger.info(today)
-    params ||= {initial_date: today.at_beginning_of_hour, final_date: today.end_of_hour}
-    where{
-      (status.eq 0) &
-      (created_at >= params[:initial_date]) &
-      (created_at <= params[:final_date])
-    }.group{[article_id, sale_id]}.order{created_at.desc}
+    if !params.blank?
+      return where{
+        (status.eq 0) &
+        (created_at >= params[:initial_date]) &
+        (created_at <= params[:final_date])
+      }.group{[article_id, sale_id]}.order{created_at.desc}
+    end
+    []
   end
 
   private

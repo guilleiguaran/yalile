@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
       params.each do |key, value|
         case key
         when /initial_date/
-          params[key] = datetime_converter(value + " 00:00:00 R")
+          params[key] = datetime_converter(value)
         when /final_date/
-          params[key] = datetime_converter(value + " 23:59:59 R")
+          params[key] = datetime_converter(value, :end)
         end
       end
     end
@@ -16,8 +16,14 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def datetime_converter(date_string)
-    date_string.to_datetime
+  def datetime_converter(date_string, period = :start)
+    date_string = Date.today.to_s if date_string.blank?
+    case period
+    when :start
+      date_string.concat(" 00:00:00 R").to_datetime
+    when :end
+      date_string.concat(" 23:59:59 R").to_datetime
+    end
   end
 
 end
