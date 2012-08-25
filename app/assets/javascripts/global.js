@@ -46,7 +46,9 @@ var globalJavascriptFile = (function  () {
     $(".datepicker").datepicker({
       changeMonth: true,
       changeYear: true,
-      dateFormat: "dd/mm/yy"
+      dateFormat: "dd/mm/yy",
+      showButtonPanel: true,
+      closeText: "Cerrar"
     });
   }
 

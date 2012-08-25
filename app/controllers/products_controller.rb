@@ -6,7 +6,6 @@ class ProductsController < ApplicationController
   def index
     @search = Product.search(params[:q])
     @products = @search.result.order{created_at.desc}.page(params[:page])
-    #@products = Product.order{created_at.desc}.page(params[:page])
     if request.xhr?
       render json: {html: render_to_string(partial: "table", layout: false)}
     end
