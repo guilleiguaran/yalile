@@ -3,7 +3,7 @@
     <div class="four-fieldset clearfix more-separate">
       <fieldset class="big">
         <%= form.label :name_cont, "Nombre Del Producto" %>
-        <%= form.text_field :name_cont, class: :text %>
+        <%= form.text_field :name_cont, class: :text, maxlength: 40 %>
       </fieldset>
       <fieldset class="btn-alone last">
         <%= content_tag :div, form.submit("Buscar"), class: "btn-green" %>
