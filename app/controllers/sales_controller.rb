@@ -1,7 +1,9 @@
 class SalesController < ApplicationController
 
   def index
-    @sales = Sale.where{}.page(params[:page])
+    @search = Sale.search(params[:q])
+    @sales =  @search.result.page(params[:page])
+    # @sales = Sale.where{}.page(params[:page])
     if request.xhr?
       render json: {html: render_to_string(partial: "table")}
     end
