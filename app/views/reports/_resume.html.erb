@@ -6,11 +6,11 @@
         <ul class="list-price clearfix">
           <li>
             <strong>Fecha Inicial:</strong>
-            <%= content_tag :span %>
+            <%= content_tag :span, formatted_time(@search.created_at_gteq) %>
           </li>
           <li>
             <strong>Fecha Final:</strong>
-            <%= content_tag :span %>
+            <%= content_tag :span, formatted_time(@search.created_at_lteq) %>
           </li>
         </ul><!-- list-price clearfix END -->
         <ul class="list-price net clearfix">
