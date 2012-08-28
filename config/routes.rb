@@ -41,7 +41,7 @@ Yalile::Application.routes.draw do
   get ":resource/:id/information" => "informations#show", as: :get_information
 end
 #== Route Map
-# Generated on 21 Aug 2012 22:43
+# Generated on 28 Aug 2012 00:21
 #
 #        user_registration POST   /user(.:format)                                 devise/registrations#create
 #    new_user_registration GET    /user/sign_up(.:format)                         devise/registrations#new

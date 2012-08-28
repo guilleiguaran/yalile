@@ -13,6 +13,12 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
+# Indexes
+#
+#  index_articles_on_code         (code) UNIQUE
+#  index_articles_on_description  (description)
+#  index_articles_on_size         (size)
+#
 
 class Article < ActiveRecord::Base
 
