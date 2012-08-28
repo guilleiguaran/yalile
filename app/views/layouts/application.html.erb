@@ -16,9 +16,7 @@
   <!--[if (gte IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
     <div id="wrapper">
       <%= render "shared/header/application" %>
-      <div id="content" class="clearfix">
-        <%= yield %>
-      </div><!-- #content END -->
+      <%= content_tag :div, yield, id: :content, class: :clearfix %>
     </div><!-- #wrapper END -->
     <footer id="footer">
       <!--[if (gte IE 6)&(lte IE 8)]>
