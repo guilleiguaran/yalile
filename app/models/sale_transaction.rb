@@ -68,7 +68,7 @@ class SaleTransaction < ActiveRecord::Base
   def self.report
     where{
       (status.eq 0)
-    }.group{[article_id, sale_id]}.order{created_at.desc}
+    }.group{[id, article_id, sale_id]}.order{created_at.desc}
   end
 
   private
