@@ -1,19 +1,21 @@
-<div class="head-table box-default clearfix">
-  <form>
-    <div class="box-search-filter clearfix">
+<div class="box-default clearfix head-table box-app">
+  <%= search_form_for @search, url: product_articles_path do |form| %>
+    <div class="four-fieldset clearfix">
       <fieldset>
-        <label>Search by Code</label>
-        <input class="text" type="text">
+        <%= form.label :code_cont, "Código" %>
+        <%= form.text_field :code_cont, class: :text %>
+      </fieldset>
+      <fieldset class="big">
+        <%= form.label :description_cont, "Referencia" %>
+        <%= form.text_field :description_cont, class: :text %>
       </fieldset>
       <fieldset>
-        <label>Search by Code</label>
-        <input class="text" type="text">
+        <%= form.label :size_cont, "Talla" %>
+        <%= form.text_field :size_cont, class: :text %>
       </fieldset>
       <fieldset class="btn-alone last">
-        <div class="btn-green">
-          <input type="submit", value="Search">
-        </div>
+        <%= content_tag :div, form.submit("Buscar", name: nil), class: "btn-green" %>
       </fieldset>
-    </div><!-- box-search-filter clearfix END -->
-  </form>
-</div><!-- head-table box-default clearfix END -->
+    </div><!-- four-fieldset clearfix END -->
+  <% end %>
+</div><!-- box-default clearfix head-table box-app END  -->

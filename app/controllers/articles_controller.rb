@@ -1,10 +1,10 @@
 class ArticlesController < ApplicationController
 
-  before_filter :find_product, :only => [:show, :new, :create]
+  before_filter :find_product, :only => [:index, :show, :new, :create]
 
   def index
-    pi = params[:product_id]
-    @articles = Article.joins{product}.where{product_id == pi}.page(params[:page])
+    @search = @product.articles.search(params[:q])
+    @articles = @search.result.page(params[:page])
     if request.xhr?
       render json: {html: render_to_string(partial: "table", layout: false)}
     end
