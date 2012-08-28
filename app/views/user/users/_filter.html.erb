@@ -2,21 +2,13 @@
   <%= search_form_for @search do |form| %>
     <div class="four-fieldset clearfix">
       <fieldset>
-        <%= form.label :username_cont, "Usuário" %>
+        <%= form.label :username_cont, "Usuário:" %>
         <%= form.text_field :username_cont, class: :text %>
       </fieldset>
       <fieldset>
-        <%= form.label :email_cont, "Email" %>
+        <%= form.label :email_cont, "Email:" %>
         <%= form.text_field :email_cont, class: :text %>
       </fieldset>
-      <!--
-      <fieldset>
-        <label>Search by Status</label>
-        <select class="skin-select">
-          <option>Lorem ipsum</option>
-        </select>
-      </fieldset>
-      -->
       <fieldset class="btn-alone last">
         <%= content_tag :div, form.submit("Buscar", value: nil), class: "btn-green" %>
       </fieldset>

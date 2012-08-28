@@ -2,11 +2,11 @@
   <%= search_form_for @search, url: reports_path, html: {method: :get} do |form| %>
     <div class="four-fieldset clearfix more-separate">
       <fieldset class="datepicker">
-        <%= form.label :created_at_gteq, content_tag(:strong, "Fecha Inicial") %>
+        <%= form.label :created_at_gteq, content_tag(:strong, "Fecha Inicial:") %>
         <%= form.text_field :created_at_gteq, class: "datepicker text", placeholder: "DD/MM/YYYY", readonly: true %>
       </fieldset>
       <fieldset class="datepicker">
-        <%= form.label :created_at_lteq, content_tag(:strong, "Fecha Final") %>
+        <%= form.label :created_at_lteq, content_tag(:strong, "Fecha Final:") %>
         <%= form.text_field :created_at_lteq, class: "datepicker text", placeholder: "DD/MM/YYYY", readonly: true %>
       </fieldset>
       <fieldset class="btn-alone last">

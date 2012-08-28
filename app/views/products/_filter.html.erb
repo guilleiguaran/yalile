@@ -2,15 +2,15 @@
   <%= search_form_for @search do |form| %>
     <div class="four-fieldset clearfix more-separate">
       <fieldset class="big">
-        <%= form.label :name_cont, "Nombre Del Producto" %>
+        <%= form.label :name_cont, "Nombre Del Producto:" %>
         <%= form.text_field :name_cont, class: :text, maxlength: 40 %>
       </fieldset>
       <fieldset>
-        <%= form.label :created_at_gteq, "Creado Desde" %>
+        <%= form.label :created_at_gteq, "Creado Desde:" %>
         <%= form.text_field :created_at_gteq, class: "datepicker text", placeholder: "DD / MM / YYYY", readonly: true %>
       </fieldset>
       <fieldset>
-        <%= form.label :created_at_lteq, "Creado Hasta" %>
+        <%= form.label :created_at_lteq, "Creado Hasta:" %>
         <%= form.text_field :created_at_lteq, class: "datepicker text", placeholder: "DD / MM / YYYY", readonly: true %>
       </fieldset>
       <fieldset class="btn-alone last">

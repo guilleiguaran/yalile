@@ -2,15 +2,15 @@
   <%= search_form_for @search, url: product_articles_path do |form| %>
     <div class="four-fieldset clearfix">
       <fieldset>
-        <%= form.label :code_cont, "Código" %>
+        <%= form.label :code_cont, "Código:" %>
         <%= form.text_field :code_cont, class: :text %>
       </fieldset>
       <fieldset class="big">
-        <%= form.label :description_cont, "Referencia" %>
+        <%= form.label :description_cont, "Referencia:" %>
         <%= form.text_field :description_cont, class: :text %>
       </fieldset>
       <fieldset>
-        <%= form.label :size_cont, "Talla" %>
+        <%= form.label :size_cont, "Talla:" %>
         <%= form.text_field :size_cont, class: :text %>
       </fieldset>
       <fieldset class="btn-alone last">
