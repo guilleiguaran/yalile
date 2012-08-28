@@ -65,15 +65,10 @@ class SaleTransaction < ActiveRecord::Base
     }.order{created_at.desc}
   end
 
-  def self.report(params={})
-    if !params.blank?
-      return where{
-        (status.eq 0) &
-        (created_at >= params[:initial_date]) &
-        (created_at <= params[:final_date])
-      }.group{[article_id, sale_id]}.order{created_at.desc}
-    end
-    []
+  def self.report
+    where{
+      (status.eq 0)
+    }.group{[article_id, sale_id]}.order{created_at.desc}
   end
 
   private

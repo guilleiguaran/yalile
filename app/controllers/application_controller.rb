@@ -17,7 +17,6 @@ class ApplicationController < ActionController::Base
   private
 
   def datetime_converter(date_string, period = :start)
-    date_string = Date.today.to_s if date_string.blank?
     case period
     when :start
       date_string.concat(" 00:00:00 R").to_datetime

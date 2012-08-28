@@ -46,8 +46,8 @@ var summaryArticle = (function  () {
       todaysSummary(element);
       actualMonthlySummary(element);
     });
-    $(todaySummary).html("$ " + summaryAmountToday);
-    $(monthlySummary).html("$ " + summaryAmountMonth);
+    $(todaySummary).html("$ " + formatCurrencyNumber(summaryAmountToday));
+    $(monthlySummary).html("$ " + formatCurrencyNumber(summaryAmountMonth));
   }
 
   var todaysSummary = function  (element) {
@@ -64,6 +64,22 @@ var summaryArticle = (function  () {
     if (dateSummary.getMonth() === todaysDate.getMonth()) {
       summaryAmountMonth += element.article_total_price;
     };
+  }
+
+  var formatCurrencyNumber = function (nStr)
+  {
+    nStr = nStr.toFixed(2).toString();
+    var tsep = ".";
+    var csep = ",";
+    var x = nStr.split('.');
+    var x1 = x[0];
+    var x2 = x.length > 1 ? csep + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    nStr += "";
+    while (rgx.test(x1)) {
+      x1 = x1.replace(rgx, '$1' + tsep + '$2');
+    }
+    return (x1 + x2);
   }
 
   return summaryArticle;

@@ -2,7 +2,7 @@ module ApplicationHelper
 
   # HELPER METHOD FOR DATE FORMATTING.
   def formatted_time(date_object, format="%B %d, %Y %H:%M")
-    l date_object.in_time_zone("Bogota"), format: format
+    return l date_object.in_time_zone("Bogota"), format: format if !date_object.blank?
   end
 
   # KAMINARI OVERWROTE METHOD FOR TRANSLATIONS PORPOUSE. CHECK KAMINARI GEM DOCUMENTATION FOR METHOD INFORMATION.

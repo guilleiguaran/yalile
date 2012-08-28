@@ -1,31 +1,25 @@
-<div class="wrapp-box clearfix">
-  <div class="two-columns floatleft box-summary">
-    <h3 class="details">Product Value</h3>
-    <div class="box-default rounder-all-five">
-      <ul class="list-price clearfix">
-        <li>
-          <strong>Gross Value:</strong>
-          <span>$999.999,99</span>
-        </li>
-        <li>
-          <strong>Discount:</strong>
-          <span>$999.999,99</span>
-        </li>
-        <li>
-          <strong>Taxes:</strong>
-          <span>$999.999,99</span>
-        </li>
-        <li>
-          <strong>Fees:</strong>
-          <span>$999.999,99</span>
-        </li>
-      </ul><!--.list-price-->
-      <ul class="list-price net clearfix">
-        <li>
-          <strong>Net Value</strong>
-          <span>$999.999,99</span>
-        </li>
-      </ul><!--.list-price-->
-    </div><!--.box-default-->
-  </div><!--.two-columns-->
-</div>
+<% if !@sale_transactions.blank? %>
+  <div class="wrapp-box clearfix">
+    <div class="two-columns floatleft box-summary">
+      <h3 class="details">Resumen De Venta(s)</h3>
+      <div class="box-default rounder-all-five">
+        <ul class="list-price clearfix">
+          <li>
+            <strong>Fecha Inicial:</strong>
+            <%= content_tag :span, params[:q][:created_at_gteq] %>
+          </li>
+          <li>
+            <strong>Fecha Final:</strong>
+            <%= content_tag :span, params[:q][:created_at_lteq] %>
+          </li>
+        </ul><!-- list-price clearfix END -->
+        <ul class="list-price net clearfix">
+          <li>
+            <strong>Total Del Reporte:</strong>
+            <%= content_tag :span, number_to_currency(@sale_transactions.sum(&:article_total_price)) %>
+          </li>
+        </ul><!-- list-price clearfix END -->
+      </div><!-- box-default rounder-all-five END -->
+    </div><!-- two-columns floatleft box-summary END -->
+  </div><!-- wrapp-box clearfix END -->
+<% end %>

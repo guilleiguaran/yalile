@@ -6,11 +6,13 @@ var siteFilters = (function  () {
   var siteFilterButton = "#site_filter_button";
   var inputSearchContainer = "#input_search_container";
   var inputSearchTextField = "#input_search_text_field";
+  var datePickers = "input:text.datepicker"
   
   $(document).ready(function  () {
     preventDefaultOfFilterForm();
     preventDefaultOfPaginationLinks();
     inputSearchSelectedOptionEffect();
+    datePickerRestoreDate();
   });
   
   var preventDefaultOfFilterForm = function  () {
@@ -58,6 +60,15 @@ var siteFilters = (function  () {
   
   var htmlRenderization = function  (jsonResponse) {
     $(siteRenderHtml).html(jsonResponse.html);
+  }
+
+  var datePickerRestoreDate = function  () {
+    $(datePickers).each(function  (index, datePicker) {
+      var currentDatePicker = $(datePicker);
+      var currentDate = new Date(currentDatePicker.val());
+      //currentDatePicker.datepicker("setDate", $.datepicker.formatDate("dd/mm/yy", currentDate));
+    });
+    return false;
   }
   
   return siteFilters;
