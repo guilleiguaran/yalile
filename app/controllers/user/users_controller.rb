@@ -3,7 +3,8 @@ class User::UsersController < ApplicationController
   before_filter :user_profile, only: [:update, :update_profile]
 
   def index    
-    @users = User.where{}.page(params[:page])
+    @search = User.search(params[:q])
+    @users = @search.result.page(params[:page])
   end
 
   def show

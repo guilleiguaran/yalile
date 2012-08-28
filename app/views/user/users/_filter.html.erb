@@ -1,22 +1,25 @@
-<div class="head-table box-default clearfix">
-  <form>
-    <div class="box-search-filter clearfix">
-      <fieldset class="">
-        <label>Search by Code</label>
-        <input class="text" type="text">
+<div class="box-default clearfix head-table box-app">
+  <%= search_form_for @search do |form| %>
+    <div class="four-fieldset clearfix">
+      <fieldset>
+        <%= form.label :username_cont, "Usuário" %>
+        <%= form.text_field :username_cont, class: :text %>
       </fieldset>
-      <fieldset class="">
+      <fieldset>
+        <%= form.label :email_cont, "Email" %>
+        <%= form.text_field :email_cont, class: :text %>
+      </fieldset>
+      <!--
+      <fieldset>
         <label>Search by Status</label>
         <select class="skin-select">
           <option>Lorem ipsum</option>
         </select>
-
       </fieldset>
+      -->
       <fieldset class="btn-alone last">
-        <div class="btn-green">
-          <input type="submit", value="Search">
-        </div>
+        <%= content_tag :div, form.submit("Buscar", value: nil), class: "btn-green" %>
       </fieldset>
     </div><!--.box-search-filter-->
-  </form>
-</div><!--.head-table-->
+  <% end %>
+</div><!-- box-default clearfix head-table box-app END -->
