@@ -76,7 +76,8 @@ var saleAction = (function  () {
     var totalPriceArticleInputText = parentsInputText.find("input[type=text][name*=article_total_price]");
     var quantityArticles = parseFloat(quantityArticlesInputText.val());
     var unitPriceArticle = parseFloat(unitPriceArticleInputText.val());
-    totalPriceArticleInputText.val(quantityArticles * unitPriceArticle);
+    var totalPrice = quantityArticles * unitPriceArticle;
+    totalPriceArticleInputText.val(totalPrice);
     saleDescriptionInformation();
     return false;
   }

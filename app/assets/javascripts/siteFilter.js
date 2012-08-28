@@ -65,8 +65,13 @@ var siteFilters = (function  () {
   var datePickerRestoreDate = function  () {
     $(datePickers).each(function  (index, datePicker) {
       var currentDatePicker = $(datePicker);
-      var currentDate = new Date(currentDatePicker.val());
-      //currentDatePicker.datepicker("setDate", $.datepicker.formatDate("dd/mm/yy", currentDate));
+      if (currentDatePicker.val() !== "") {
+        var currentDate = new Date(currentDatePicker.val());
+        if (currentDatePicker.prop("name").match(/created_at_lteq/)) {
+          currentDate.setDate(currentDate.getDate() - 1);
+        }        
+        currentDatePicker.datepicker("setDate", $.datepicker.formatDate("dd/mm/yy", currentDate));
+      };
     });
     return false;
   }
