@@ -36,12 +36,15 @@ Yalile::Application.routes.draw do
   # ================ USERS REPORTS =========================================================
   resources :reports, only: :index
 
+  # ================ ARTICLEs STOCKS =======================================================
+  resources :stocks, only: :index
+
   # ================ INFORMATIONS ROUTES ===================================================
   get ":resource/information" => "informations#index", as: :informations
   get ":resource/:id/information" => "informations#show", as: :get_information
 end
 #== Route Map
-# Generated on 28 Aug 2012 00:21
+# Generated on 28 Aug 2012 19:52
 #
 #        user_registration POST   /user(.:format)                                 devise/registrations#create
 #    new_user_registration GET    /user/sign_up(.:format)                         devise/registrations#new
@@ -73,5 +76,6 @@ end
 #                     user GET    /users/:id(.:format)                            user/users#show
 #                          PUT    /users/:id(.:format)                            user/users#update
 #                  reports GET    /reports(.:format)                              reports#index
+#                   stocks GET    /stocks(.:format)                               stocks#index
 #             informations GET    /:resource/information(.:format)                informations#index
 #          get_information GET    /:resource/:id/information(.:format)            informations#show

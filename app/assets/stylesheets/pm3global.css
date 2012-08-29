@@ -1251,6 +1251,8 @@ fieldset.show-error input.text{
   padding:0 10px;
 }
 
+.content-main input.text.width180px{width: 180px;}
+
 .ie8 .content-main input.text{
   padding-top:10px;
   height:34px;

@@ -41,4 +41,8 @@ class Article < ActiveRecord::Base
   # CALLBACKS
   before_destroy AvoidDestroy
 
+  def product_reference(attr=:id)
+    self.product.send(attr)
+  end
+
 end

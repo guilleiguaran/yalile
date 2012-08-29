@@ -1,0 +1,34 @@
+<table class="main-table aligncenter">
+  <thead>
+    <tr>
+      <td><span>Producto</span></td>
+      <td><span>Código</span></td>
+      <td><span>Valor</span></td>
+      <td><span>Talla</span></td>
+      <td><span>Referencia</span></td>
+      <td><span>En Bodega</span></td>
+    </tr>
+  </thead>
+  <tbody>
+    <%= content_tag_for :tr, @articles do |article| %>
+      <td>
+        <%= content_tag :span, link_to(article.product_reference(:name), product_article_path(article.product_reference, article.id)) %>
+      </td>
+      <td><%= content_tag :span, article.code %></td>
+      <td><%= content_tag :span, number_to_currency(article.price) %></td>
+      <td><%= content_tag :span, article.size %></td>
+      <td><%= content_tag :span, article.description %></td>
+      <td>
+        <% if article.eql?(@articles.last) %>
+          <%= content_tag :input, "", type: :text, class: "text width180px" %>
+        <% else %>
+          <%= content_tag :span, article.in_stock %>
+        <% end %>
+      </td>
+    <% end %>
+  </tbody>
+</table>
+<div class="navigation">
+  <%= content_tag :p, page_entries_info(@articles, entry_name: "Articulos") %>
+  <%= paginate @articles %>
+</div>

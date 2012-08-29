@@ -1,0 +1,14 @@
+<% title "Inventario" %>
+<div class="wrapper clearfix">
+  <%= render "shared/common/leftpanel" %>
+  <div class="content-right clearfix">
+    <div class="content-main clearfix">
+      <div class="content-title">
+        <h2 class="floatleft">Inventario</h2>
+      </div>
+      <%= render "filter" %>
+      <%= content_tag :div, render("table"), id: "site_render_html" %>
+    </div><!--.content-main END -->
+    <%= render "shared/common/footer" %>
+  </div><!-- content-right clearfix END -->
+</div><!-- wrapper clearfix END -->

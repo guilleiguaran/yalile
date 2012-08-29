@@ -1,0 +1,21 @@
+<div class="box-default clearfix head-table box-app">
+  <%= search_form_for @search, url: stocks_path do |form| %>
+    <div class="four-fieldset clearfix">
+      <fieldset>
+        <%= form.label :in_stock_eq, "En Bodega:" %>
+        <%= form.text_field :in_stock_eq, class: :text %>
+      </fieldset>
+      <fieldset>
+        <%= form.label :code_cont, "Código:" %>
+        <%= form.text_field :code_cont, class: :text %>
+      </fieldset>
+      <fieldset>
+        <%= form.label :product_name_cont, "Producto:" %>
+        <%= form.text_field :product_name_cont, class: :text %>
+      </fieldset>
+      <fieldset class="btn-alone last">
+        <%= content_tag :div, form.submit("Buscar", name: nil), class: "btn-green" %>
+      </fieldset>
+    </div><!-- box-search-filter clearfix END -->
+  <% end %>
+</div><!-- head-table box-default clearfix END -->
