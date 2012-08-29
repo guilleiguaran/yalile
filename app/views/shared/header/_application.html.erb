@@ -17,25 +17,27 @@
   </div><!-- header-top END -->
   <div class="nav-bar">
     <% if current_user %>
-    <div class="config select-type">
-      <% if current_user.is_admin? %>
-        <%= link_to "Administrador", "javascript:void(0);" %>
-        <div class="config-box">
-          <ul>
-            <li><%= link_to "Listado de Ventas", sales_path %></li>
-            <li><%= link_to "Resumen de Ventas", reports_path %></li>
-            <li><%= link_to "Manejo de Usuarios", users_path %></li>
-          </ul>
-        </div><!-- config-box END -->
-      <% end%>
-    </div><!-- config select-type END -->
-    <ul class="nav">
-      <li><%= link_to "Nueva Venta", new_sale_path, class: "dashboard" %></li>
-      <li><%= link_to "Productos", products_path, class: "application" %></li>
-      <li><%= link_to "Transacciones", sales_path, class: "transaction" %></li>
-      <li><%= link_to "Inventario", stocks_path, class: "support" %></li>
-      <li><%= link_to "Usúarios", users_path, class: "colleagues" %></li>
-    </ul><!-- nav END -->
+      <div class="config select-type">
+        <% if current_user.is_admin? %>
+          <%= link_to "Administrador", "javascript:void(0);" %>
+          <div class="config-box">
+            <ul>
+              <li><%= link_to "Listado de Ventas", sales_path %></li>
+              <li><%= link_to "Resumen de Ventas", reports_path %></li>
+              <li><%= link_to "Manejo de Usuarios", users_path %></li>
+            </ul>
+          </div><!-- config-box END -->
+        <% end%>
+      </div><!-- config select-type END -->
+      <ul class="nav">
+        <li><%= link_to "Nueva Venta", new_sale_path, class: "dashboard" %></li>
+        <% if current_user.is_admin? %>
+          <li><%= link_to "Productos", products_path, class: "application" %></li>
+          <li><%= link_to "Transacciones", sales_path, class: "transaction" %></li>
+          <li><%= link_to "Inventario", stocks_path, class: "support" %></li>
+          <li><%= link_to "Usúarios", users_path, class: "colleagues" %></li>
+        <% end %>
+      </ul><!-- nav END -->
     <% end %>
   </div><!-- nav-bar END -->
 </header>

@@ -260,7 +260,8 @@ a:hover{
   text-decoration:none;
 }
 
-.nav-bar ul.nav li:hover{
+.nav-bar ul.nav li:hover,
+.nav-bar ul.nav li.current {
   background: url(app/backgrounds/hover-nav-bar.png) repeat-x top;
 }
 
