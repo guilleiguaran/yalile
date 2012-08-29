@@ -18,13 +18,7 @@
       <td><%= content_tag :span, number_to_currency(article.price) %></td>
       <td><%= content_tag :span, article.size %></td>
       <td><%= content_tag :span, article.description %></td>
-      <td>
-        <% if article.eql?(@articles.last) %>
-          <%= content_tag :input, "", type: :text, class: "text width180px" %>
-        <% else %>
-          <%= content_tag :span, article.in_stock %>
-        <% end %>
-      </td>
+      <td><%= content_tag :span, article.in_stock %></td>
     <% end %>
   </tbody>
 </table>
