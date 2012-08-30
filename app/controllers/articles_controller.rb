@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
 
+  before_filter :authenticate_user!
   before_filter :find_product, :only => [:index, :show, :new, :create]
 
   def index

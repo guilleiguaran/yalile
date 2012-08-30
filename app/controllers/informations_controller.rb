@@ -1,5 +1,6 @@
 class InformationsController < ApplicationController
 
+  before_filter :authenticate_user!
   before_filter :instance_resource
 
   def index

@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
 
+  before_filter :authenticate_user!
   before_filter :load_products, only: [:new]
   before_filter :check_product_existence, :only => [:create]
 

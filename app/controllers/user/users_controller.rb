@@ -1,5 +1,6 @@
 class User::UsersController < ApplicationController
 
+  before_filter :authenticate_user!
   before_filter :user_profile, only: [:update, :update_profile]
 
   def index    

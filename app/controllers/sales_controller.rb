@@ -1,5 +1,7 @@
 class SalesController < ApplicationController
 
+  before_filter :authenticate_user!
+
   def index
     @search = Sale.search(params[:q])
     @sales =  @search.result.page(params[:page])
