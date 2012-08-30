@@ -1,5 +1,4 @@
 <% title "Iniciar Sessión" %>
-
 <div class="wrapper clearfix">
   <%= render "shared/common/leftpanel" %>
   <div class="content-right clearfix">
@@ -13,7 +12,6 @@
             <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |form| %>
               <%= form.input :username, :autofocus => true, :input_html => {:class => "text"}, :label => "Usuario:" %>
               <%= form.input :password, :input_html => {:class => "text"}, :label => "Contraseña:" %>
-              <%= form.input :remember_me, :as => :boolean, :label => "Recordarme" if devise_mapping.rememberable? %>
               <%= content_tag :div, form.button(:submit, "Entrar"), :class => "btn-green floatright" %>
             <% end %>
           </div><!-- box-default rounder-all-five clearfix marginbottom END -->

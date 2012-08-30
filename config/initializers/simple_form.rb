@@ -51,7 +51,7 @@ SimpleForm.setup do |config|
     component.use :label
     component.use :input
 
-    # component.optional :label_input
+    component.optional :label_input
     component.optional :maxlength
     component.optional :readonly
   end
@@ -63,7 +63,7 @@ SimpleForm.setup do |config|
   # Defaults to :nested for bootstrap config.
   #   :inline => input + label
   #   :nested => label > input
-  config.boolean_style = nil
+  config.boolean_style = :inline
 
   # Default class for buttons
   config.button_class = nil
@@ -89,7 +89,7 @@ SimpleForm.setup do |config|
   # config.collection_value_methods = [ :id, :to_s ]
 
   # You can wrap a collection of radio/check boxes in a pre-defined tag, defaulting to none.
-  config.collection_wrapper_tag = :ul
+  config.collection_wrapper_tag = nil
 
   # You can define the class to use on all collection wrappers. Defaulting to none.
   config.collection_wrapper_class = nil
@@ -97,7 +97,7 @@ SimpleForm.setup do |config|
   # You can wrap each item in a collection of radio/check boxes with a tag,
   # defaulting to :span. Please note that when using :boolean_style = :nested,
   # SimpleForm will force this option to be a label.
-  config.item_wrapper_tag = :li
+  config.item_wrapper_tag = nil
 
   # You can define a class to use in all item wrappers. Defaulting to none.
   config.item_wrapper_class = nil
@@ -112,7 +112,7 @@ SimpleForm.setup do |config|
   config.form_class = nil
 
   # You can define which elements should obtain additional classes
-  config.generate_additional_classes_for = [:wrapper, :label, :input]
+  config.generate_additional_classes_for = []
 
   # Whether attributes are required by default (or not). Default is true.
   config.required_by_default = false

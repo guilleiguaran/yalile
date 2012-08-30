@@ -14,7 +14,7 @@
 
 class Product < ActiveRecord::Base
   
-  paginates_per 10
+  paginates_per 1
 
   # ASOCIATIONS
   has_many :articles
