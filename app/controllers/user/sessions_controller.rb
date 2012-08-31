@@ -9,7 +9,7 @@ class User::SessionsController < Devise::SessionsController
       flash[:error] = "Usuario o Contrasena invalida"
       render :new
     else
-      sign_in(@user)
+      sign_in(:user, @user)
       redirect_to products_path
     end
   end

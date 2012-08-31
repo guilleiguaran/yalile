@@ -47,17 +47,15 @@ var siteFilters = (function  () {
   }
   
   var ajaxRequest = function  (ajaxUrl, ajaxType, ajaxParams, ajaxCallback) {
-    var hola = $.ajax({
+    $.ajax({
       url: ajaxUrl,
       type: ajaxType,
       data: ajaxParams,
-      statusCode: {
-        303: function  () {
-          alert("HOLA");
-        }
+      success: ajaxCallback,
+      error: function  (jqXHR, textStatus, errorThrown) {
+        console.log(jqXHR, textStatus, errorThrown);
       }
     });
-    console.log(hola);
   }
   
   var htmlRenderization = function  (jsonResponse) {
